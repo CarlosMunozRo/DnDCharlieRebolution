@@ -273,8 +273,7 @@ p,.texto_normal{
     }
 
     @keyframes ICO_Animation_Delante {
-        0% { transform:rotate(-360deg); }
-        100%{ transform:rotate(-360deg); }
+        100%{ left: 50%; }
     }
 
     /* XXXAnimacionesXXX */
@@ -294,7 +293,15 @@ p,.texto_normal{
     }
 
     .icono-animation-delante i{
+        position: relative;
+        visibility: hidden;
+    }
 
+    .icono-animation-delante i:after {
+        content: "\f061";
+        position: absolute;
+        visibility: visible;
+        left: 0;
     }
 
     .icono-animation-delante:hover{
@@ -302,11 +309,19 @@ p,.texto_normal{
         box-shadow: none;
     }
 
-    .icono-animation-delante:hover i{
+    .icono-animation-delante:hover{
+        animation:none;
+        box-shadow: none;
+    }
+
+    .icono-animation-delante:hover i:after{
         animation-name: ICO_Animation_Delante;
         animation-duration: 1s;
-        animation-iteration-count: 1;
         animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+
+
     }
 
 

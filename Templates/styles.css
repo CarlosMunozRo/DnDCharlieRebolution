@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+@font-face {
+    font-family: 'Cronos';
+    src:  url('../Media/Fonts/Song_Of_Coronos.woff2') format('woff2'),
+          url('../Media/Fonts/Song_Of_Coronos.woff') format('woff');
+}
+
+
+
+:root {
+    --amarillo: rgb(242,230,53);
+    --naranga: rgb(242,171,39);
+    --marron: rgb(217,141,48);
+    --rojo: rgb(217,54,54);
+    --rojo-oscuro: rgb(166,51,51);
+    --BTN_ST1_color-texto: rgb(255,255,255);
+    --BTN_ST1_color-bg: var(--rojo);
+
+
+
+    
+    --BTN_ST2_color-texto: rgb(0,0,0);
+    --BTN_ST2_color-bg: var(--amarillo);
+
+    --BTN_PEQ_Padding: 20px 20px;
+    --BTN_MED_Padding: 50px 50px;
+    --BTN_GRA_Padding: 30px 30px;
+
+    --BTN_PEQ_Tamano: 20px;
+    --BTN_MED_Tamano: 20px;
+    --BTN_GRA_Tamano: 30px;
+
+    --cronos:'Cronos';
+    --medieval: 'MedievalSharp';
+}
+
+.HEA_HeaderStyle1{
+
+}
+
+h1,.titulo1{
+    font-family: var(--cronos);
+    font-size: 60px;
+}
+
+h2,.titulo2{
+    font-family: var(--cronos);
+    font-size: 50px;
+}
+
+h3,.titulo3{
+    font-family: var(--cronos);
+    font-size: 40px;
+}
+
+p,.texto_normal{
+    font-family: var(--medieval);
+    font-size: 20px;
+}
+
+/* Botones */
+
+    /* Estandar */
+
+    button{
+        border-radius: 10px;
+    }
+
+    /* XXXEstandarXXX */
+
+    /* Pequeños */
+
+        /* Estilo 1 */
+
+        .BTN_NoA_ST1_Pequeño{
+            border: 0px;
+            background: var(--BTN_ST1_color-bg);
+            cursor: pointer;
+            padding: var(--BTN_PEQ_Padding);
+            font-family: var(--medieval);
+            font-size: var(--BTN_PEQ_Tamano);
+            color: var(--BTN_ST1_color-texto);
+        }
+
+        .BTN_A_ST1_Pequeño{
+            border: 0px;
+            background: var(--BTN_ST1_color-bg);
+            cursor: pointer;
+            padding: var(--BTN_PEQ_Padding);
+        }
+
+        .BTN_A_ST1_Pequeño a{
+            font-family: var(--medieval);
+            font-size: var(--BTN_PEQ_Tamano);
+            text-decoration: none;
+            color:var(--BTN_ST1_color-texto);
+        }
+
+        /* Estilo 2 */
+
+        .BTN_NoA_ST2_Pequeño{
+            border: 0px;
+            background: var(--BTN_ST2_color-bg);
+            cursor: pointer;
+            padding: var(--BTN_PEQ_Padding);
+            font-family: var(--medieval);
+            font-size: 20px;
+            color: var(--BTN_ST2_color-texto);
+        }
+
+        .BTN_A_ST2_Pequeño{
+            border: 0px;
+            background: var(--BTN_ST2_color-bg);
+            cursor: pointer;
+            padding: var(--BTN_PEQ_Padding);
+        }
+
+        .BTN_A_ST2_Pequeño a{
+            font-family: var(--medieval);
+            font-size: var(--BTN_PEQ_Tamano);
+            text-decoration: none;
+            color:var(--BTN_ST2_color-texto);
+        }
+
+        /* XXXEstilo 2XXX */
+
+    /* XXXPequeñoxXXX */
+
+    /* Mediano */
+
+        /* Estilo 1 */
+
+        .BTN_NoA_ST1_Mediano{
+            border: 0px;
+            background: var(--BTN_ST1_color-bg);
+            cursor: pointer;
+            padding: var(--BTN_MED_Padding);
+            font-family: var(--medieval);
+            font-size: var(--BTN_MED_Tamano);
+            color: var(--BTN_ST1_color-texto);
+        }
+
+        .BTN_A_ST1_Mediano{
+            border: 0px;
+            background: var(--BTN_ST1_color-bg);
+            cursor: pointer;
+            padding: var(--BTN_MED_Padding);
+        }
+
+        .BTN_A_ST1_Mediano a{
+            font-family: var(--medieval);
+            font-size: var(--BTN_MED_Tamano);
+            text-decoration: none;
+            color:var(--BTN_ST1_color-texto);
+        }
+
+        /* XXEstilo 1XXX */
+
+        
+        /* Estilo 2 */
+
+        .BTN_NoA_ST1_Mediano{
+            border: 0px;
+            background: var(--BTN_ST2_color-bg);
+            cursor: pointer;
+            padding: var(--BTN_MED_Padding);
+            font-family: var(--medieval);
+            font-size: var(--BTN_MED_Tamano);
+            color: var(--BTN_ST2_color-texto);
+        }
+
+        .BTN_A_ST1_Mediano{
+            border: 0px;
+            background: var(--BTN_ST1_color-bg);
+            cursor: pointer;
+            padding: var(--BTN_MED_Padding);
+        }
+
+        .BTN_A_ST1_Mediano a{
+            font-family: var(--medieval);
+            font-size: var(--BTN_MED_Tamano);
+            text-decoration: none;
+            color:var(--BTN_ST2_color-texto);
+        }
+
+        /* XXEstilo 2XXX */
+
+    /* XXXMedioXXX */
+
+/* XXXBotonesXXX */
+
+/* Colores Textos */
+
+.amarillo{
+    color:var(--amarillo);
+}
+
+.naranga{
+    color:var(--naranga);
+}
+
+.marron{
+    color:var(--marron);
+}
+
+.rojo{
+    color:var(--rojo);
+}
+
+.rojo_oscuro{
+    color:var(--rojo-oscuro);
+}
+
+/* XXXColores TextosXXX */
+
+
+
+
+
+/* Temporal */
+
+.template_demostracion_container{
+    display: flex;
+}
+
+.template_demostracion_container div:nth-child(1){
+    background-color: var(--amarillo);
+}
+
+.template_demostracion_container div:nth-child(2){
+    background-color: var(--naranga);
+}
+
+.template_demostracion_container div:nth-child(3){
+    background-color: var(--marron);
+}
+
+.template_demostracion_container div:nth-child(4){
+    background-color: var(--rojo);
+}
+
+.template_demostracion_container div:nth-child(4) p{
+    color:white;
+}
+
+.template_demostracion_container div:nth-child(5){
+    background-color: var(--rojo-oscuro);
+}
+
+.template_demostracion_container div:nth-child(5) p{
+    color:white;
+}
+
+.template_demostration{
+    width: 200px;
+    height: 200px;
+    padding:20px;
+}
+

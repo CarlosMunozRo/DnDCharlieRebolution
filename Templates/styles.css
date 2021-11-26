@@ -24,11 +24,11 @@
     --BTN_ST2_color-bg: var(--amarillo);
 
     --BTN_PEQ_Padding: 20px 20px;
-    --BTN_MED_Padding: 50px 50px;
-    --BTN_GRA_Padding: 30px 30px;
+    --BTN_MED_Padding: 25px 25px;
+    --BTN_GRA_Padding: 35px 30px;
 
     --BTN_PEQ_Tamano: 20px;
-    --BTN_MED_Tamano: 20px;
+    --BTN_MED_Tamano: 25px;
     --BTN_GRA_Tamano: 30px;
 
     --cronos:'Cronos';
@@ -65,6 +65,18 @@ p,.texto_normal{
 
     button{
         border-radius: 10px;
+        transition: all 1s ease-in;
+        position: relative;
+    }
+
+    button:hover{
+        box-shadow: inset 0px 0px 20px 4px black;
+        animation-name: BTN_Animacion;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-delay: 1s;
+        animation-direction: alternate;
+        animation-timing-function: ease-out;
     }
 
     /* XXXEstandarXXX */
@@ -160,7 +172,7 @@ p,.texto_normal{
         
         /* Estilo 2 */
 
-        .BTN_NoA_ST1_Mediano{
+        .BTN_NoA_ST2_Mediano{
             border: 0px;
             background: var(--BTN_ST2_color-bg);
             cursor: pointer;
@@ -170,14 +182,14 @@ p,.texto_normal{
             color: var(--BTN_ST2_color-texto);
         }
 
-        .BTN_A_ST1_Mediano{
+        .BTN_A_ST2_Mediano{
             border: 0px;
-            background: var(--BTN_ST1_color-bg);
+            background: var(--BTN_ST2_color-bg);
             cursor: pointer;
             padding: var(--BTN_MED_Padding);
         }
 
-        .BTN_A_ST1_Mediano a{
+        .BTN_A_ST2_Mediano a{
             font-family: var(--medieval);
             font-size: var(--BTN_MED_Tamano);
             text-decoration: none;
@@ -187,6 +199,119 @@ p,.texto_normal{
         /* XXEstilo 2XXX */
 
     /* XXXMedioXXX */
+
+    /* Grande */
+
+        /* Estilo 1 */
+
+        .BTN_NoA_ST1_Grande{
+            border: 0px;
+            background: var(--BTN_ST1_color-bg);
+            cursor: pointer;
+            padding: var(--BTN_GRA_Padding);
+            font-family: var(--medieval);
+            font-size: var(--BTN_GRA_Tamano);
+            color: var(--BTN_ST1_color-texto);
+        }
+
+        .BTN_A_ST1_Grande{
+            border: 0px;
+            background: var(--BTN_ST1_color-bg);
+            cursor: pointer;
+            padding: var(--BTN_GRA_Padding);
+        }
+
+        .BTN_A_ST1_Grande a{
+            font-family: var(--medieval);
+            font-size: var(--BTN_GRA_Tamano);
+            text-decoration: none;
+            color:var(--BTN_ST1_color-texto);
+        }
+
+        /* XXXEstilo 1XXX */
+
+        /* Estilo 2 */
+
+        .BTN_NoA_ST2_Grande{
+            border: 0px;
+            background: var(--BTN_ST2_color-bg);
+            cursor: pointer;
+            padding: var(--BTN_GRA_Padding);
+            font-family: var(--medieval);
+            font-size: var(--BTN_GRA_Tamano);
+            color: var(--BTN_ST2_color-texto);
+        }
+
+        .BTN_A_ST2_Grande{
+            border: 0px;
+            background: var(--BTN_ST2_color-bg);
+            cursor: pointer;
+            padding: var(--BTN_GRA_Padding);
+        }
+
+        .BTN_A_ST2_Grande a{
+            font-family: var(--medieval);
+            font-size: var(--BTN_GRA_Tamano);
+            text-decoration: none;
+            color:var(--BTN_ST2_color-texto);
+        }
+
+        /* XXXEstilo 2XXX */
+
+    /* XXXGrandeXXX */
+
+    /* Animaciones */
+
+    @keyframes BTN_Animacion {
+        0% { box-shadow: inset 0px 0px 20px 4px black; }
+        50% { box-shadow: inset 0px 0px 25px 11px black; }
+        100% { box-shadow: inset 0px 0px 20px 4px black; }
+    }
+
+    @keyframes ICO_Animation_Atras {
+        100%{ transform:rotate(-360deg); }
+    }
+
+    @keyframes ICO_Animation_Delante {
+        0% { transform:rotate(-360deg); }
+        100%{ transform:rotate(-360deg); }
+    }
+
+    /* XXXAnimacionesXXX */
+
+    /* Variaciones */
+
+    .icono-animation-atras:hover{
+        animation:none;
+        box-shadow: none;
+    }
+
+    .icono-animation-atras:hover i{
+        animation-name: ICO_Animation_Atras;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+    }
+
+    .icono-animation-delante i{
+
+    }
+
+    .icono-animation-delante:hover{
+        animation:none;
+        box-shadow: none;
+    }
+
+    .icono-animation-delante:hover i{
+        animation-name: ICO_Animation_Delante;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+    }
+
+
+
+    /* XXXVariacionesXXX */
 
 /* XXXBotonesXXX */
 

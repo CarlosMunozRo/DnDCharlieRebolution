@@ -99,7 +99,7 @@ p,.texto_normal{
 
         .BTN_NoA_ST1_Pequeño{
             border: 0px;
-            background: var(--BTN_ST1_color-bg);
+            background: var(--BTN_S<<T1_color-bg);
             cursor: pointer;
             padding: var(--BTN_PEQ_Padding);
             font-family: var(--medieval);

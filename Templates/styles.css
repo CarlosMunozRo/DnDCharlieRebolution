@@ -6,20 +6,31 @@
           url('../Media/Fonts/Song_Of_Coronos.woff') format('woff');
 }
 
-
+body{
+    margin: 0px;
+}
 
 :root {
+
+    /* Colores */
     --amarillo: rgb(242,230,53);
     --naranga: rgb(242,171,39);
     --marron: rgb(217,141,48);
     --rojo: rgb(217,54,54);
     --rojo-oscuro: rgb(166,51,51);
+
+    --naranga-tinte: rgb(242,171,39,.5);
+
+    /* Fuentes */
+
+    --cronos:'Cronos';
+    --medieval: 'MedievalSharp';
+
+    /* Botones */
+
     --BTN_ST1_color-texto: rgb(255,255,255);
     --BTN_ST1_color-bg: var(--rojo);
 
-
-
-    
     --BTN_ST2_color-texto: rgb(0,0,0);
     --BTN_ST2_color-bg: var(--amarillo);
 
@@ -31,8 +42,9 @@
     --BTN_MED_Tamano: 25px;
     --BTN_GRA_Tamano: 30px;
 
-    --cronos:'Cronos';
-    --medieval: 'MedievalSharp';
+    /* Input */
+    --INP_TamanoFuente: 20px;
+
 }
 
 .HEA_HeaderStyle1{
@@ -330,6 +342,20 @@ p,.texto_normal{
 
 /* XXXBotonesXXX */
 
+/* Inputs */
+
+    input,select,textarea{
+        background-color: var(--naranga-tinte);
+        font-family: var(--medieval);
+        font-size: var(--INP_TamanoFuente);
+        width: 200px;
+        height: 30px;
+        box-shadow: inset 0px 0px 10px 5px var(--marron);
+        border:0px;
+    }    
+
+/* XXXInputsXXX */
+
 /* Colores Textos */
 
 .amarillo{
@@ -397,4 +423,3 @@ p,.texto_normal{
     height: 200px;
     padding:20px;
 }
-

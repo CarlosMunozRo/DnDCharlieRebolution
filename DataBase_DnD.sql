@@ -14,7 +14,7 @@ CREATE TABLE Armas_PropiedadesArma (
 );
 CREATE TABLE Usuarios (
     UsuarioID INT AUTO_INCREMENT PRIMARY KEY,
-    NombreUsuario varchar(20) not null,
+    NombreUsuario varchar(257) not null,
     Password varchar(20) not null,
     Email varchar(50) not null
 );

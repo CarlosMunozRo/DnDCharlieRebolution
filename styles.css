@@ -558,5 +558,11 @@ body.login-dashboard .BTN_A_ST1_Grande{
 
 .I_Alternar-Visivilidad-Contraseña{
     cursor: pointer;
-    color:white;
+    color:black;
+    position: absolute;
+    right: 8px;
+}
+
+.position-relative{
+    position: relative;
 }

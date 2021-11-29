@@ -86,7 +86,7 @@
                             <label for="usuario">Nombre de Usuario:</label><input type="text" name="usuario" id="usuario">
                         </div>
                         <div class="centrar-contenido flex-column">
-                            <label for="usuario">Contraseña:</label><div class="centrar-contenido"><input type="password" name="contrasenya" id="contrasenya"><i onclick="cambiarContrasenya()" class="fas fa-eye I_Alternar-Visivilidad-Contraseña"></i></div>
+                            <label for="usuario">Contraseña:</label><div class="centrar-contenido position-relative"><input type="password" name="contrasenya" id="contrasenya"><i onclick="cambiarContrasenya()" class="fas fa-eye I_Alternar-Visivilidad-Contraseña"></i></div>
                         </div>
                         <div class="centrar-contenido flex-row DIV_Home-Login-enviar">
                             <div> <a href="">No recuerdas la contraseña?</a> </div>

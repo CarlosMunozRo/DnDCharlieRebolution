@@ -194,3 +194,6 @@ ALTER TABLE Razas_HabilidadesRaciales
 ADD FOREIGN KEY (NombreRaza) REFERENCES Razas(NombreRaza);
 ALTER TABLE Razas_HabilidadesRaciales
 ADD FOREIGN KEY (NombreHabilidadRacial) REFERENCES HabilidadesRaciales(NombreHabilidadRacial);
+
+INSERT INTO Usuarios (UsuarioID,NombreUsuario,Password,Email)
+VALUES (default,'carlos','carlos123','carlos@gmail.com');

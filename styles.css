@@ -380,46 +380,30 @@ p,.texto_normal{
 
 /* XXXColores TextosXXX */
 
-
-
-
-
-/* Temporal */
-
-.template_demostracion_container{
+.hdr-usuario {
+    width: 100vw;
+    height: 10vh;
     display: flex;
-}
-
-.template_demostracion_container div:nth-child(1){
-    background-color: var(--amarillo);
-}
-
-.template_demostracion_container div:nth-child(2){
-    background-color: var(--naranja);
-}
-
-.template_demostracion_container div:nth-child(3){
-    background-color: var(--marron);
-}
-
-.template_demostracion_container div:nth-child(4){
-    background-color: var(--rojo);
-}
-
-.template_demostracion_container div:nth-child(4) p{
-    color:white;
-}
-
-.template_demostracion_container div:nth-child(5){
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     background-color: var(--rojo-oscuro);
 }
 
-.template_demostracion_container div:nth-child(5) p{
-    color:white;
+.centrar-contenido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.template_demostration{
-    width: 200px;
-    height: 200px;
-    padding:20px;
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.home{
+    background-color: var(--naranja);
 }

@@ -6,7 +6,7 @@
           url('../Media/Fonts/Song_Of_Coronos.woff') format('woff');
 }
 
-body{
+body,p{
     margin: 0px;
 }
 
@@ -20,6 +20,7 @@ body{
     --rojo-oscuro: rgb(166,51,51);
 
     --naranja-tinte: rgb(242,171,39,.5);
+    --rojo-oscuro-tinte: rgb(166,51,51,.5);
 
     /* Fuentes */
 
@@ -345,14 +346,20 @@ p,.texto_normal{
 /* Inputs */
 
     input,select,textarea{
-        background-color: var(--naranja-tinte);
+        background-color: var(--naranja);
         font-family: var(--medieval);
         font-size: var(--INP_TamanoFuente);
         width: 200px;
         height: 30px;
         box-shadow: inset 0px 0px 10px 5px var(--marron);
         border:0px;
-    }    
+        padding: 0px 20px;
+
+    }
+
+    input[type="submit"]{
+        padding: 0;
+    }
 
 /* XXXInputsXXX */
 
@@ -376,6 +383,10 @@ p,.texto_normal{
 
 .rojo_oscuro{
     color:var(--rojo-oscuro);
+}
+
+.blanco{
+    color:white;
 }
 
 /* XXXColores TextosXXX */
@@ -406,4 +417,84 @@ p,.texto_normal{
 
 .home{
     background-color: var(--naranja);
+}
+
+.home{
+    background-image: url('./Media/Imagenes/dd_background-login-dashboard.jpg');
+}
+
+.home label,.home a{
+    font-size: 20px;
+    color:white;
+}
+
+.home a{
+    color: var(--amarillo);
+}
+
+.DIV_Home-Izquierda{
+    width: 50vw;
+    height: 100vh;
+}
+
+.DIV_Home-Izquierda>div:nth-child(1){
+    width: 100%;
+    height: 50%;
+}
+
+.DIV_Home-Izquierda>div:nth-child(2){
+    width: 100%;
+    height: 50%;
+    background-color: var(--rojo-oscuro-tinte);
+    text-align: center;
+}
+
+.DIV_Home-Izquierda>div:nth-child(2) p{
+    width: 80%;
+    color:white;
+    font-size: 25px;
+}
+
+.DIV_Home-Derecha{
+    width: 50vw;
+}
+
+.IMG_Home-imagen{
+    max-width: 70%;
+}
+
+.DIV_Home-Login{
+    text-align: center;
+    height: 65vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--rojo-oscuro-tinte);
+    border-radius: 25px;
+}
+
+.DIV_Home-Login>div{
+    width: 80%;
+}
+
+.DIV_Home-Login>div:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.DIV_Home-Login-enviar{
+    gap:3vw;
+}
+
+.DIV_Home-Login-enviar input[type="submit"]{
+    width: 150px;
+    height: 70px;
+    cursor: pointer;
+}
+
+.I_Alternar-Visivilidad-Contraseña{
+    cursor: pointer;
+    color:white;
 }

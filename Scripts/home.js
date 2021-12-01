@@ -1,3 +1,9 @@
+$(document).ready(function (){
+    $('.DIV_ERR_Message >div>span').click(()=>{
+        $('.DIV_ERR_Message').hide();
+    });
+});
+
 
 function cambiarContrasenya(){  // Alterna la visibilidad de la contraseña
 

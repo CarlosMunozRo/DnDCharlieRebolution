@@ -467,7 +467,7 @@ p, .texto_normal, a{
 .home{
     background-color: var(--naranja);
     background-image: url('./Media/Imagenes/dd_background-login-dashboard.jpg');
-
+    overflow: hidden;
 }
 
 
@@ -565,4 +565,35 @@ body.login-dashboard .BTN_NoA_ST1_Grande{
 
 .position-relative{
     position: relative;
+}
+
+.DIV_ERR_Message{
+    position: absolute;
+    left: 50%;
+    bottom: -10%;
+    width: 50%;
+    height: 20px;
+    background-color: red;
+    transform: translate(-50%,50%);
+    display: flex;
+    justify-content: space-between;
+    padding:20px;
+    border-radius: 15px;
+    animation: ANI_DIV_Message 1s ease-in 0s 1 forwards;
+}
+
+.DIV_ERR_Message p{
+    color:white;
+}
+
+.DIV_ERR_Message >div{
+    cursor: pointer;
+}
+
+@keyframes ANI_DIV_Message{
+    0%{
+        bottom: -10%;
+    }100%{
+        bottom: 10%;
+    }
 }

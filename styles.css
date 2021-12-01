@@ -573,17 +573,13 @@ body.login-dashboard .BTN_NoA_ST1_Grande{
     bottom: -10%;
     width: 50%;
     height: 20px;
-    background-color: red;
+    background-color: var(--rojo);
     transform: translate(-50%,50%);
     display: flex;
     justify-content: space-between;
     padding:20px;
     border-radius: 15px;
     animation: ANI_DIV_Message 1s ease-in 0s 1 forwards;
-}
-
-.DIV_ERR_Message p{
-    color:white;
 }
 
 .DIV_ERR_Message >div{

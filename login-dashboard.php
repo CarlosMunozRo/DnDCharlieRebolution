@@ -13,9 +13,9 @@
     <?php include "Templates/header.php"?>
     <section id="" class="centrar-contenido"> 
         <nav class="centrar-contenido flex-column flex-space-around">
-            <button class="BTN_A_ST1_Grande"><a href="#">Crear Ficha</a></button>
-            <button class="BTN_A_ST1_Grande"><a href="#">Listar Fichas</a></button>
-            <button class="BTN_A_ST1_Grande"><a href="#">Probar Ficha</a></button>
+        <a href="/crear-ficha.php"><button class="BTN_NoA_ST1_Grande">Crear Ficha</button></a>
+        <a href="/listar-ficha.php"><button class="BTN_NoA_ST1_Grande">Listar Fichas</button></a>
+        <a href="/probar-ficha.php"><button class="BTN_NoA_ST1_Grande">Probar Ficha</button></a>
         </nav>
     </section>
 

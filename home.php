@@ -34,6 +34,7 @@
           //anem agafant les fileres d'amb una amb una
           $row = $query->fetch();
     
+          $login="no";
           if($row){
               session_start();
                 
@@ -41,7 +42,7 @@
 
               header("Location: login-dashboard.php");
           }else{
-              echo "No";
+              $login="no";
           }
     
     
@@ -68,6 +69,16 @@
     <script src="./Scripts/home.js"></script>
 </head>
 <body class="home">
+
+    <?php 
+    
+        if($login=="no"){
+            ?>
+                <div class="DIV_ERR_Message"><p>Los credenciales no son correctos</p><div><span>X</span></div></div>
+            <?php
+        }
+
+    ?>
     
     <div class="centrar-contenido flex-row">
         <div class="DIV_Home-Izquierda">

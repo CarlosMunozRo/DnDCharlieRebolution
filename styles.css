@@ -70,12 +70,12 @@ body,p{
     padding: 0.5vw;
 }
 
-.HEA_HeaderStyle1 > div > img {
+.HEA_HeaderStyle1 .perfil-usuario > img {
     width: 2vw;
     height: auto;
 }
 
-.HEA_HeaderStyle1 > nav {
+.HEA_HeaderStyle1 form > nav {
     width: 15vw;
     position: absolute;
     top: 10vh;
@@ -83,7 +83,7 @@ body,p{
     background-color: black;
 }
 
-.HEA_HeaderStyle1 > nav > a {
+.HEA_HeaderStyle1 form > nav > a {
     padding: 2vh 0;
 }
 
@@ -480,7 +480,7 @@ body.login-dashboard > section > nav {
     width: 100vw;
 }
 
-body.login-dashboard .BTN_A_ST1_Grande{
+body.login-dashboard .BTN_NoA_ST1_Grande{
     padding: 10vh 20vw;
 }
 

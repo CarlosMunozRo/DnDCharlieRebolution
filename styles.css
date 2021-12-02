@@ -556,6 +556,10 @@ body.login-dashboard .BTN_NoA_ST1_Grande{
     cursor: pointer;
 }
 
+.DIV_Home-Login-enviar input[type="submit"]:hover{
+    box-shadow: 0px 0px 10px 0px white;
+}
+
 .I_Alternar-Visivilidad-Contraseña{
     cursor: pointer;
     color:black;

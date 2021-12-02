@@ -3,7 +3,7 @@
     if(!empty($_POST["usuario"]) && !empty($_POST["contrasenya"])){
 
         try {
-            $hostname = "localhost";
+            $hostname = "dndcharlierevolution.tk";
             $dbname = "DungeonsAndDragons";
             $username = "master";
             $pw = "Master1234!";

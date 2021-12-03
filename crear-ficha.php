@@ -37,11 +37,6 @@
 
 
             foreach($row as $dato){
-                array(
-                    "foo" => "bar",
-                    "bar" => "foo",
-                );
-                
 
                 
                 $queryRaza= $pdo->prepare('
@@ -68,7 +63,7 @@
 
 
 
-                print_r($Raza);
+                print_r($Razas);
                 
 
             }

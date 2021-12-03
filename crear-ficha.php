@@ -48,8 +48,8 @@
                     from Razas where NombreRaza=":razaB";
                 ');
 
-                $query->bindParam(':razaB', $dato["NombreRaza"]);
-                $query->bindParam(':razaP',$dato["RazaPadre"]);
+                $queryRaza->bindParam(':razaB', $dato["NombreRaza"]);
+                $queryRaza->bindParam(':razaP',$dato["RazaPadre"]);
 
                 $queryRaza->execute();
 
@@ -61,12 +61,7 @@
 
                 }
 
-
-
-                foreach($Razas as $Sheesh){
-                    print_r($Sheesh);
-                }
-                
+                print_r($Razas);
 
             }
 

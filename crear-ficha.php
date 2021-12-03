@@ -38,13 +38,6 @@
 
             foreach($row as $dato){
 
-                array_push($Razas,{"NombreRaza":$dato["NombreRaza"]});
-                array_push($Razas,{"IncrementoEstadistica":$dato["IncrementoEstadistica"]});
-                array_push($Razas,{"RazaPadre":$dato["RazaPadre"]});
-                
-
-                print_r($Raza);
-                
 
             }
 

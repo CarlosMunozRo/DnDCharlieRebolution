@@ -25,18 +25,18 @@
             exit;
         }
 
-        $query = $pdo->prepare("select NombreRaza from Razas;");
+        $query = $pdo->prepare("select * from Razas;");
   
         $query->execute();
 
 
-        $row = $query->fetch();
+        $row = $query->fetchAll();
 
 
         if($row){
 
             foreach($row as $dato){
-                print_r($dato);
+                print_r($dato["NombreRaza"]);
             }
 
         }else{

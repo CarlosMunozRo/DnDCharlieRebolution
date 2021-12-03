@@ -26,17 +26,51 @@
         }
 
         $query = $pdo->prepare("select * from Razas;");
-  
         $query->execute();
 
 
         $row = $query->fetchAll();
 
-
+        $Razas = []
         if($row){
 
+
+
             foreach($row as $dato){
-                print_r($dato["NombreRaza"]);
+
+                $Raza={"NombreRaza":$dato["NombreRaza"]};
+                $Raza={"IncrementoEstadistica":$dato["IncrementoEstadistica"]};
+                $Raza={"RazaPadre":$dato["RazaPadre"]};
+                array_push($Razas,$Raza);
+
+                
+                $queryRaza= $pdo->prepare('
+                    select IncrementoEstadistica,
+                    IFNULL(Dimension, (select Dimension from Razas where NombreRaza=":razaP")) as "Dimension",
+                    IFNULL(Velocidad, 0)+(select IFNULL(Velocidad, 0) from Razas where NombreRaza=":razaP") as "Velocidad",
+                    IFNULL(Vision, (select Vision from Razas where NombreRaza=":razaP")) as "Vision",
+                    IFNULL(RazaPadre,false) as "RazaPadre"
+                    from Razas where NombreRaza=":razaB";
+                ');
+
+                $query->bindParam(':razaB', $dato["NombreRaza"]);
+                $query->bindParam(':razaP',$dato["RazaPadre"]);
+
+                $queryRaza->execute();
+
+                $rowR = $queryRaza->fetchAll();
+
+                foreach($rowR as $datoR){
+                    
+                    $Raza={"Dimension":$datoR["Dimension"]};
+                    $Raza={"Velocidad":$datoR["Velocidad"]};
+                    $Raza={"HasRazaPadre":$datoR["RazaPadre"]};
+
+                }
+
+                print_r($Raza);
+                
+
             }
 
         }else{

@@ -114,7 +114,7 @@ CREATE TABLE Razas (
     NombreRaza varchar(30) PRIMARY KEY,
     IncrementoEstadistica varchar(100) not null,
     Dimension varchar(20),
-    Velocidad varchar(10),
+    Velocidad int(10),
     Vision varchar(100),
     RazaPadre varchar(30)
 );
@@ -228,4 +228,12 @@ VALUES ('Guerrero','Un maestro del combate marcial, competente con una gran vari
 ('Mago','Un usuario de magia educado capaz de manipular la estructura de la realidad.',6,'Inteligencia','Inteligencia y sabiduria','Dagas, dorados, hondas, bastones, ballestas ligeras',null,null,null,3,6);
 
 INSERT INTO Razas (NombreRaza,IncrementoEstadistica,Dimension,Velocidad,Vision,RazaPadre)
-VALUES ('Elfo','Destreza 2','mediano','30 pies','vision en la oscuridad',null),('Alto Elfo','Inteligencia 1',null,null,null,'Elfo');
+VALUES ('Elfo','Destreza 2','mediano',30,'vision en la oscuridad',null),('Alto Elfo','Inteligencia 1',null,null,null,'Elfo');
+
+select * from Razas;
+select IncrementoEstadistica,
+IFNULL(Dimension, (select Dimension from Razas where NombreRaza='Elfo')) as "Dimension",
+IFNULL(Velocidad, 0)+(select IFNULL(Velocidad, 0) from Razas where NombreRaza='Elfo') as "Velocidad",
+IFNULL(Vision, (select Vision from Razas where NombreRaza='Elfo')) as "Vision",
+IFNULL(RazaPadre,false) as "RazaPadre"
+from Razas where NombreRaza='Alto Elfo';

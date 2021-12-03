@@ -31,7 +31,7 @@
 
         $row = $query->fetchAll();
 
-        $Razas = []
+        $Razas = [];
         if($row){
 
 
@@ -41,7 +41,6 @@
                 $Raza={"NombreRaza":$dato["NombreRaza"]};
                 $Raza={"IncrementoEstadistica":$dato["IncrementoEstadistica"]};
                 $Raza={"RazaPadre":$dato["RazaPadre"]};
-                array_push($Razas,$Raza);
 
                 
                 $queryRaza= $pdo->prepare('

@@ -63,7 +63,9 @@
 
 
 
-                print_r($Razas);
+                foreach($Razas as $Sheesh){
+                    print_r($Sheesh);
+                }
                 
 
             }

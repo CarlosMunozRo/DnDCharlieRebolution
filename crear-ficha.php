@@ -37,7 +37,39 @@
 
 
             foreach($row as $dato){
+                array(
+                    "foo" => "bar",
+                    "bar" => "foo",
+                );
+                
 
+                
+                $queryRaza= $pdo->prepare('
+                    select 
+                    IFNULL(Dimension, (select Dimension from Razas where NombreRaza=":razaP")) as "Dimension",
+                    IFNULL(Velocidad, 0)+(select IFNULL(Velocidad, 0) from Razas where NombreRaza=":razaP") as "Velocidad",
+                    IFNULL(Vision, (select Vision from Razas where NombreRaza=":razaP")) as "Vision",
+                    IFNULL(RazaPadre,false) as "RazaPadre"
+                    from Razas where NombreRaza=":razaB";
+                ');
+
+                $query->bindParam(':razaB', $dato["NombreRaza"]);
+                $query->bindParam(':razaP',$dato["RazaPadre"]);
+
+                $queryRaza->execute();
+
+                $rowR = $queryRaza->fetchAll();
+
+                foreach($rowR as $datoR){
+                    
+                    array_push($Razas,array("NombreRaza"=>$dato["NombreRaza"],"IncrementoEstadistica"=>$dato["IncrementoEstadistica"],"Dimension"=>$datoR["Dimension"],"Velocidad"=>$datoR["Velocidad"],"RazaPadre"=>$dato["RazaPadre"],"HasRazaPadre"=>$datoR["RazaPadre"]));
+
+                }
+
+
+
+                print_r($Raza);
+                
 
             }
 

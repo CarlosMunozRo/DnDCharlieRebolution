@@ -36,7 +36,7 @@
         if($row){
 
             foreach($row as $dato){
-                print_r($dato["NombreRaza"]);
+                print_r($dato);
             }
 
         }else{

@@ -42,29 +42,6 @@
                 array_push($Razas,{"IncrementoEstadistica":$dato["IncrementoEstadistica"]});
                 array_push($Razas,{"RazaPadre":$dato["RazaPadre"]});
                 
-                $queryRaza= $pdo->prepare('
-                    select 
-                    IFNULL(Dimension, (select Dimension from Razas where NombreRaza=":razaP")) as "Dimension",
-                    IFNULL(Velocidad, 0)+(select IFNULL(Velocidad, 0) from Razas where NombreRaza=":razaP") as "Velocidad",
-                    IFNULL(Vision, (select Vision from Razas where NombreRaza=":razaP")) as "Vision",
-                    IFNULL(RazaPadre,false) as "RazaPadre"
-                    from Razas where NombreRaza=":razaB";
-                ');
-
-                $query->bindParam(':razaB', $dato["NombreRaza"]);
-                $query->bindParam(':razaP',$dato["RazaPadre"]);
-
-                $queryRaza->execute();
-
-                $rowR = $queryRaza->fetchAll();
-
-                foreach($rowR as $datoR){
-                    
-                    array_push($Razas,{"Dimension":$datoR["Dimension"]});
-                    array_push($Razas,{"Velocidad":$datoR["Velocidad"]});
-                    array_push($Razas,{"HasRazaPadre":$datoR["RazaPadre"]});
-
-                }
 
                 print_r($Raza);
                 

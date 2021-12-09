@@ -51,6 +51,7 @@
                 $queryRaza->bindParam(':razaB', $dato["NombreRaza"]);
                 $queryRaza->bindParam(':razaP',$dato["RazaPadre"]);
                 print_r($dato["NombreRaza"]);
+                print_r($queryRaza);
                 $queryRaza->execute();
 
                 $rowR = $queryRaza->fetchAll();

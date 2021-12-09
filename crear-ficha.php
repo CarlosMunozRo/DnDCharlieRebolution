@@ -84,5 +84,6 @@
     <!-- boton mirar tus fichas -->
     <!-- boton probar ficha -->
 
+    <script src="Scripts/crear-ficha.js"></script>
 </body>
 </html>

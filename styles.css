@@ -597,3 +597,43 @@ body.login-dashboard .BTN_NoA_ST1_Grande{
         bottom: 10%;
     }
 }
+
+/* Nueva-Cuenta css */
+
+.Nueva-Cuenta{
+    background-image: url("Media/Imagenes/d&d_background-login-dashboard.jpg");
+    background-size: cover;
+}
+.DIV_Nueva-Cuenta{
+    width: 100vw;
+    height: 90vh;
+}
+
+.DIV_Nueva-Cuenta-Formulario{
+    text-align: center;
+    height: 65vh;
+    width: 30vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--rojo-oscuro-tinte);
+    border-radius: 25px;
+}
+.Nueva-Cuenta  input[type="submit"]{
+    margin-top: 50px;
+    width: 300px;
+    height: 75px;
+}
+
+.Nueva-Cuenta label{
+    color: white;
+    font-size: 20px;
+}
+
+/* Crear-Ficha css */
+
+.Crear-Ficha{
+    background-image: url("Media/Imagenes/d&d_background-login-dashboard.jpg");
+    background-size: cover;
+}

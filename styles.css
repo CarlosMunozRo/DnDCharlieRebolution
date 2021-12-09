@@ -20,6 +20,10 @@ body{
     --rojo-oscuro: rgb(166,51,51);
 
     --naranja-tinte: rgb(242,171,39,.5);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 37ec9b12ff40c8da25dc622e8c16ec2d778d7cb4
     /* Fuentes */
 
     --cronos:'Cronos';
@@ -462,12 +466,22 @@ p,.texto_normal{
 
 /* XXXColores TextosXXX */
 
+<<<<<<< HEAD
+=======
 
 
+
+>>>>>>> 37ec9b12ff40c8da25dc622e8c16ec2d778d7cb4
+
+/* Temporal */
+
+<<<<<<< HEAD
 
 
 /* Temporal */
 
+=======
+>>>>>>> 37ec9b12ff40c8da25dc622e8c16ec2d778d7cb4
 .template_demostracion_container{
     display: flex;
 }

@@ -6,7 +6,7 @@
           url('../Media/Fonts/Song_Of_Coronos.woff') format('woff');
 }
 
-body,p{
+body{
     margin: 0px;
 }
 
@@ -20,8 +20,6 @@ body,p{
     --rojo-oscuro: rgb(166,51,51);
 
     --naranja-tinte: rgb(242,171,39,.5);
-    --rojo-oscuro-tinte: rgb(166,51,51,.5);
-
     /* Fuentes */
 
     --cronos:'Cronos';
@@ -133,9 +131,7 @@ body,p{
     transition: color 0.75s ease-out;
 }
 
-.perfil-usuario > p:hover {
-    color: var(--rojo);
-}
+
 
 h1,.titulo1{
     font-family: var(--cronos);
@@ -152,7 +148,7 @@ h3,.titulo3{
     font-size: 40px;
 }
 
-p, .texto_normal, a{
+p,.texto_normal{
     font-family: var(--medieval);
     font-size: 20px;
 }
@@ -431,20 +427,14 @@ p, .texto_normal, a{
 /* Inputs */
 
     input,select,textarea{
-        background-color: var(--naranja);
+        background-color: var(--naranja-tinte);
         font-family: var(--medieval);
         font-size: var(--INP_TamanoFuente);
         width: 200px;
         height: 30px;
         box-shadow: inset 0px 0px 10px 5px var(--marron);
         border:0px;
-        padding: 0px 20px;
-
-    }
-
-    input[type="submit"]{
-        padding: 0;
-    }
+    }    
 
 /* XXXInputsXXX */
 
@@ -470,129 +460,48 @@ p, .texto_normal, a{
     color:var(--rojo-oscuro);
 }
 
-.blanco{
-    color:white;
-}
-
 /* XXXColores TextosXXX */
 
-.centrar-contenido {
+
+
+
+
+/* Temporal */
+
+.template_demostracion_container{
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.flex-row {
-    flex-direction: row;
+.template_demostracion_container div:nth-child(1){
+    background-color: var(--amarillo);
 }
 
-.flex-column {
-    flex-direction: column;
-}
-
-.flex-space-around {
-    justify-content: space-around;
-}
-
-.home{
+.template_demostracion_container div:nth-child(2){
     background-color: var(--naranja);
-    background-image: url('./Media/Imagenes/dd_background-login-dashboard.jpg');
-
 }
 
-
-/* login-dashboard css */
-
-body.login-dashboard > section > nav {
-    background-image: url("Media/Imagenes/d&d_background-login-dashboard.jpg");
-    background-size: cover;
-    height: 90vh; 
-    width: 100vw;
+.template_demostracion_container div:nth-child(3){
+    background-color: var(--marron);
 }
 
-body.login-dashboard .BTN_NoA_ST1_Grande{
-    padding: 10vh 20vw;
+.template_demostracion_container div:nth-child(4){
+    background-color: var(--rojo);
 }
 
-
-.home label,.home a{
-    font-size: 20px;
+.template_demostracion_container div:nth-child(4) p{
     color:white;
 }
 
-.home a{
-    color: var(--amarillo);
+.template_demostracion_container div:nth-child(5){
+    background-color: var(--rojo-oscuro);
 }
 
-.DIV_Home-Izquierda{
-    width: 50vw;
-    height: 100vh;
-}
-
-.DIV_Home-Izquierda>div:nth-child(1){
-    width: 100%;
-    height: 50%;
-}
-
-.DIV_Home-Izquierda>div:nth-child(2){
-    width: 100%;
-    height: 50%;
-    background-color: var(--rojo-oscuro-tinte);
-    text-align: center;
-}
-
-.DIV_Home-Izquierda>div:nth-child(2) p{
-    width: 80%;
+.template_demostracion_container div:nth-child(5) p{
     color:white;
-    font-size: 25px;
 }
 
-.DIV_Home-Derecha{
-    width: 50vw;
-}
-
-.IMG_Home-imagen{
-    max-width: 70%;
-}
-
-.DIV_Home-Login{
-    text-align: center;
-    height: 65vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    background-color: var(--rojo-oscuro-tinte);
-    border-radius: 25px;
-}
-
-.DIV_Home-Login>div{
-    width: 80%;
-}
-
-.DIV_Home-Login>div:nth-child(2){
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-}
-
-.DIV_Home-Login-enviar{
-    gap:3vw;
-}
-
-.DIV_Home-Login-enviar input[type="submit"]{
-    width: 150px;
-    height: 70px;
-    cursor: pointer;
-}
-
-.I_Alternar-Visivilidad-Contraseña{
-    cursor: pointer;
-    color:black;
-    position: absolute;
-    right: 8px;
-}
-
-.position-relative{
-    position: relative;
+.template_demostration{
+    width: 200px;
+    height: 200px;
+    padding:20px;
 }

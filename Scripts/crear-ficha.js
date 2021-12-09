@@ -9,8 +9,13 @@ function crearFormRazas(){
 
     console.log(razas);
 
-    for(var i=0; i<razas.lenght;i++){
-        razas[i]["NombreRaza"];
+    $('<div id="Div_Razas"></div>').append($('<select id="raza" name="raza"></select>'));
+    
+
+    for(var i=0; i<razas.length;i++){
+        $('<option></option>').value(razas[i]["NombreRaza"]).text(razas[i]["NombreRaza"]).append($('select#raza'));
     }
+
+    
 
 }

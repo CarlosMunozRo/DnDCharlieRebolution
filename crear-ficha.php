@@ -74,8 +74,10 @@
 
     ?>
 
-
+    <form action="" id="formulario">
         
+    </form>
+
 
     <script src="Scripts/crear-ficha.js"></script>
 </body>

@@ -3,10 +3,10 @@
     if(!empty($_POST["usuario"]) && !empty($_POST["contrasenya"])){
 
         try {
-            $hostname = "dndcharlierevolution.tk";
+            $hostname = "dndcharlierevolution.ml";
             $dbname = "DungeonsAndDragons";
-            $username = "manolo";
-            $pw = "manolo123";
+            $username = "master";
+            $pw = "Master1234!";
             $pdo = new PDO ("mysql:host=$hostname;dbname=$dbname","$username","$pw");
           } catch (PDOException $e) {
             echo "Failed to get DB handle: " . $e->getMessage() . "\n";

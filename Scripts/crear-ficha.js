@@ -9,11 +9,11 @@ function crearFormRazas(){
 
     console.log(razas);
 
-    $('form#formulario').append($('<div id="Div_Razas"></div>').append($('<select id="raza" name="raza"></select>')));
-    
+    $('form#formulario').append($('<div id="Div_Razas"></div>'));
+    $('#Div_Razas').append($('<select id="raza" name="raza"></select>'));
 
     for(var i=0; i<razas.length;i++){
-        $('<option></option>').val(razas[i]["NombreRaza"]).text(razas[i]["NombreRaza"]).append($('select#raza'));
+        $('select#raza').append($('<option></option>').val(razas[i]["NombreRaza"]).text(razas[i]["NombreRaza"]));
     }
 
     

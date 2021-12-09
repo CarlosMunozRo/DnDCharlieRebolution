@@ -61,7 +61,9 @@
 
                 }
 
-                print_r($Razas);
+                foreach($Razas as $sheesh){
+                    print_r($sheesh);
+                }
 
             }
 

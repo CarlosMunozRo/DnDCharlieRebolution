@@ -57,7 +57,7 @@
 
                 foreach($rowR as $datoR){
                     
-                    print_r($dato["IncrementoEstadistica"]);
+                    print_r("dd ",$dato["IncrementoEstadistica"]);
 
                     array_push($Razas,array("NombreRaza"=>$dato["NombreRaza"],"IncrementoEstadistica"=>$dato["IncrementoEstadistica"],"Dimension"=>$datoR["Dimension"],"Velocidad"=>$datoR["Velocidad"],"RazaPadre"=>$dato["RazaPadre"],"HasRazaPadre"=>$datoR["RazaPadre"]));
 

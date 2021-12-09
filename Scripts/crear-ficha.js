@@ -23,7 +23,7 @@ function crearFormRazas(){
 
     var tieneHijos=false;
     for(var i=0; i<razas.length;i++){
-        //$('select#raza').append($('<option></option>').val(razas[i]["NombreRaza"]).text(razas[i]["NombreRaza"]));
+        $('select#raza').append($('<option></option>').val(razas[i]["NombreRaza"]).text(razas[i]["NombreRaza"]));
 
         if(razas[i]["HasRazaPadre"]=="0"){
             tieneHijos=false;
@@ -50,12 +50,8 @@ function crearFormRazas(){
                 });
 
             }else{
-                console.log("no Tene hijos")
+                $('select#raza').append($('<option></option>').val(razas[i]["NombreRaza"]).text(razas[i]["NombreRaza"]));
             }
-
-        }
-
-        for(var j=0; j<razas.length;j++){
 
         }
 

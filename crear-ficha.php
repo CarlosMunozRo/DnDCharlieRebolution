@@ -75,7 +75,7 @@
     ?>
 
 
-
+        
 
     <script src="Scripts/crear-ficha.js"></script>
 </body>

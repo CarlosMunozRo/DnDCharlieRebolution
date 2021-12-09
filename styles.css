@@ -87,6 +87,32 @@ body,p{
     padding: 2vh 0;
 }
 
+.FOO_FooterStyle1 {
+    width: 90vw;
+    height: 10vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+}
+.FOO_FooterStyle1 .FOO_GroupNames p{
+    color :white;
+    font-size:100%;
+}
+a:link,a{
+    color:white;
+    text-decoration: none;
+    transition: color 0.75s ease-out;
+}
+a:hover{
+    color: var(--rojo);
+
+}
+
+
 .nav-usuario > a {
     color: white;
     text-decoration: none;
@@ -476,7 +502,7 @@ p, .texto_normal, a{
 body.login-dashboard > section > nav {
     background-image: url("Media/Imagenes/d&d_background-login-dashboard.jpg");
     background-size: cover;
-    height: 90vh; 
+    height: 80vh; 
     width: 100vw;
 }
 

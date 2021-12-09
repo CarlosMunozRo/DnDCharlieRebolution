@@ -14,15 +14,14 @@ CREATE TABLE Armas_PropiedadesArma (
 );
 CREATE TABLE Usuarios (
     UsuarioID INT AUTO_INCREMENT PRIMARY KEY,
-    NombreUsuario varchar(30) not null,
-    FechaNacimiento Date not null,
-    Password varchar(257) not null,
+    NombreUsuario varchar(257) not null,
+    Password varchar(20) not null,
     Email varchar(50) not null
 );
 CREATE TABLE Armas (
     NombreArma varchar(30) PRIMARY KEY,
-    TipoArma varchar(20) not null,
-    Coste int,
+    TipoArma varchar(100) not null,
+    Coste varchar(20),
     Dano varchar(20) not null,
     TipoDano varchar(20) not null,
     Peso int
@@ -30,7 +29,7 @@ CREATE TABLE Armas (
 CREATE TABLE Armaduras (
     NombreArmadura varchar(30) PRIMARY KEY,
     TipoArmadura varchar(20) not null,
-    Coste int,
+    Coste varchar(20),
     CA int not null,
     MaximoDestreza int,
     RequisitoFuerza int,
@@ -39,14 +38,14 @@ CREATE TABLE Armaduras (
 );
 CREATE TABLE Objetos (
     NombreObjeto varchar(20) PRIMARY KEY,
-    Descripcion varchar(1000) not null,
+    Descripcion varchar(1000),
     Coste varchar(20),
     Peso int
 );
 CREATE TABLE Conjuros (
     NombreConjuro varchar(30) PRIMARY KEY,
     TiempoLanzamiento varchar(30) not null,
-    Alcance varchar(10) not null,
+    Alcance varchar(100) not null,
     Componentes varchar(50) not null,
     Duracion varchar(50) not null,
     Descripcion varchar(5000) not null,
@@ -113,18 +112,11 @@ CREATE TABLE Trasfondo (
 );
 CREATE TABLE Razas (
     NombreRaza varchar(30) PRIMARY KEY,
-    IncrementoEstadistica varchar(10) not null,
-    Dimension varchar(20) not null,
-    Velocidad varchar(10) not null,
-    Vision varchar(20) not null,
+    IncrementoEstadistica varchar(100) not null,
+    Dimension varchar(20),
+    Velocidad int(10),
+    Vision varchar(100),
     RazaPadre varchar(30)
-);
-CREATE TABLE Razas_Idiomas (
-    NombreRaza varchar(30) not null,
-    NombreIdioma varchar(30) not null
-);
-CREATE TABLE Idiomas (
-    NombreIdioma varchar(30) PRIMARY KEY
 );
 CREATE TABLE Clases (
     NombreClase varchar(30) PRIMARY KEY,
@@ -132,22 +124,13 @@ CREATE TABLE Clases (
     DG int not null,
     CaracteristicaPrimaria varchar(20) not null,
     CompetenciasSalvacion varchar(30) not null,
-    CompetenciasArmas varchar(50),
+    CompetenciasArmas varchar(100),
     CompetenciasArmaduras varchar(50),
     EquipoInicial varchar(200),
     Rasgos varchar(50),
     TrucosConocidos int,
     ConjurosConocidos int,
     EspaciosConjuroPorNivel varchar(30)
-);
-CREATE TABLE Clases_EspacioConjuros (
-    NombreClase varchar(30) not null,
-    Id int not null
-);
-CREATE TABLE EspacioConjuros (
-    Id int PRIMARY KEY,
-    NivelClase int not null,
-    NumeroConjuros int not null
 );
 CREATE TABLE Razas_HabilidadesRaciales (
     NombreRaza varchar(30) not null,
@@ -211,18 +194,10 @@ ADD FOREIGN KEY (NombreRaza) REFERENCES Razas(NombreRaza);
 ALTER TABLE Razas_HabilidadesRaciales
 ADD FOREIGN KEY (NombreHabilidadRacial) REFERENCES HabilidadesRaciales(NombreHabilidadRacial);
 
-ALTER TABLE Clases_EspacioConjuros
-ADD FOREIGN KEY (NombreClase) REFERENCES Clases(NombreClase);
-ALTER TABLE Clases_EspacioConjuros
-ADD FOREIGN KEY (Id) REFERENCES EspacioConjuros(Id);
-
-ALTER TABLE Razas_Idiomas
-ADD FOREIGN KEY (NombreRaza) REFERENCES Razas(NombreRaza);
-ALTER TABLE Razas_Idiomas
-ADD FOREIGN KEY (NombreIdioma) REFERENCES Idiomas(NombreIdioma);
 
 INSERT INTO Usuarios (NombreUsuario,FechaNacimiento,Password,Email)
 VALUES ('carlos','2000-02-28','AC9C2C34C9F7AD52528C3422AF40A66E2E24AAF2A727831255413C9470158984','carlos@gmail.com');
+
 
 INSERT INTO Armas (NombreArma,TipoArma,Coste,Dano,TipoDano,Peso)
 VALUES ('Baston','Cuerpo a cuerpo sencilla','2pp','1d6','Contundente',4),

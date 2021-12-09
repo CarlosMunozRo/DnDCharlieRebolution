@@ -74,15 +74,8 @@
 
     ?>
 
-    <section>
-        Label: Raza
-    </section>
 
 
-
-    <!--boton crear ficha-->
-    <!-- boton mirar tus fichas -->
-    <!-- boton probar ficha -->
 
     <script src="Scripts/crear-ficha.js"></script>
 </body>

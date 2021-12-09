@@ -1,6 +1,13 @@
 $(document).ready{
 
-    console.log(razas);
+    crearFormRazas();
 
     
+}
+
+
+function crearFormRazas(){
+
+    console.log(razas);
+
 }

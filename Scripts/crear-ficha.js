@@ -9,7 +9,7 @@ function crearFormRazas(){
 
     console.log(razas);
 
-    $('<div id="Div_Razas"></div>').append($('<select id="raza" name="raza"></select>'));
+    $('form#formulario').append($('<div id="Div_Razas"></div>').append($('<select id="raza" name="raza"></select>')));
     
 
     for(var i=0; i<razas.length;i++){

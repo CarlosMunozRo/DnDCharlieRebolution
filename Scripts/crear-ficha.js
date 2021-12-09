@@ -23,7 +23,7 @@ function crearFormRazas(){
 
     var tieneHijos=false;
     for(var i=0; i<razas.length;i++){
-        $('select#raza').append($('<option></option>').val(razas[i]["NombreRaza"]).text(razas[i]["NombreRaza"]));
+        //$('select#raza').append($('<option></option>').val(razas[i]["NombreRaza"]).text(razas[i]["NombreRaza"]));
 
         if(razas[i]["HasRazaPadre"]=="0"){
             tieneHijos=false;

@@ -37,7 +37,7 @@ function crearFormRazas(){
                 hijos=[];
                 razas.forEach(raza => {
                     if(raza["RazaPadre"]==razas[i]["NombreRaza"]){
-                        hijos.append(raza);
+                        hijos.push(raza);
                     }
                 });
 

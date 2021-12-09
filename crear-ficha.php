@@ -50,8 +50,6 @@
 
                 $queryRaza->bindParam(':razaB', $dato["NombreRaza"]);
                 $queryRaza->bindParam(':razaP',$dato["RazaPadre"]);
-                print_r($dato["NombreRaza"]);
-                print_r($queryRaza);
                 $queryRaza->execute();
 
                 $rowR = $queryRaza->fetchAll();
@@ -62,11 +60,9 @@
 
                 }
 
-                foreach($Razas as $sheesh){
-                    print_r($sheesh);
-                }
-
             }
+
+            echo json_encode($Razas);
 
         }else{
             echo "No hay ninguna";

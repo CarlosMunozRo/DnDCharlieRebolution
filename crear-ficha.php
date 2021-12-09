@@ -56,16 +56,11 @@
 
                 $rowR = $queryRaza->fetchAll();
 
-                print_r("fuera");
                 foreach($rowR as $datoR){
-                    print_r("dentro");
-                    print_r($dato["IncrementoEstadistica"]);
 
                     array_push($Razas,array("NombreRaza"=>$dato["NombreRaza"],"IncrementoEstadistica"=>$dato["IncrementoEstadistica"],"Dimension"=>$datoR["Dimension"],"Velocidad"=>$datoR["Velocidad"],"RazaPadre"=>$dato["RazaPadre"],"HasRazaPadre"=>$datoR["RazaPadre"]));
 
                 }
-
-                print_r("fuera");
 
                 foreach($Razas as $sheesh){
                     print_r($sheesh);

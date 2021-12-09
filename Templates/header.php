@@ -14,10 +14,13 @@
     <a href="login-dashboard.php">
         <img src="Media/Imagenes/DnDLogo.png" alt="d&d Logo">
     </a>
+    <a href="home.php">Home</a>
+    
     <div>
         <div id="perfil-usuario" class="perfil-usuario centrar-contenido flex-row">
             <p><?php echo $_SESSION["Usuario"]?></p>
             <img src="Media/Imagenes/portrait-prueba.png" alt="Avatar">
+            
         </div>
         <form action="" method="post">
             <nav class="nav-usuario centrar-contenido flex-column">

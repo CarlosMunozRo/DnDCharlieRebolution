@@ -5,8 +5,8 @@
         try {
             $hostname = "localhost";
             $dbname = "DungeonsAndDragons";
-            $username = "master";
-            $pw = "Master1234!";
+            $username = "sergio";
+            $pw = "Sergio123!";
             $pdo = new PDO ("mysql:host=$hostname;dbname=$dbname","$username","$pw");
           } catch (PDOException $e) {
             echo "Failed to get DB handle: " . $e->getMessage() . "\n";

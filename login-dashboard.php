@@ -18,6 +18,7 @@
         <a href="/probar-ficha.php"><button class="BTN_NoA_ST1_Grande">Probar Ficha</button></a>
         </nav>
     </section>
+    <?php include "Templates/footer.php"?>
 
     <!--boton crear ficha-->
     <!-- boton mirar tus fichas -->

@@ -62,7 +62,7 @@
 
             }
 
-            echo json_encode($Razas);
+            file_put_contents("razas.json",json_encode($Razas));
 
         }else{
             echo "No hay ninguna";

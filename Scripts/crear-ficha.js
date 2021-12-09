@@ -13,7 +13,7 @@ function crearFormRazas(){
     
 
     for(var i=0; i<razas.length;i++){
-        $('<option></option>').value(razas[i]["NombreRaza"]).text(razas[i]["NombreRaza"]).append($('select#raza'));
+        $('<option></option>').val(razas[i]["NombreRaza"]).text(razas[i]["NombreRaza"]).append($('select#raza'));
     }
 
     

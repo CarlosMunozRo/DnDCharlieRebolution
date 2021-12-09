@@ -5,10 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 	<link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
-    <script src="./Scripts/jquery.min.js" ></script>
-    <script src="./Scripts/home.js"></script>
-    <script src="Scripts/login-dashboard.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+  <script src="./Scripts/jquery.min.js" ></script>
+  <script src="./Scripts/home.js"></script>
+  <script src="Scripts/login-dashboard.js"></script>
 </head>
 <body class="Nueva-Cuenta">
 	<?php include "Templates/header.php"?>
@@ -54,10 +54,10 @@
       //  prova d'executar el contingut del try
       //  si falla executa el catch
       try {
-        $hostname = "localhost";
+        $hostname = "dndcharlierevolution.ml";
         $dbname = "DungeonsAndDragons";
-        $username = "manolo";
-        $pw = "manolo123";
+        $username = "master";
+        $pw = "master1234!";
         $pdo = new PDO ("mysql:host=$hostname;dbname=$dbname","$username","$pw");
       } catch (PDOException $e) {
         echo "Failed to get DB handle: " . $e->getMessage() . "\n";

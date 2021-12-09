@@ -626,3 +626,10 @@ body.login-dashboard .BTN_NoA_ST1_Grande{
     color: white;
     font-size: 20px;
 }
+
+/* Crear-Ficha css */
+
+.Crear-Ficha{
+    background-image: url("Media/Imagenes/d&d_background-login-dashboard.jpg");
+    background-size: cover;
+}

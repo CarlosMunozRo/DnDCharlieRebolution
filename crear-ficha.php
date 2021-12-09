@@ -61,8 +61,12 @@
                 }
 
             }
-
-            file_put_contents("razas.json",json_encode($Razas));
+            
+            ?>
+                <script>
+                    var razas =<?php echo json_encode($Razas) ?>
+                </script>
+            <?php
 
         }else{
             echo "No hay ninguna";

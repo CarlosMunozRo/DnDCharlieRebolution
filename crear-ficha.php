@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="./Scripts/jquery.min.js" ></script>
     <script src="Scripts/login-dashboard.js"></script>
-    <title>Dashboard</title>
+    <title>Crear Ficha</title>
 </head>
 <body class="login-dashboard">
     <?php include "Templates/header.php"?>
@@ -15,7 +15,7 @@
     <?php
     
         try {
-            $hostname = "dndcharlierevolution.tk";
+            $hostname = "dndcharlierevolution.ml";
             $dbname = "DungeonsAndDragons";
             $username = "master";
             $pw = "Master1234!";

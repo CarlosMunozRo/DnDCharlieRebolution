@@ -5,8 +5,8 @@
         try {
             $hostname = "localhost";
             $dbname = "DungeonsAndDragons";
-            $username = "master";
-            $pw = "Master1234!";
+            $username = "manolo";
+            $pw = "manolo123";
             $pdo = new PDO ("mysql:host=$hostname;dbname=$dbname","$username","$pw");
           } catch (PDOException $e) {
             echo "Failed to get DB handle: " . $e->getMessage() . "\n";
@@ -15,7 +15,7 @@
     
     
           //preparem i executem la consulta
-          $query = $pdo->prepare("select * FROM Usuarios where NombreUsuario= :user and Password= :password ");
+          $query = $pdo->prepare("select * FROM Usuarios where NombreUsuario= :user and Password= SHA2(:password,256)");
     
           $query->bindParam(':user', $_POST["usuario"]);
           $query->bindParam(':password',$_POST["contrasenya"]);
@@ -99,7 +99,7 @@
                             <label for="usuario">Contraseña:</label><div class="centrar-contenido position-relative"><input type="password" name="contrasenya" id="contrasenya"><i onclick="cambiarContrasenya()" class="fas fa-eye I_Alternar-Visivilidad-Contraseña"></i></div>
                         </div>
                         <div class="centrar-contenido flex-row DIV_Home-Login-enviar">
-                            <div> <a href="">No recuerdas la contraseña?</a> </div>
+                            <div> <a href="Nueva-Cuenta.php">No recuerdas la contraseña?</a> </div>
                             <div> <input type="submit" value="Iniciar Sesion"></div>
                         </div>
                     </div>
@@ -107,6 +107,5 @@
             </form>
         </div>
     </div>
-
 </body>
 </html>

@@ -14,8 +14,9 @@ CREATE TABLE Armas_PropiedadesArma (
 );
 CREATE TABLE Usuarios (
     UsuarioID INT AUTO_INCREMENT PRIMARY KEY,
-    NombreUsuario varchar(257) not null,
-    Password varchar(20) not null,
+    NombreUsuario varchar(30) not null,
+    FechaNacimiento Date not null,
+    Password varchar(257) not null,
     Email varchar(50) not null
 );
 CREATE TABLE Armas (
@@ -220,5 +221,5 @@ ADD FOREIGN KEY (NombreRaza) REFERENCES Razas(NombreRaza);
 ALTER TABLE Razas_Idiomas
 ADD FOREIGN KEY (NombreIdioma) REFERENCES Idiomas(NombreIdioma);
 
-INSERT INTO Usuarios (NombreUsuario,Password,Email)
-VALUES ('carlos','carlos123','carlos@gmail.com');
+INSERT INTO Usuarios (NombreUsuario,FechaNacimiento,Password,Email)
+VALUES ('carlos','2000-02-28','AC9C2C34C9F7AD52528C3422AF40A66E2E24AAF2A727831255413C9470158984','carlos@gmail.com');

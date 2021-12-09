@@ -223,3 +223,35 @@ ADD FOREIGN KEY (NombreIdioma) REFERENCES Idiomas(NombreIdioma);
 
 INSERT INTO Usuarios (NombreUsuario,FechaNacimiento,Password,Email)
 VALUES ('carlos','2000-02-28','AC9C2C34C9F7AD52528C3422AF40A66E2E24AAF2A727831255413C9470158984','carlos@gmail.com');
+
+INSERT INTO Armas (NombreArma,TipoArma,Coste,Dano,TipoDano,Peso)
+VALUES ('Baston','Cuerpo a cuerpo sencilla','2pp','1d6','Contundente',4),
+('Clava','Cuerpo a cuerpo sencilla','1pp','1d4','Contundente',2);
+
+INSERT INTO PropiedadesArma (NombrePropiedadArma,Descripcion)
+VALUES ('Versatil','Esta arma puede usarse con una o dos manos. Entre paréntesis aparece también un valor de daño: es el daño que inflige cuando se usa para hacer un ataque cuerpo a cuerpo con dos manos.'),
+('Ligera','Un arma ligera es pequeña y fácil de manejar, ideal para luchar con dos armas.');
+
+INSERT INTO Armas_PropiedadesArma VALUES ('Baston','Versatil'),('Clava','Ligera');
+
+INSERT INTO Armaduras (NombreArmadura,TipoArmadura,Coste,CA,MaximoDestreza,RequisitoFuerza,Sigilo,Peso)
+VALUES ('Acolchada','Ligera','5po',11,-1,null,'desventaja',8),
+('Pieles','Media','10po',12,2,null,null,12);
+
+INSERT INTO Objetos (NombreObjeto,Descripcion,Coste,Peso)
+VALUES ('Raciones(1 dia)',null,'5pp',2),('Saco de dormir',null,'1po',7);
+
+INSERT INTO Conjuros(NombreConjuro,TiempoLanzamiento,Alcance,Componentes,Duracion,Descripcion,Salvacion)
+VALUES ('Armadura de mago','1 accion','toque','V,S,M(un trozo de cuero curtido)','8 horas','Tocas a una criatura voluntaria, que no esté portando una armadura, y una fuerza mágica protectora la rodea hasta el fin de la duración del conjuro. La CA base del objetivo se vuelve 13 + su modificador de Destreza. El conjuro finaliza si el receptor se pone una armadura o si tú cancelas el conjuro como una acción.',null),
+('Proyectil magico','1 accion','120 pies(24 casillas, 36 m)','V,S','instantanea','Creas tres dardos brillantes de fuerza mágica. Cada dardo impacta a una criatura de tu elección que puedas ver dentro del alcance. Un dardo inflige 1d4 + 1 puntos de daño por fuerza a su objetivo. Todos los dardos impactan a la vez, y los puedes dirigir para que impacten a una criatura o a varias. A niveles superiores. Cuando lanzas este hechizo usando un espacio de conjuros de nivel 2 o superior, el conjuro crea un dardo más por cada nivel de espacio de conjuros por encima de nivel 1.',null);
+
+INSERT INTO Dotes (NombreDote,Requisito,Descripcion)
+VALUES ('acechador','Destreza 13 o super(ior','Eres un experto en ocultarte en las sombras. Ganas los siguientes beneficios: • Puedes intentar esconderte cuando estás en penumbra de la criatura de la cual te estás ocultando. • Cuando estás escondido de una criatura y fallas con un arma a distancia, hacer el ataque no delatará tu posición. • La luz tenue no supone una desventaja para tus tiradas de Sabiduría (Percepción) si estas se basan en la vista.'),
+('Actor',null,'Eres experimentado en la imitación y en el arte del drama. Ganas los siguientes beneficios: • Incrementa tu puntuación de Carisma en 1, hasta un máximo de 20. • Tienes ventaja en las tiradas de Carisma (Engañar) y Carisma (Interpretar) cuando intentas hacerte pasar por otra persona. • Puedes imitar el habla de otra persona o los sonidos hechos por otras criaturas. Debes haber oído a la persona hablar, o haber escuchado a la criatura haber hecho el sonido, por al menos un minuto. Una tirada exitosa de Sabiduría (Averiguar Intenciones) contra tu tirada de Carisma (Engañar) permite a alguien o algo que escucha determinar que el efecto es falso.');
+
+INSERT INTO Clases (NombreClase,Descripcion,DG,CaracteristicaPrimaria,CompetenciasSalvacion,CompetenciasArmas,CompetenciasArmaduras,EquipoInicial,Rasgos,TrucosConocidos,ConjurosConocidos)
+VALUES ('Guerrero','Un maestro del combate marcial, competente con una gran variedad de armas y armaduras.',10,'fuerza o destreza','fuerza y contitucion','Todas las armaduras, escudos, armas simples y marciales.','todas',null,null,0,0),
+('Mago','Un usuario de magia educado capaz de manipular la estructura de la realidad.',6,'Inteligencia','Inteligencia y sabiduria','Dagas, dorados, hondas, bastones, ballestas ligeras',null,null,null,3,6);
+
+INSERT INTO Razas (NombreRaza,IncrementoEstadistica,Dimension,Velocidad,Vision,RazaPadre)
+VALUES ('Elfo','Destreza 2','mediano',30,'vision en la oscuridad',null),('Alto Elfo','Inteligencia 1',null,null,null,'Elfo');

@@ -1,9 +1,8 @@
-$(document).ready{
+$(document).read({
 
     crearFormRazas();
 
-    
-}
+});
 
 
 function crearFormRazas(){

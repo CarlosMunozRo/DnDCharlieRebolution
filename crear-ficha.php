@@ -41,11 +41,11 @@
                 
                 $queryRaza= $pdo->prepare('
                     select 
-                    IFNULL(Dimension, (select Dimension from Razas where NombreRaza=":razaP")) as "Dimension",
-                    IFNULL(Velocidad, 0)+(select IFNULL(Velocidad, 0) from Razas where NombreRaza=":razaP") as "Velocidad",
-                    IFNULL(Vision, (select Vision from Razas where NombreRaza=":razaP")) as "Vision",
+                    IFNULL(Dimension, (select Dimension from Razas where NombreRaza= :razaP )) as "Dimension",
+                    IFNULL(Velocidad, 0)+(select IFNULL(Velocidad, 0) from Razas where NombreRaza= :razaP ) as "Velocidad",
+                    IFNULL(Vision, (select Vision from Razas where NombreRaza= :razaP )) as "Vision",
                     IFNULL(RazaPadre,false) as "RazaPadre"
-                    from Razas where NombreRaza=":razaB";
+                    from Razas where NombreRaza= :razaB ;
                 ');
 
                 $queryRaza->bindParam(':razaB', $dato["NombreRaza"]);

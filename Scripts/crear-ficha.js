@@ -1,4 +1,4 @@
-$(document).read({
+$(document).read(function (){
 
     crearFormRazas();
 

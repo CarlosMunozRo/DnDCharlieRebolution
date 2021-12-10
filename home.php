@@ -99,7 +99,7 @@
                             <label for="usuario">Contraseña:</label><div class="centrar-contenido position-relative"><input type="password" name="contrasenya" id="contrasenya"><i onclick="cambiarContrasenya()" class="fas fa-eye I_Alternar-Visivilidad-Contraseña"></i></div>
                         </div>
                         <div class="centrar-contenido flex-row DIV_Home-Login-enviar">
-                            <div> <a href="Nueva-Cuenta.php">No recuerdas la contraseña?</a> </div>
+                            <div> <a href="">No recuerdas la contraseña?</a> </div>
                             <div> <input type="submit" value="Iniciar Sesion"></div>
                         </div>
                     </div>

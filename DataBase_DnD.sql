@@ -82,7 +82,7 @@ CREATE TABLE Personajes_Dotes (
     NombreDote varchar(30) not null    
 );
 CREATE TABLE Personajes (
-    PersonajeID int PRIMARY KEY,
+    PersonajeID int AUTO_INCREMENT PRIMARY KEY,
     Nombre varchar(50),
     Clase varchar(20),
     Trasfondo varchar(50),
@@ -330,3 +330,9 @@ INSERT INTO Dotes (NombreDote,Requisito,Descripcion)
 VALUES ('acechador','Destreza 13 o super(ior','Eres un experto en ocultarte en las sombras. Ganas los siguientes beneficios: • Puedes intentar esconderte cuando estás en penumbra de la criatura de la cual te estás ocultando. • Cuando estás escondido de una criatura y fallas con un arma a distancia, hacer el ataque no delatará tu posición. • La luz tenue no supone una desventaja para tus tiradas de Sabiduría (Percepción) si estas se basan en la vista.'),
 ('Actor',null,'Eres experimentado en la imitación y en el arte del drama. Ganas los siguientes beneficios: • Incrementa tu puntuación de Carisma en 1, hasta un máximo de 20. • Tienes ventaja en las tiradas de Carisma (Engañar) y Carisma (Interpretar) cuando intentas hacerte pasar por otra persona. • Puedes imitar el habla de otra persona o los sonidos hechos por otras criaturas. Debes haber oído a la persona hablar, o haber escuchado a la criatura haber hecho el sonido, por al menos un minuto. Una tirada exitosa de Sabiduría (Averiguar Intenciones) contra tu tirada de Carisma (Engañar) permite a alguien o algo que escucha determinar que el efecto es falso.');
 
+INSERT INTO Personajes (Nombre,Clase,Trasfondo,Raza,Alineamiento,Experiencia,RasgosPersonalidad,Ideales,Vinculos,Defectos,Nivel,PGMaximos,CA,Fuerza,Destreza,Constitucion,inteligencia,Sabiduria,Carisma,RasgosAtributos)
+VALUES ('Legolas','Guerrero',null,'Alto Elfo',null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+('Gandalf','Mago',null,'Piesligeros',null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+('Sauron','Hechicero',null,'Semielfo',null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+('Elrond','Picaro',null,'Semiorco',null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+('Boromir','Paladin',null,'Humano',null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null);

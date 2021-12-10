@@ -72,6 +72,26 @@
             echo "No hay ninguna";
         }
 
+        $query = $pdo->prepare("SELECT * FROM Clases;");
+        $query->execute();
+
+
+        $row = $query->fetchAll();
+
+        $Clases = [];
+        if($row){
+
+            foreach($row as $clase){
+                array_push($Clases,array("Nombre"=>$clase["NombreClase"],"Descripcion"=>$clase["Descripcion"]));
+            }
+            
+            ?>
+                <script>
+                    var clases =<?php echo json_encode($Clases) ?>
+                </script>
+            <?php
+        }
+
     ?>
 
     <form action="" id="formulario">

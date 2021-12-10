@@ -1,13 +1,11 @@
 $(document).ready(function (){
 
     crearFormRazas();
-
+    crearFormClases();
 });
 
 
 function crearFormRazas(){
-
-    console.log(razas);
 
     razas.sort(function(a, b) {
         var keyA = new Date(a.updated_at),
@@ -23,7 +21,6 @@ function crearFormRazas(){
 
     var tieneHijos=false;
     for(var i=0; i<razas.length;i++){
-        //$('select#raza').append($('<option></option>').val(razas[i]["NombreRaza"]).text(razas[i]["NombreRaza"]));
 
         if(razas[i]["HasRazaPadre"]=="0"){
             tieneHijos=false;
@@ -41,8 +38,6 @@ function crearFormRazas(){
                     }
                 });
 
-                console.log(razas[i]["NombreRaza"]+" Tiene Hijos -> "+hijos);
-
                 $('select#raza').append($('<optgroup></optgroup>').attr("label",razas[i]["NombreRaza"]));
 
                 hijos.forEach(hijo => {
@@ -55,5 +50,23 @@ function crearFormRazas(){
 
         }
     }
+
+}
+
+function crearFormClases(){
+
+    console.log(clases);
+
+    $('form#formulario').append($('<div id="Div_Clases"></div>'));
+
+    $('#Div_Clases').append($('<select id="clase" name="clase"></select>'));
+
+    if(clases){
+        clases.forEach(clase => {
+            $('select#clase').append($('<option></option>').val(clase["Nombre"]).text(clase["Nombre"]));
+        });
+    }
+
+
 
 }

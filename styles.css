@@ -174,8 +174,8 @@ p, .texto_normal, a{
     margin-left: 4vw;
     padding-bottom: 4vh;
     border-radius:10px;
-    display:flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     font-family:var(--medieval);
     
 }
@@ -228,6 +228,9 @@ p, .texto_normal, a{
             background: var(--BTN_ST1_color-bg);
             cursor: pointer;
             padding: var(--BTN_PEQ_Padding);
+            width: 20px;
+            height: 20px;
+            border-radius: 50px;
         }
 
         .BTN_A_ST1_Pequeño a{
@@ -235,6 +238,10 @@ p, .texto_normal, a{
             font-size: var(--BTN_PEQ_Tamano);
             text-decoration: none;
             color:var(--BTN_ST1_color-texto);
+        }
+
+        .BTN_A_ST1_Pequeño a i{
+            color: black;
         }
 
         /* Estilo 2 */
@@ -254,12 +261,19 @@ p, .texto_normal, a{
             background: var(--BTN_ST2_color-bg);
             cursor: pointer;
             padding: var(--BTN_PEQ_Padding);
+            width: 20px;
+            height: 20px;
+            border-radius: 50px;
         }
 
         .BTN_A_ST2_Pequeño a{
             font-family: var(--medieval);
             font-size: var(--BTN_PEQ_Tamano);
             text-decoration: none;
+            color:var(--BTN_ST2_color-texto);
+        }
+        
+        .BTN_A_ST2_Pequeño a i{
             color:var(--BTN_ST2_color-texto);
         }
 
@@ -697,4 +711,8 @@ body.login-dashboard .BTN_NoA_ST1_Grande{
 .Crear-Ficha{
     background-image: url("Media/Imagenes/d&d_background-login-dashboard.jpg");
     background-size: cover;
+}
+
+a i{
+    color: black;
 }

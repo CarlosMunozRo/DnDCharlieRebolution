@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
     <script src="./Scripts/jquery.min.js" ></script>
     <script src="Scripts/login-dashboard.js"></script>
-    <script src="./Scripts/crear-ficha.js"></script>
     <title>Crear Ficha</title>
-    
 </head>
 <body class="Crear-Ficha">
     <?php include "Templates/header.php"?>
@@ -96,13 +94,12 @@
         }
 
     ?>
-    
-    <section>
-        Label: Raza
-    </section>
+
     <div class="Crear_Form">
         <form id="autoForm"></form>
     </div>
+
+
     <?php include "Templates/footer.php"?>
 
     <script src="Scripts/crear-ficha.js"></script>

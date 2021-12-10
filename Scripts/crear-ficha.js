@@ -1,18 +1,39 @@
+var formNum=1;
+
 $(document).ready(function (){
 
-    crearFormRazas();
-    crearFormClases();
-
+    
 
     $('.DIV_ERR_Message >div>span').click(()=>{
         $('.DIV_ERR_Message').hide();
     });
     create_sheet();
 
+
 });
 
 
+function create_sheet(){
+    $("#autoForm").append("<div id='form"+formNum+"' class='form_input '></div>")
+    $("#form"+formNum).append("<label for='sh_name'>Nom: </label>")
+    $("#form"+formNum).append("<input id='sh_name'type='text'></input>")
+    $("#form"+formNum).append("<div id='forButton'></div>")
+    $("#forButton").append("<a class='BTN_A_ST2_Pequeño icono-animation-delante' onclick='crearFormRazas()'><i class='fas fa-arrow-right'></i></a>")
+
+    formNum++;
+}
+
 function crearFormRazas(){
+
+
+    if(!$('#form2')){
+        return;
+    }
+
+    
+
+    $('#form1 input').attr('readonly','true');
+
 
     razas.sort(function(a, b) {
         var keyA = new Date(a.updated_at),
@@ -23,8 +44,8 @@ function crearFormRazas(){
       });
     
 
-    $('form#formulario').append($('<div id="Div_Razas"></div>'));
-    $('#Div_Razas').append($('<select id="raza" name="raza"></select>'));
+    $('form#autoForm').append($('<div id="form2"></div>').addClass("form_input"));
+    $('#form2').append($('<select id="raza" name="raza"></select>'));
 
     var tieneHijos=false;
     for(var i=0; i<razas.length;i++){
@@ -58,15 +79,22 @@ function crearFormRazas(){
         }
     }
 
+    $('#form2').append("<a class='BTN_A_ST1_Pequeño icono-animation-atras' onclick='removeRazas()'><i class='fas fa-undo-alt'></i></a>");
+
+
+    $('#form2').append("<a class='BTN_A_ST2_Pequeño icono-animation-delante' onclick='crearFormClases()'><i class='fas fa-arrow-right'></i></a>");
+
+
+
 }
 
 function crearFormClases(){
 
-    console.log(clases);
+    $('#form2 select').attr('disabled','true');
 
-    $('form#formulario').append($('<div id="Div_Clases"></div>'));
+    $('form#autoForm').append($('<div id="form3"></div>').addClass("form_input"));
 
-    $('#Div_Clases').append($('<select id="clase" name="clase"></select>'));
+    $('#form3').append($('<select id="clase" name="clase"></select>'));
 
     if(clases){
         clases.forEach(clase => {
@@ -74,17 +102,27 @@ function crearFormClases(){
         });
     }
 
+    $('#form3').append("<a class='BTN_A_ST1_Pequeño icono-animation-atras' onclick='removeClases()'><i class='fas fa-undo-alt'></i></a>");
+
+    $('#form3').append("<a class='BTN_A_ST2_Pequeño icono-animation-delante' onclick='crearFormRazas()'><i class='fas fa-arrow-right'></i></a>");
 
 
 }
 
-function create_sheet(){
-    var formNum=1;
-    $("#autoForm").append("<div id='form"+formNum+"' class='form_input '></div>")
-    $("#form"+formNum).append("<label for='sh_name'>Nom: </label>")
-    $("#form"+formNum).append("<input id='sh_name'type='text'></input>")
-    $("#form"+formNum).append("<div id='forButton'></div>")
-    $("#forButton").append("<button class='BTN_NoA_ST2_Pequeño icono-animation-delante'><i class='fas fa-arrow-right'></i></button>")
 
-    formNum++;
-};
+function removeRazas(){
+
+    $('#form1 input').removeAttr("readonly");
+
+    $('#form2').remove();
+
+
+}
+
+function removeClases(){
+
+    $('#form2 select').removeAttr("disabled");
+
+    $('#form3').remove();
+
+}

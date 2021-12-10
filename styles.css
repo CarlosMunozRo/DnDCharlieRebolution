@@ -97,6 +97,8 @@ body,p{
     justify-content: space-between;
     align-items: center;
     background-color: black;
+    position:fixed;
+    bottom: 0;
 }
 .FOO_FooterStyle1 .FOO_GroupNames p{
     color :white;
@@ -155,7 +157,7 @@ p, .texto_normal, a{
 .Crear-Ficha{
     background-image: url("Media/Imagenes/d&d_background-login-dashboard.jpg");
     background-size: cover;
-    height: 80vh; 
+    height: 100vh; 
     width: 100vw;
     display:flex;
     flex-direction:column;
@@ -167,8 +169,8 @@ p, .texto_normal, a{
 }
 .form_input{
     background-color: var(--rojo-oscuro-tinte);
-    height: 15vh;
-    width: 60vw;
+    height: 20vh;
+    width: 70vw;
     padding-top:5vh;
     padding-left:5vh;
     margin-left: 4vw;
@@ -177,13 +179,27 @@ p, .texto_normal, a{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     font-family:var(--medieval);
-    
+    margin-bottom: 4vh;
+    flex-wrap: wrap;
+    column-gap:5vw;
+    row-gap:2vh;
 }
-#forButton{
+.input_butoni{
     width: 36vw;
     display:flex;
     justify-content: flex-end;
     align-self: flex-end;
+}
+#skillsform{
+    height: 50vh;
+    display:grid;
+    text-align:center;
+    grid-template-areas: "header header header header";
+    grid-template-columns: 5vw 20vw 5vw 20vw;
+}
+#puntosres{
+    
+    grid-area: header;
 }
 /* Botones */
 

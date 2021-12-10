@@ -211,10 +211,16 @@ ADD FOREIGN KEY (NombreRaza) REFERENCES Razas(NombreRaza);
 ALTER TABLE Razas_HabilidadesRaciales
 ADD FOREIGN KEY (NombreHabilidadRacial) REFERENCES HabilidadesRaciales(NombreHabilidadRacial);
 
+<<<<<<< HEAD
 ALTER TABLE Clases_EspacioConjuros
 ADD FOREIGN KEY (NombreClase) REFERENCES Clases(NombreClase);
 ALTER TABLE Clases_EspacioConjuros
 ADD FOREIGN KEY (Id) REFERENCES EspacioConjuros(Id);
+=======
+
+INSERT INTO Usuarios (NombreUsuario,Password,Email)
+VALUES ('carlos','carlos123','carlos@gmail.com');
+>>>>>>> origin/Sergio
 
 ALTER TABLE Razas_Idiomas
 ADD FOREIGN KEY (NombreRaza) REFERENCES Razas(NombreRaza);

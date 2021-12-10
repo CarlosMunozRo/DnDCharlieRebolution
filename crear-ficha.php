@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
     <script src="./Scripts/jquery.min.js" ></script>
     <script src="Scripts/login-dashboard.js"></script>
+    <script src="./Scripts/crear-ficha.js"></script>
     <title>Crear Ficha</title>
+    
 </head>
-<body class="login-dashboard">
+<body class="Crear-Ficha">
     <?php include "Templates/header.php"?>
 
     <?php
@@ -93,11 +96,14 @@
         }
 
     ?>
-
-    <form action="" id="formulario">
-        
-    </form>
-
+    
+    <section>
+        Label: Raza
+    </section>
+    <div class="Crear_Form">
+        <form id="autoForm"></form>
+    </div>
+    <?php include "Templates/footer.php"?>
 
     <script src="Scripts/crear-ficha.js"></script>
 </body>

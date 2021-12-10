@@ -5,8 +5,8 @@
         try {
             $hostname = "dndcharlierevolution.ml";
             $dbname = "DungeonsAndDragons";
-            $username = "master";
-            $pw = "Master1234!";
+            $username = "sergio";
+            $pw = "Sergio123!";
             $pdo = new PDO ("mysql:host=$hostname;dbname=$dbname","$username","$pw");
           } catch (PDOException $e) {
             echo "Failed to get DB handle: " . $e->getMessage() . "\n";
@@ -65,6 +65,7 @@
     <title>Home</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+
     <script src="./Scripts/jquery.min.js" ></script>
     <script src="./Scripts/home.js"></script>
 </head>

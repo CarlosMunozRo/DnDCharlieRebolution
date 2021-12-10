@@ -87,6 +87,32 @@ body,p{
     padding: 2vh 0;
 }
 
+.FOO_FooterStyle1 {
+    width: 90vw;
+    height: 10vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+}
+.FOO_FooterStyle1 .FOO_GroupNames p{
+    color :white;
+    font-size:100%;
+}
+a:link,a{
+    color:white;
+    text-decoration: none;
+    transition: color 0.75s ease-out;
+}
+a:hover{
+    color: var(--rojo);
+
+}
+
+
 .nav-usuario > a {
     color: white;
     text-decoration: none;
@@ -126,7 +152,39 @@ p, .texto_normal, a{
     font-family: var(--medieval);
     font-size: 20px;
 }
+.Crear-Ficha{
+    background-image: url("Media/Imagenes/d&d_background-login-dashboard.jpg");
+    background-size: cover;
+    height: 80vh; 
+    width: 100vw;
+    display:flex;
+    flex-direction:column;
+}
+.Crear_Form{
+    flex-direction:column;
+    height: 70vh;
 
+}
+.form_input{
+    background-color: var(--rojo-oscuro-tinte);
+    height: 15vh;
+    width: 60vw;
+    padding-top:5vh;
+    padding-left:5vh;
+    margin-left: 4vw;
+    padding-bottom: 4vh;
+    border-radius:10px;
+    display:flex;
+    flex-direction: row;
+    font-family:var(--medieval);
+    
+}
+#forButton{
+    width: 36vw;
+    display:flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+}
 /* Botones */
 
     /* Estandar */
@@ -161,6 +219,8 @@ p, .texto_normal, a{
             font-family: var(--medieval);
             font-size: var(--BTN_PEQ_Tamano);
             color: var(--BTN_ST1_color-texto);
+            width: 10vw;
+            
         }
 
         .BTN_A_ST1_Pequeño{
@@ -363,6 +423,7 @@ p, .texto_normal, a{
     .icono-animation-delante i{
         position: relative;
         visibility: hidden;
+        
     }
 
     .icono-animation-delante i:after {
@@ -476,7 +537,7 @@ p, .texto_normal, a{
 body.login-dashboard > section > nav {
     background-image: url("Media/Imagenes/d&d_background-login-dashboard.jpg");
     background-size: cover;
-    height: 90vh; 
+    height: 80vh; 
     width: 100vw;
 }
 

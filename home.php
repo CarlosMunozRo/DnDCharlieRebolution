@@ -15,7 +15,7 @@
     
     
           //preparem i executem la consulta
-          $query = $pdo->prepare("select * FROM Usuarios where NombreUsuario= :user and Password= :password ");
+          $query = $pdo->prepare("select * FROM Usuarios where NombreUsuario= :user and Password= SHA2(:password,256) ");
     
           $query->bindParam(':user', $_POST["usuario"]);
           $query->bindParam(':password',$_POST["contrasenya"]);

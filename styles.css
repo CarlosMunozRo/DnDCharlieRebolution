@@ -164,8 +164,8 @@ p, .texto_normal, a{
 }
 .Crear_Form{
     flex-direction:column;
-    height: 70vh;
-
+    overflow-y: scroll;
+    height: 80%;
 }
 .form_input{
     background-color: var(--rojo-oscuro-tinte);
@@ -734,5 +734,5 @@ a i{
 }
 
 .hidden{
-    
+    display: none;
 }

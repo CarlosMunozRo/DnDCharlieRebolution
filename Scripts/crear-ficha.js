@@ -233,7 +233,7 @@ function removeSkillPoints(){
 
     $('#form3 select').removeAttr("disabled");
     $('#form3 a').toggleClass("hidden");
-    $('#skillsform').remove();
+    $('#form4').remove();
 
 }
 
@@ -373,7 +373,7 @@ function crearFormIdiomas(){
 
     if(idiomas){
         idiomas.forEach(idioma => {
-            $('#form6').append($("<label for='"+idioma["Nombre"]+"'></label>").text("hola"));
+            $('#form6').append($("<label for='"+idioma["Nombre"]+"'></label>").text(idioma["Nombre"]));
 
 
             $('<input type="checkbox" id="'+idioma["Nombre"]+'" name="idiomas[]">').val(idioma["Nombre"]).insertAfter($('label[for="'+idioma["Nombre"]+'"]'));
@@ -383,6 +383,16 @@ function crearFormIdiomas(){
     $('#form6').append("<a class='BTN_A_ST1_Pequeño icono-animation-atras' onclick='removeClases()'><i class='fas fa-undo-alt'></i></a>");
 
     /*$('#form6').append("<a class='BTN_A_ST2_Pequeño icono-animation-delante' onclick='skill_points()'><i class='fas fa-arrow-right'></i></a>");*/
+
+    $('#form6 input[type="checkbox"]').change(function(e) {
+
+        if($('#form6 input[type="checkbox"]:checked').length>3){
+            $(e.target).prop( "checked", false );
+        }
+
+
+        
+    });
 
 
 }

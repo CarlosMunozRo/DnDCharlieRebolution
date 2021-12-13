@@ -765,8 +765,6 @@ a i{
 
 .carta{
     display: flex;
-    background-color: var(--rojo-oscuro);
-    border-radius: 25px;  
 }
 
 .listar-ficha *{
@@ -782,4 +780,27 @@ a i{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.contenedor{
+    background-color: var(--rojo-oscuro);
+    border-radius: 25px;  
+}
+.posicionar-Botones{
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-bottom: 2vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.visualizar, .borrar{
+    background-color: var(--naranja);
+    font-family: var(--medieval);
+    font-size: var(--INP_TamanoFuente);
+    width: 150px;
+    height: 30px;
+    box-shadow: inset 0px 0px 10px 5px var(--marron);
+    border:0px;
+    padding: 0px 20px;
+
 }

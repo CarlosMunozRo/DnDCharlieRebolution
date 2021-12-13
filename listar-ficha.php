@@ -71,5 +71,7 @@
 	<script type="text/javascript">
 		$('.borrar').attr('disabled','disabled');
 	</script>
+
+<?php include "Templates/footer.php"?>
 </body>
 </html>

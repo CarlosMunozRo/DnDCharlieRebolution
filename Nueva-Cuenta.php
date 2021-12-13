@@ -47,10 +47,8 @@
 		</form>
 	</div>
    <?php
-        if(!isset($_POST["usuario"])){
-            die();
-        }
-      //connexió dins block try-catch:
+        if(isset($_POST["usuario"])){
+            //connexió dins block try-catch:
       //  prova d'executar el contingut del try
       //  si falla executa el catch
       try {
@@ -100,6 +98,10 @@
       //eliminem els objectes per alliberar memòria 
       unset($pdo); 
       unset($query);
+        }
+      
     ?>
+
+<?php include "Templates/footer.php"?>
 </body>
 </html>

@@ -3,10 +3,10 @@
     if(!empty($_POST["usuario"]) && !empty($_POST["contrasenya"])){
 
         try {
-            $hostname = "localhost";
+            $hostname = "dndcharlierevolution.ml";
             $dbname = "DungeonsAndDragons";
-            $username = "sergio";
-            $pw = "Sergio123!";
+            $username = "master";
+            $pw = "Master1234!";
             $pdo = new PDO ("mysql:host=$hostname;dbname=$dbname","$username","$pw");
           } catch (PDOException $e) {
             echo "Failed to get DB handle: " . $e->getMessage() . "\n";
@@ -15,7 +15,7 @@
     
     
           //preparem i executem la consulta
-          $query = $pdo->prepare("select * FROM Usuarios where NombreUsuario= :user and Password= :password ");
+          $query = $pdo->prepare("select * FROM Usuarios where NombreUsuario= :user and Password= SHA2(:password,256) ");
     
           $query->bindParam(':user', $_POST["usuario"]);
           $query->bindParam(':password',$_POST["contrasenya"]);

@@ -106,7 +106,7 @@ CREATE TABLE Personajes (
 );
 CREATE TABLE Trasfondo (
     Nombre varchar(30) PRIMARY KEY,
-    Descripcion varchar(500) not null,
+    Descripcion varchar(1000) not null,
     HabilidadesAdicionales varchar(50),
     LenguajeAdicional varchar(50),
     Herramientas varchar(200)
@@ -336,3 +336,13 @@ VALUES ('Legolas','Guerrero',null,'Alto Elfo',null,null,null,null,null,null,null
 ('Sauron','Hechicero',null,'Semielfo',null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
 ('Elrond','Picaro',null,'Semiorco',null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
 ('Boromir','Paladin',null,'Humano',null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null);
+
+
+INSERT INTO Trasfondo(Nombre,Descripcion)
+VALUES ('acolito','Has pasado tu vida al servicio de un templo para un dios específico o panteón de dioses. Actúas como intermediario entre el reino del mundo sagrado y el mundo mortal, realizando ritos sagrados y ofreciendo sacrificios para llevar a los adoradores a la presencia de lo divino. No es necesariamente un clérigo; realizar ritos sagrados no es lo mismo que canalizar el poder divino.'),
+('Criminal','Es un delincuente experimentado con un historial de infracción de la ley. Has pasado mucho tiempo entre otros criminales y todavía tienes contactos dentro del inframundo criminal. Estás mucho más cerca que la mayoría de la gente del mundo de asesinatos, robos y violencia que invade la parte más vulnerable de la civilización, y has sobrevivido hasta este punto burlando las reglas y regulaciones de la sociedad.'),
+('Heroe popular','Vienes de un rango social humilde, pero estás destinado a mucho más. La gente de tu aldea de origen ya te considera su campeón, y tu destino te llama a enfrentarte a los tiranos y monstruos que amenazan a la gente común en todas partes.'),
+('Embrujado','Estás atormentado por algo tan terrible que no te atreves a hablar de ello. Ha intentado enterrarlo y huir de él, sin éxito. Sea lo que sea esta cosa que te persigue, no puedes ser asesinado con una espada o desterrado con un hechizo. Puede que te llegue como una sombra en la pared, una pesadilla escalofriante, un recuerdo que se niega a morir o un susurro demoníaco en la oscuridad. La carga ha pasado factura, aislándote de la mayoría de las personas y haciéndote cuestionar tu cordura. Debes encontrar una manera de superarlo antes de que te destruya.'),
+('Noble','Entiendes la riqueza, el poder y los privilegios. Posee un título noble y su familia posee tierras, recauda impuestos y ejerce una influencia política significativa. Puede que seas un aristócrata mimado que no esté familiarizado con el trabajo o la incomodidad, un antiguo comerciante que acaba de ascender a la nobleza o un sinvergüenza desheredado con un sentido desproporcionado de los derechos. O podría ser un terrateniente honesto y trabajador que se preocupa profundamente por las personas que viven y trabajan en su tierra, muy consciente de su responsabilidad hacia ellos.'),
+('Sabio','Pasaste años aprendiendo la tradición del multiverso. Recorrió manuscritos, estudió pergaminos y escuchó a los mejores expertos en los temas que le interesan. Tus esfuerzos te han convertido en un maestro en tus campos de estudio.'),
+('Soldado','La guerra ha sido su vida desde que quiere recordar. Te entrenaste cuando eras joven, estudiaste el uso de armas y armaduras, aprendiste técnicas básicas de supervivencia, incluido cómo mantenerte con vida en el campo de batalla. Es posible que haya sido parte de un ejército nacional permanente o una compañía de mercenarios, o quizás un miembro de una milicia local que saltó a la fama durante una guerra reciente.Cuando elija estos antecedentes, trabaje con su DM para determinar de qué organización militar formaba parte, cuánto progresó en sus filas y qué tipo de experiencias tuvo durante su carrera militar. ¿Era un ejército permanente, una guardia de la ciudad o una milicia de la aldea? O podría haber sido el ejército privado de un noble o un comerciante, o una compañía de mercenarios.');

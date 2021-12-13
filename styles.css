@@ -744,3 +744,38 @@ a i{
 .hidden{
     display: none;
 }
+/*Listar-Ficha css */
+.listar-ficha{
+    background-image: url("Media/Imagenes/d&d_background-login-dashboard.jpg");
+    background-size: cover;
+     overflow-x: hidden;
+}
+.tablero{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 70vw;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px; 
+}
+
+.carta{
+    display: flex;
+    background-color: var(--rojo-oscuro);
+    border-radius: 25px;  
+}
+
+.listar-ficha *{
+    overflow: hidden;
+}
+
+.img > img{
+    width: 150px;
+    height: 150px;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

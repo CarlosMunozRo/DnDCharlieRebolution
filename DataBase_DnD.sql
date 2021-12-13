@@ -337,6 +337,7 @@ VALUES ('Legolas','Guerrero',null,'Alto Elfo',null,null,null,null,null,null,null
 ('Elrond','Picaro',null,'Semiorco',null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
 ('Boromir','Paladin',null,'Humano',null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null);
 
+
 INSERT INTO Trasfondo(Nombre,Descripcion)
 VALUES ('acolito','Has pasado tu vida al servicio de un templo para un dios específico o panteón de dioses. Actúas como intermediario entre el reino del mundo sagrado y el mundo mortal, realizando ritos sagrados y ofreciendo sacrificios para llevar a los adoradores a la presencia de lo divino. No es necesariamente un clérigo; realizar ritos sagrados no es lo mismo que canalizar el poder divino.'),
 ('Criminal','Es un delincuente experimentado con un historial de infracción de la ley. Has pasado mucho tiempo entre otros criminales y todavía tienes contactos dentro del inframundo criminal. Estás mucho más cerca que la mayoría de la gente del mundo de asesinatos, robos y violencia que invade la parte más vulnerable de la civilización, y has sobrevivido hasta este punto burlando las reglas y regulaciones de la sociedad.'),

@@ -690,3 +690,14 @@ body.login-dashboard .BTN_NoA_ST1_Grande{
     padding: 0px 20px;
 
 }
+.Boton-Cuenta{
+    background-color: var(--naranja);
+    font-family: var(--medieval);
+    font-size: var(--INP_TamanoFuente);
+    width: 200px;
+    height: 30px;
+    box-shadow: inset 0px 0px 10px 5px var(--marron);
+    border:0px;
+    padding: 0px 20px;
+    margin-top: 2vw;
+}

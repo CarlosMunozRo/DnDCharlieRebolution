@@ -103,6 +103,7 @@
                             <div> <input type="submit" value="Iniciar Sesion"></div>
                         </div>
                     </div>
+                    <button class="Boton-Cuenta">Crear Cuenta</button>
                 </div>
             </form>
         </div>

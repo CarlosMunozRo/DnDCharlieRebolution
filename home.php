@@ -104,9 +104,12 @@
                             <div> <input type="submit" value="Iniciar Sesion"></div>
                         </div>
                     </div>
-                    <button href='Nueva-Cuenta.php' class="Boton-Cuenta">Crear Cuenta</button>
+
+                    <button class="Boton-Cuenta" form="crearCuenta">Crear Cuenta</button>
                 </div>
             </form>
+
+            <form action="Nueva-Cuenta.php" id="crearCuenta"></form>
         </div>
     </div>
 </body>

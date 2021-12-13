@@ -1,15 +1,19 @@
-<?php 
-    session_start();
+    <?php 
 
-    if(!empty($_POST["logout"])){
-        unset($_SESSION["Usuario"]);
-    }
-    
-    if(!$_SESSION["Usuario"]) {
-        header("Location: home.php");
-    }
-    
-?>
+        session_start();
+        if($_SERVER['SCRIPT_NAME']!="/Nueva-Cuenta.php"){
+            
+
+            if(!empty($_POST["logout"])){
+                unset($_SESSION["Usuario"]);
+            }
+            
+            if(!$_SESSION["Usuario"]) {
+                header("Location: home.php");
+            }
+        }
+
+    ?>
 <header class="HEA_HeaderStyle1">
     <a href="login-dashboard.php">
         <img src="Media/Imagenes/DnDLogo.png" alt="d&d Logo">

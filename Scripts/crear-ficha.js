@@ -124,13 +124,26 @@ function generate_menu(id){
 function updatemenu(pnt,inpval,idform){
     var total = parseInt(pnt)
     if(total>=9){
-        if($("#"+idform+" option[value=9]").length ==0){
-            $("#"+idform).append("<option value='1'>9</option>")
+        if($("#"+idform+" option[value=1]").length ==0){
+            $("#"+idform).append("<option value='1'>9</option>")            
+        }
+        if($("#"+idform+" option[value=2]").length ==0){
             $("#"+idform).append("<option value='2'>10</option>")
+        }
+        if($("#"+idform+" option[value=3]").length ==0){
             $("#"+idform).append("<option value='3'>11</option>")
+        }
+        if($("#"+idform+" option[value=4]").length ==0){
             $("#"+idform).append("<option value='4'>12</option>")
+        }
+        if($("#"+idform+" option[value=5]").length ==0){
             $("#"+idform).append("<option value='5'>13</option>")
+        }
+        if($("#"+idform+" option[value=7]").length ==0){
             $("#"+idform).append("<option value='7'>14</option>")
+
+        }
+        if($("#"+idform+" option[value=9]").length ==0){
             $("#"+idform).append("<option value='9'>15</option>")
 
         } 
@@ -138,12 +151,22 @@ function updatemenu(pnt,inpval,idform){
     if(total<=9 && inpval<=total){
         if(total==8){
             $("#"+idform+" option[value=9]").remove()
-            if($("#"+idform+" option[value=7]").length ==0){
-                $("#"+idform).append("<option value='1'>9</option>")
+            if($("#"+idform+" option[value=1]").length ==0){
+                $("#"+idform).append("<option value='1'>9</option>")            
+            }
+            if($("#"+idform+" option[value=2]").length ==0){
                 $("#"+idform).append("<option value='2'>10</option>")
+            }
+            if($("#"+idform+" option[value=3]").length ==0){
                 $("#"+idform).append("<option value='3'>11</option>")
+            }
+            if($("#"+idform+" option[value=4]").length ==0){
                 $("#"+idform).append("<option value='4'>12</option>")
+            }
+            if($("#"+idform+" option[value=5]").length ==0){
                 $("#"+idform).append("<option value='5'>13</option>")
+            }
+            if($("#"+idform+" option[value=7]").length ==0){
                 $("#"+idform).append("<option value='7'>14</option>")
 
             }
@@ -151,11 +174,19 @@ function updatemenu(pnt,inpval,idform){
         }else if(total==6){
             $("#"+idform+" option[value=9]").remove()
             $("#"+idform+" option[value=7]").remove()
-            if($("#"+idform+" option[value=5]").length ==0){
+            if($("#"+idform+" option[value=1]").length ==0){
                 $("#"+idform).append("<option value='1'>9</option>")            
+            }
+            if($("#"+idform+" option[value=2]").length ==0){
                 $("#"+idform).append("<option value='2'>10</option>")
+            }
+            if($("#"+idform+" option[value=3]").length ==0){
                 $("#"+idform).append("<option value='3'>11</option>")
+            }
+            if($("#"+idform+" option[value=4]").length ==0){
                 $("#"+idform).append("<option value='4'>12</option>")
+            }
+            if($("#"+idform+" option[value=5]").length ==0){
                 $("#"+idform).append("<option value='5'>13</option>")
             }
 
@@ -163,10 +194,16 @@ function updatemenu(pnt,inpval,idform){
             $("#"+idform+" option[value=9]").remove()
             $("#"+idform+" option[value=7]").remove()
             $("#"+idform+" option[value=5]").remove()
-            if($("#"+idform+" option[value=4]").length ==0){
+            if($("#"+idform+" option[value=1]").length ==0){
                 $("#"+idform).append("<option value='1'>9</option>")            
+            }
+            if($("#"+idform+" option[value=2]").length ==0){
                 $("#"+idform).append("<option value='2'>10</option>")
+            }
+            if($("#"+idform+" option[value=3]").length ==0){
                 $("#"+idform).append("<option value='3'>11</option>")
+            }
+            if($("#"+idform+" option[value=4]").length ==0){
                 $("#"+idform).append("<option value='4'>12</option>")
             }
         }else if(total==3){
@@ -174,9 +211,13 @@ function updatemenu(pnt,inpval,idform){
             $("#"+idform+" option[value=7]").remove()
             $("#"+idform+" option[value=5]").remove()
             $("#"+idform+" option[value=4]").remove()
-            if($("#"+idform+" option[value=3]").length ==0){
-                $("#"+idform).append("<option value='1'>9</option>")    
+            if($("#"+idform+" option[value=1]").length ==0){
+                $("#"+idform).append("<option value='1'>9</option>")          
+            }
+            if($("#"+idform+" option[value=2]").length ==0){
                 $("#"+idform).append("<option value='2'>10</option>")
+            }
+            if($("#"+idform+" option[value=3]").length ==0){
                 $("#"+idform).append("<option value='3'>11</option>")
             }
 
@@ -186,8 +227,10 @@ function updatemenu(pnt,inpval,idform){
             $("#"+idform+" option[value=5]").remove()
             $("#"+idform+" option[value=4]").remove()
             $("#"+idform+" option[value=3]").remove()
-            if($("#"+idform+" option[value=2]").length ==0){
+            if($("#"+idform+" option[value=1]").length ==0){
                 $("#"+idform).append("<option value='1'>9</option>")          
+            }
+            if($("#"+idform+" option[value=2]").length ==0){
                 $("#"+idform).append("<option value='2'>10</option>")
             }
 

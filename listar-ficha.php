@@ -42,17 +42,23 @@
 		      	$row = $query->fetchAll();
 
 		      	foreach ($row as $ficha) {
-		      		echo"<div class='carta'>
-		      				<div class='img'>
-		      					<img src='/Media/Imagenes/".$ficha["Raza"].".jpeg'/>
+		      		echo"<div class='contenedor'>
+		      				<div class='carta'>
+		      					<div class='img'>
+		      						<img src='/Media/Imagenes/".$ficha["Raza"].".jpeg'/>
+		      					</div>
+		      					<div class='info'>
+		      						<h3>Nombre:</h2>
+		      						<p>".$ficha["Nombre"]."</p>
+		      						<h3>Clase:</h2>
+		      						<p>".$ficha["Clase"]."</p>
+		      						<h3>Raza:</h2>
+		      						<p>".$ficha["Raza"]."</p>
+		      					</div>
 		      				</div>
-		      				<div class='info'>
-		      					<h3>Nombre:</h2>
-		      					<p>".$ficha["Nombre"]."</p>
-		      					<h3>Clase:</h2>
-		      					<p>".$ficha["Clase"]."</p>
-		      					<h3>Raza:</h2>
-		      					<p>".$ficha["Raza"]."</p>
+		      				<div class='posicionar-Botones'>
+		      					<button class='borrar'>Borrar</button>
+		      					<button class='visualizar'>Ver ficha</button>
 		      				</div>
 		      			</div>";
 		      	}
@@ -62,5 +68,8 @@
 		    ?>
 		</div>
 	</section>
+	<script type="text/javascript">
+		$('.borrar').attr('disabled','disabled');
+	</script>
 </body>
 </html>

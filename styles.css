@@ -162,27 +162,35 @@ p, .texto_normal, a{
     display:flex;
     flex-direction:column;
 }
-.Crear_Form{
-    flex-direction:column;
+.Crear_Form {
+    flex-direction: column;
     overflow-y: scroll;
-    height: 80%;
+    height: 74%;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
-.form_input{
-    background-color: var(--rojo-oscuro-tinte);
+.form_input:hover {
+    box-shadow: 0px 0px 20px white;
+}
+.form_input {
+    background-color: rgb(217,54,54,.7);
+    backdrop-filter: blur(2px);
+    /* box-shadow: 0px 0px 20px white; */
+    transition: box-shadow 1s;
     height: 20vh;
     width: 70vw;
-    padding-top:5vh;
-    padding-left:5vh;
+    padding-top: 5vh;
+    padding-left: 5vh;
     margin-left: 4vw;
     padding-bottom: 4vh;
-    border-radius:10px;
+    border-radius: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    font-family:var(--medieval);
+    font-family: var(--medieval);
     margin-bottom: 4vh;
     flex-wrap: wrap;
-    column-gap:5vw;
-    row-gap:2vh;
+    column-gap: 5vw;
+    row-gap: 2vh;
 }
 .input_butoni{
     width: 36vw;

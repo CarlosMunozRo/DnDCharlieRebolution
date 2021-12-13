@@ -143,7 +143,7 @@ function skill_points(){
     
     $("#forButton4").append("<a class='BTN_A_ST1_Pequeño icono-animation-atras' onclick='removeSkillPoints()'><i class='fas fa-undo-alt'></i></a>");
 
-    $("#forButton4").append("<a class='BTN_A_ST2_Pequeño icono-animation-delante'><i class='fas fa-arrow-right'></i></a>")
+    $("#forButton4").append("<a class='BTN_A_ST2_Pequeño icono-animation-delante' onclick='crearFormIdiomas()'><i class='fas fa-arrow-right'></i></a>")
 
 
     var fuerza = 8;
@@ -359,4 +359,30 @@ function resta(val1,val2){
     num1 = parseInt(val1)
     num2 = parseInt(val2)
     return num1-num2;
+}
+
+
+function crearFormIdiomas(){
+
+
+    $('#form5 select').attr('disabled','true');
+
+    $('#form5 a').toggleClass('hidden');
+
+    $('form#autoForm').append($('<div id="form6"></div>').addClass("form_input"));
+
+    if(idiomas){
+        idiomas.forEach(idioma => {
+            $('#form6').append($("<label for='"+idioma["Nombre"]+"'></label>").text("hola"));
+
+
+            $('<input type="checkbox" id="'+idioma["Nombre"]+'" name="idiomas[]">').val(idioma["Nombre"]).insertAfter($('label[for="'+idioma["Nombre"]+'"]'));
+        });
+    }
+
+    $('#form6').append("<a class='BTN_A_ST1_Pequeño icono-animation-atras' onclick='removeClases()'><i class='fas fa-undo-alt'></i></a>");
+
+    /*$('#form6').append("<a class='BTN_A_ST2_Pequeño icono-animation-delante' onclick='skill_points()'><i class='fas fa-arrow-right'></i></a>");*/
+
+
 }

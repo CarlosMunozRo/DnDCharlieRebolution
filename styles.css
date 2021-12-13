@@ -177,7 +177,7 @@ p, .texto_normal, a{
     backdrop-filter: blur(2px);
     /* box-shadow: 0px 0px 20px white; */
     transition: box-shadow 1s;
-    height: 20vh;
+    height: auto;
     width: 70vw;
     padding-top: 5vh;
     padding-left: 5vh;
@@ -191,6 +191,10 @@ p, .texto_normal, a{
     flex-wrap: wrap;
     column-gap: 5vw;
     row-gap: 2vh;
+}
+#form6{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 .input_butoni{
     width: 36vw;

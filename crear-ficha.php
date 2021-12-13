@@ -93,6 +93,47 @@
             <?php
         }
 
+        $query = $pdo->prepare("SELECT * FROM Trasfondo;");
+        $query->execute();
+
+
+        $row = $query->fetchAll();
+
+        $Trasfondos = [];
+        if($row){
+
+            foreach($row as $trasfondo){
+                array_push($Trasfondos,array("Nombre"=>$trasfondo["Nombre"]));
+            }
+            
+            ?>
+                <script>
+                    var trasfondos =<?php echo json_encode($Trasfondos) ?>
+                </script>
+            <?php
+        }
+
+
+        $query = $pdo->prepare("SELECT * FROM Idiomas;");
+        $query->execute();
+
+
+        $row = $query->fetchAll();
+
+        $Idiomas = [];
+        if($row){
+
+            foreach($row as $idioma){
+                array_push($Idiomas,array("Nombre"=>$idioma["NombreIdioma"]));
+            }
+            
+            ?>
+                <script>
+                    var idiomas =<?php echo json_encode($Idiomas) ?>
+                </script>
+            <?php
+        }
+
     ?>
 
     <div class="Crear_Form">

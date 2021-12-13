@@ -143,7 +143,7 @@ function skill_points(){
     
     $("#forButton4").append("<a class='BTN_A_ST1_Pequeño icono-animation-atras' onclick='removeSkillPoints()'><i class='fas fa-undo-alt'></i></a>");
 
-    $("#forButton4").append("<a class='BTN_A_ST2_Pequeño icono-animation-delante' onclick='crearFormIdiomas()'><i class='fas fa-arrow-right'></i></a>")
+    $("#forButton4").append("<a class='BTN_A_ST2_Pequeño icono-animation-delante' onclick='crearFormTrasfondo()'><i class='fas fa-arrow-right'></i></a>")
 
 
     var fuerza = 8;
@@ -227,7 +227,7 @@ function removeClases(){
     $('#form2 a').toggleClass("hidden");
     $('#form3').remove();
 
-};
+}
 
 function removeSkillPoints(){
 
@@ -423,7 +423,7 @@ function crearFormIdiomas(){
         });
     }
 
-    $('#form6').append("<a class='BTN_A_ST1_Pequeño icono-animation-atras' onclick='removeClases()'><i class='fas fa-undo-alt'></i></a>");
+    $('#form6').append("<a class='BTN_A_ST1_Pequeño icono-animation-atras' onclick='removeIdiomas()'><i class='fas fa-undo-alt'></i></a>");
 
     /*$('#form6').append("<a class='BTN_A_ST2_Pequeño icono-animation-delante' onclick='skill_points()'><i class='fas fa-arrow-right'></i></a>");*/
 
@@ -437,5 +437,48 @@ function crearFormIdiomas(){
         
     });
 
+
+}
+
+function crearFormTrasfondo(){
+
+    if($('#puntosres').text()!="0"){
+        return;
+    }
+
+    $('#form4 select').attr('disabled','true');
+
+    $('#form4 a').toggleClass('hidden');
+
+    $('form#autoForm').append($('<div id="form5"></div>').addClass("form_input"));
+
+    $('#form5').append($('<select id="trasfondo" name="trasfondo"></select>'));
+
+    if(trasfondos){
+        trasfondos.forEach(trasfondo => {
+            $('select#trasfondo').append($('<option></option>').val(trasfondo["Nombre"]).text(trasfondo["Nombre"]));
+        });
+    }
+
+    $('#form5').append("<a class='BTN_A_ST1_Pequeño icono-animation-atras' onclick='removeTrasfondo()'><i class='fas fa-undo-alt'></i></a>");
+
+    $('#form5').append("<a class='BTN_A_ST2_Pequeño icono-animation-delante' onclick='crearFormIdiomas()'><i class='fas fa-arrow-right'></i></a>");
+
+
+}
+
+function removeTrasfondo(){
+
+    $('#form4 select').removeAttr("disabled");
+    $('#form4 a').toggleClass("hidden");
+    $('#form5').remove();
+
+}
+
+function removeIdiomas(){
+
+    $('#form5 select').removeAttr("disabled");
+    $('#form5 a').toggleClass("hidden");
+    $('#form6').remove();
 
 }

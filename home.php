@@ -15,7 +15,7 @@
     
     
           //preparem i executem la consulta
-          $query = $pdo->prepare("select * FROM Usuarios where NombreUsuario= :user and Password= SHA2(:password,256) ");
+          $query = $pdo->prepare("select * FROM Usuarios where NombreUsuario= :user and Password= SHA2(:password,256)");
     
           $query->bindParam(':user', $_POST["usuario"]);
           $query->bindParam(':password',$_POST["contrasenya"]);
@@ -104,10 +104,13 @@
                             <div> <input type="submit" value="Iniciar Sesion"></div>
                         </div>
                     </div>
+
+                    <button class="Boton-Cuenta" form="crearCuenta">Crear Cuenta</button>
                 </div>
             </form>
+
+            <form action="Nueva-Cuenta.php" id="crearCuenta"></form>
         </div>
     </div>
-
 </body>
 </html>

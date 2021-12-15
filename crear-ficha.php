@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
     <script src="./Scripts/jquery.min.js" ></script>
     <script src="Scripts/login-dashboard.js"></script>
-    <script src="./Scripts/crear-ficha.js"></script>
     <title>Crear Ficha</title>
-    
 </head>
 <body class="Crear-Ficha">
     <?php include "Templates/header.php"?>
@@ -44,52 +42,107 @@
                 
                 $queryRaza= $pdo->prepare('
                     select 
-                    IFNULL(Dimension, (select Dimension from Razas where NombreRaza=":razaP")) as "Dimension",
-                    IFNULL(Velocidad, 0)+(select IFNULL(Velocidad, 0) from Razas where NombreRaza=":razaP") as "Velocidad",
-                    IFNULL(Vision, (select Vision from Razas where NombreRaza=":razaP")) as "Vision",
+                    IFNULL(Dimension, (select Dimension from Razas where NombreRaza= :razaP )) as "Dimension",
+                    IFNULL(Velocidad, 0)+(select IFNULL(Velocidad, 0) from Razas where NombreRaza= :razaP ) as "Velocidad",
+                    IFNULL(Vision, (select Vision from Razas where NombreRaza= :razaP )) as "Vision",
                     IFNULL(RazaPadre,false) as "RazaPadre"
-                    from Razas where NombreRaza=":razaB";
+                    from Razas where NombreRaza= :razaB ;
                 ');
 
                 $queryRaza->bindParam(':razaB', $dato["NombreRaza"]);
                 $queryRaza->bindParam(':razaP',$dato["RazaPadre"]);
-                print_r($dato["NombreRaza"]);
                 $queryRaza->execute();
 
                 $rowR = $queryRaza->fetchAll();
 
                 foreach($rowR as $datoR){
-                    
-                    print_r(array("NombreRaza"=>$dato["NombreRaza"],"IncrementoEstadistica"=>$dato["IncrementoEstadistica"],"Dimension"=>$datoR["Dimension"],"Velocidad"=>$datoR["Velocidad"],"RazaPadre"=>$dato["RazaPadre"],"HasRazaPadre"=>$datoR["RazaPadre"]));
 
                     array_push($Razas,array("NombreRaza"=>$dato["NombreRaza"],"IncrementoEstadistica"=>$dato["IncrementoEstadistica"],"Dimension"=>$datoR["Dimension"],"Velocidad"=>$datoR["Velocidad"],"RazaPadre"=>$dato["RazaPadre"],"HasRazaPadre"=>$datoR["RazaPadre"]));
 
                 }
 
-                foreach($Razas as $sheesh){
-                    print_r($sheesh);
-                }
-
             }
+            
+            ?>
+                <script>
+                    var razas =<?php echo json_encode($Razas) ?>
+                </script>
+            <?php
 
         }else{
             echo "No hay ninguna";
         }
 
+        $query = $pdo->prepare("SELECT * FROM Clases;");
+        $query->execute();
+
+
+        $row = $query->fetchAll();
+
+        $Clases = [];
+        if($row){
+
+            foreach($row as $clase){
+                array_push($Clases,array("Nombre"=>$clase["NombreClase"],"Descripcion"=>$clase["Descripcion"]));
+            }
+            
+            ?>
+                <script>
+                    var clases =<?php echo json_encode($Clases) ?>
+                </script>
+            <?php
+        }
+
+        $query = $pdo->prepare("SELECT * FROM Trasfondo;");
+        $query->execute();
+
+
+        $row = $query->fetchAll();
+
+        $Trasfondos = [];
+        if($row){
+
+            foreach($row as $trasfondo){
+                array_push($Trasfondos,array("Nombre"=>$trasfondo["Nombre"]));
+            }
+            
+            ?>
+                <script>
+                    var trasfondos =<?php echo json_encode($Trasfondos) ?>
+                </script>
+            <?php
+        }
+
+
+        $query = $pdo->prepare("SELECT * FROM Idiomas;");
+        $query->execute();
+
+
+        $row = $query->fetchAll();
+
+        $Idiomas = [];
+        if($row){
+
+            foreach($row as $idioma){
+                array_push($Idiomas,array("Nombre"=>$idioma["NombreIdioma"]));
+            }
+            
+            ?>
+                <script>
+                    var idiomas =<?php echo json_encode($Idiomas) ?>
+                </script>
+            <?php
+        }
+
     ?>
-    
-    <section>
-        Label: Raza
-    </section>
+
     <div class="Crear_Form">
         <form id="autoForm"></form>
     </div>
+
+
     <?php include "Templates/footer.php"?>
 
-
-    <!--boton crear ficha-->
-    <!-- boton mirar tus fichas -->
-    <!-- boton probar ficha -->
-
+    <script src="Scripts/crear-ficha.js"></script>
 </body>
 </html>

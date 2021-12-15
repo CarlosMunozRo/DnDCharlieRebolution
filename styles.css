@@ -162,27 +162,39 @@ p, .texto_normal, a{
     display:flex;
     flex-direction:column;
 }
-.Crear_Form{
-    flex-direction:column;
-    height: 70vh;
-
+.Crear_Form {
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 74%;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
-.form_input{
-    background-color: var(--rojo-oscuro-tinte);
-    height: 20vh;
+.form_input:hover {
+    box-shadow: 0px 0px 20px white;
+}
+.form_input {
+    background-color: rgb(217,54,54,.7);
+    backdrop-filter: blur(2px);
+    /* box-shadow: 0px 0px 20px white; */
+    transition: box-shadow 1s;
+    height: auto;
     width: 70vw;
-    padding-top:5vh;
-    padding-left:5vh;
+    padding-top: 5vh;
+    padding-left: 5vh;
     margin-left: 4vw;
     padding-bottom: 4vh;
-    border-radius:10px;
-    display:flex;
-    flex-direction: row;
-    font-family:var(--medieval);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-family: var(--medieval);
     margin-bottom: 4vh;
     flex-wrap: wrap;
-    column-gap:5vw;
-    row-gap:2vh;
+    column-gap: 5vw;
+    row-gap: 2vh;
+}
+#form6{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 .input_butoni{
     width: 36vw;
@@ -244,6 +256,9 @@ p, .texto_normal, a{
             background: var(--BTN_ST1_color-bg);
             cursor: pointer;
             padding: var(--BTN_PEQ_Padding);
+            width: 20px;
+            height: 20px;
+            border-radius: 50px;
         }
 
         .BTN_A_ST1_Pequeño a{
@@ -251,6 +266,10 @@ p, .texto_normal, a{
             font-size: var(--BTN_PEQ_Tamano);
             text-decoration: none;
             color:var(--BTN_ST1_color-texto);
+        }
+
+        .BTN_A_ST1_Pequeño a i{
+            color: black;
         }
 
         /* Estilo 2 */
@@ -270,12 +289,19 @@ p, .texto_normal, a{
             background: var(--BTN_ST2_color-bg);
             cursor: pointer;
             padding: var(--BTN_PEQ_Padding);
+            width: 20px;
+            height: 20px;
+            border-radius: 50px;
         }
 
         .BTN_A_ST2_Pequeño a{
             font-family: var(--medieval);
             font-size: var(--BTN_PEQ_Tamano);
             text-decoration: none;
+            color:var(--BTN_ST2_color-texto);
+        }
+        
+        .BTN_A_ST2_Pequeño a i{
             color:var(--BTN_ST2_color-texto);
         }
 
@@ -673,4 +699,120 @@ body.login-dashboard .BTN_NoA_ST1_Grande{
     }100%{
         bottom: 10%;
     }
+}
+
+/* Nueva-Cuenta css */
+
+.Nueva-Cuenta{
+    background-image: url("Media/Imagenes/d&d_background-login-dashboard.jpg");
+    background-size: cover;
+}
+.DIV_Nueva-Cuenta{
+    width: 100vw;
+    height: 90vh;
+}
+
+.DIV_Nueva-Cuenta-Formulario{
+    text-align: center;
+    height: 65vh;
+    width: 30vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--rojo-oscuro-tinte);
+    border-radius: 25px;
+}
+.Nueva-Cuenta  input[type="submit"]{
+    margin-top: 50px;
+    width: 300px;
+    height: 75px;
+}
+
+.Nueva-Cuenta label{
+    color: white;
+    font-size: 20px;
+}
+
+/* Crear-Ficha css */
+
+.Crear-Ficha{
+    background-image: url("Media/Imagenes/d&d_background-login-dashboard.jpg");
+    background-size: cover;
+}
+
+a i{
+    color: black;
+}
+
+.hidden{
+    display: none;
+}
+/*Listar-Ficha css */
+.listar-ficha{
+    background-image: url("Media/Imagenes/d&d_background-login-dashboard.jpg");
+    background-size: cover;
+     overflow-x: hidden;
+}
+.tablero{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 70vw;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px; 
+    padding: 100px 0px;
+}
+
+.carta{
+    display: flex;
+}
+
+.listar-ficha *{
+    overflow: hidden;
+}
+
+.img > img{
+    width: 150px;
+    height: 150px;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor{
+    background-color: var(--rojo-oscuro);
+    border-radius: 25px;  
+}
+.posicionar-Botones{
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-bottom: 2vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.visualizar, .borrar{
+    background-color: var(--naranja);
+    font-family: var(--medieval);
+    font-size: var(--INP_TamanoFuente);
+    width: 150px;
+    height: 30px;
+    box-shadow: inset 0px 0px 10px 5px var(--marron);
+    border:0px;
+    padding: 0px 20px;
+
+}
+.Boton-Cuenta{
+    background-color: var(--naranja);
+    font-family: var(--medieval);
+    font-size: var(--INP_TamanoFuente);
+    width: 200px;
+    height: 30px;
+    box-shadow: inset 0px 0px 10px 5px var(--marron);
+    border:0px;
+    padding: 0px 20px;
+    margin-top: 2vw;
 }

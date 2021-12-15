@@ -113,7 +113,7 @@ function generate_menu(id){
     $(menu).append("<option value='0'>8</option>")
     $(menu).append("<option value='1'>9</option>")
     $(menu).append("<option value='2'>10</option>")
-    $(menu).append("<option value='3'>12</option>")
+    $(menu).append("<option value='3'>11</option>")
     $(menu).append("<option value='4'>12</option>")
     $(menu).append("<option value='5'>13</option>")
     $(menu).append("<option value='7'>14</option>")
@@ -124,33 +124,18 @@ function generate_menu(id){
 function updatemenu(pnt,inpval,idform){
     var total = parseInt(pnt)
     if(total>=9){
-        if($("#"+idform+" option[value=1]").length ==0){
-            $("#"+idform).append("<option value='1'>9</option>")            
-        }
-        if($("#"+idform+" option[value=2]").length ==0){
-            $("#"+idform).append("<option value='2'>10</option>")
-        }
-        if($("#"+idform+" option[value=3]").length ==0){
-            $("#"+idform).append("<option value='3'>11</option>")
-        }
-        if($("#"+idform+" option[value=4]").length ==0){
-            $("#"+idform).append("<option value='4'>12</option>")
-        }
-        if($("#"+idform+" option[value=5]").length ==0){
-            $("#"+idform).append("<option value='5'>13</option>")
-        }
-        if($("#"+idform+" option[value=7]").length ==0){
-            $("#"+idform).append("<option value='7'>14</option>")
-
-        }
-        if($("#"+idform+" option[value=9]").length ==0){
-            $("#"+idform).append("<option value='9'>15</option>")
-
-        } 
+        add_menu_option(idform) 
     }
+    var difrencia=$("#"+idform+" option:selected").next().val()-inpval
+    var coste = parseInt(difrencia)
+    if(coste>total){
+        $("#"+idform+" option:selected").nextAll().remove()
+    }
+    
     if(total<=9 && inpval<=total){
-        if(total==8){
+        if(total>7 && total<8){
             $("#"+idform+" option[value=9]").remove()
+            
             if($("#"+idform+" option[value=1]").length ==0){
                 $("#"+idform).append("<option value='1'>9</option>")            
             }
@@ -171,7 +156,7 @@ function updatemenu(pnt,inpval,idform){
 
             }
             
-        }else if(total==6){
+        }else if(total>4 && total<7){
             $("#"+idform+" option[value=9]").remove()
             $("#"+idform+" option[value=7]").remove()
             if($("#"+idform+" option[value=1]").length ==0){
@@ -257,6 +242,34 @@ function updatemenu(pnt,inpval,idform){
 
         }
     }
+}
+function remove_options(idform){
+    
+}
+function add_menu_option(idform){
+    if($("#"+idform+" option[value=1]").length ==0){
+        $("#"+idform).append("<option value='1'>9</option>")            
+    }
+    if($("#"+idform+" option[value=2]").length ==0){
+        $("#"+idform).append("<option value='2'>10</option>")
+    }
+    if($("#"+idform+" option[value=3]").length ==0){
+        $("#"+idform).append("<option value='3'>11</option>")
+    }
+    if($("#"+idform+" option[value=4]").length ==0){
+        $("#"+idform).append("<option value='4'>12</option>")
+    }
+    if($("#"+idform+" option[value=5]").length ==0){
+        $("#"+idform).append("<option value='5'>13</option>")
+    }
+    if($("#"+idform+" option[value=7]").length ==0){
+        $("#"+idform).append("<option value='7'>14</option>")
+
+    }
+    if($("#"+idform+" option[value=9]").length ==0){
+        $("#"+idform).append("<option value='9'>15</option>")
+
+    } 
 }
 function suma(val1,val2){
     num1 = parseInt(val1)

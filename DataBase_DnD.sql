@@ -130,7 +130,8 @@ CREATE TABLE Clases (
     EquipoInicial varchar(200),
     Rasgos varchar(50),
     TrucosConocidos int,
-    ConjurosConocidos int);
+    ConjurosConocidos int
+);
 
 CREATE TABLE Razas_HabilidadesRaciales (
     NombreRaza varchar(30) not null,
@@ -163,6 +164,12 @@ CREATE TABLE EspacioConjuros (
     Id int PRIMARY KEY,
     NivelClase int not null,
     NumeroConjuros int not null
+);
+CREATE TABLE Clases_Armas_Armaduras_Conjuros (
+    NombreClase varchar(30),
+    NombreArma varchar(30),
+    NombreArmadura varchar(30),
+    NombreObjeto varchar(30)
 );
 
 ALTER TABLE Clases_EspacioConjuros
@@ -219,6 +226,15 @@ ALTER TABLE Razas_HabilidadesRaciales
 ADD FOREIGN KEY (NombreRaza) REFERENCES Razas(NombreRaza);
 ALTER TABLE Razas_HabilidadesRaciales
 ADD FOREIGN KEY (NombreHabilidadRacial) REFERENCES HabilidadesRaciales(NombreHabilidadRacial);
+
+ALTER TABLE Clases_Armas_Armaduras_Conjuros
+ADD FOREIGN KEY (NombreClase) REFERENCES Clases(NombreRaza);
+ALTER TABLE Clases_Armas_Armaduras_Conjuros
+ADD FOREIGN KEY (NombreArma) REFERENCES Armas(NombreArma);
+ALTER TABLE Clases_Armas_Armaduras_Conjuros
+ADD FOREIGN KEY (NombreArmadura) REFERENCES Armaduras(NombreArmadura);
+ALTER TABLE Clases_Armas_Armaduras_Conjuros
+ADD FOREIGN KEY (NombreConjuro) REFERENCES Conjuros(NombreConjuro);
 
 
 INSERT INTO Usuarios (NombreUsuario,FechaNacimiento,Password,Email)
@@ -346,3 +362,7 @@ VALUES ('acolito','Has pasado tu vida al servicio de un templo para un dios espe
 ('Noble','Entiendes la riqueza, el poder y los privilegios. Posee un título noble y su familia posee tierras, recauda impuestos y ejerce una influencia política significativa. Puede que seas un aristócrata mimado que no esté familiarizado con el trabajo o la incomodidad, un antiguo comerciante que acaba de ascender a la nobleza o un sinvergüenza desheredado con un sentido desproporcionado de los derechos. O podría ser un terrateniente honesto y trabajador que se preocupa profundamente por las personas que viven y trabajan en su tierra, muy consciente de su responsabilidad hacia ellos.'),
 ('Sabio','Pasaste años aprendiendo la tradición del multiverso. Recorrió manuscritos, estudió pergaminos y escuchó a los mejores expertos en los temas que le interesan. Tus esfuerzos te han convertido en un maestro en tus campos de estudio.'),
 ('Soldado','La guerra ha sido su vida desde que quiere recordar. Te entrenaste cuando eras joven, estudiaste el uso de armas y armaduras, aprendiste técnicas básicas de supervivencia, incluido cómo mantenerte con vida en el campo de batalla. Es posible que haya sido parte de un ejército nacional permanente o una compañía de mercenarios, o quizás un miembro de una milicia local que saltó a la fama durante una guerra reciente.Cuando elija estos antecedentes, trabaje con su DM para determinar de qué organización militar formaba parte, cuánto progresó en sus filas y qué tipo de experiencias tuvo durante su carrera militar. ¿Era un ejército permanente, una guardia de la ciudad o una milicia de la aldea? O podría haber sido el ejército privado de un noble o un comerciante, o una compañía de mercenarios.');
+
+INSERT INTO Clases_Armas_Armaduras_Conjuros (NombreClase,NombreArma,NombreArmadura,NombreConjuro) VALUES 
+("Barbaro","Alabarda","Coraza",null),
+("Bardo","","Cuero",null,null);

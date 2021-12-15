@@ -437,8 +437,8 @@ function crearFormIdiomas(){
     }
 
     $('#form6').append("<a class='BTN_A_ST1_Pequeño icono-animation-atras' onclick='removeIdiomas()'><i class='fas fa-undo-alt'></i></a>");
-    
-    $('#form6').append("<a class='BTN_A_ST2_Pequeño icono-animation-delante' onclick='skill_points()'><i class='fas fa-arrow-right'></i></a>");
+
+    $('#form6').append("<a class='BTN_A_ST2_Pequeño icono-animation-delante' onclick=''><i class='fas fa-arrow-right'></i></a>");
 
     $('#form6 input[type="checkbox"]').change(function(e) {
 
@@ -495,3 +495,9 @@ function removeIdiomas(){
     $('#form6').remove();
 
 }
+
+function crearFormEquipamiento(){
+
+    
+
+} 

@@ -100,12 +100,12 @@
                             <label for="usuario">Contraseña:</label><div class="centrar-contenido position-relative"><input type="password" name="contrasenya" id="contrasenya"><i onclick="cambiarContrasenya()" class="fas fa-eye I_Alternar-Visivilidad-Contraseña"></i></div>
                         </div>
                         <div class="centrar-contenido flex-row DIV_Home-Login-enviar">
-                            <div> <a href="">No recuerdas la contraseña?</a> </div>
-                            <div> <input type="submit" value="Iniciar Sesion"></div>
+                            <div> <a href="" accesskey="n">No recuerdas la contraseña?</a> </div>
+                            <div> <input type="submit" value="Iniciar Sesion" accesskey="e"></div>
                         </div>
                     </div>
 
-                    <button class="Boton-Cuenta" form="crearCuenta">Crear Cuenta</button>
+                    <button class="Boton-Cuenta" form="crearCuenta" accesskey="r">Crear Cuenta</button>
                 </div>
             </form>
 

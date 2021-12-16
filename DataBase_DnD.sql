@@ -165,7 +165,7 @@ CREATE TABLE EspacioConjuros (
     NivelClase int not null,
     NumeroConjuros int not null
 );
-CREATE TABLE Clases_Armas_Armaduras_Conjuros (
+CREATE TABLE Clases_Armas_Armaduras_Objetos (
     NombreClase varchar(30),
     NombreArma varchar(30),
     NombreArmadura varchar(30),
@@ -227,14 +227,14 @@ ADD FOREIGN KEY (NombreRaza) REFERENCES Razas(NombreRaza);
 ALTER TABLE Razas_HabilidadesRaciales
 ADD FOREIGN KEY (NombreHabilidadRacial) REFERENCES HabilidadesRaciales(NombreHabilidadRacial);
 
-ALTER TABLE Clases_Armas_Armaduras_Conjuros
-ADD FOREIGN KEY (NombreClase) REFERENCES Clases(NombreRaza);
-ALTER TABLE Clases_Armas_Armaduras_Conjuros
+ALTER TABLE Clases_Armas_Armaduras_Objetos
+ADD FOREIGN KEY (NombreClase) REFERENCES Clases(NombreClase);
+ALTER TABLE Clases_Armas_Armaduras_Objetos
 ADD FOREIGN KEY (NombreArma) REFERENCES Armas(NombreArma);
-ALTER TABLE Clases_Armas_Armaduras_Conjuros
+ALTER TABLE Clases_Armas_Armaduras_Objetos
 ADD FOREIGN KEY (NombreArmadura) REFERENCES Armaduras(NombreArmadura);
-ALTER TABLE Clases_Armas_Armaduras_Conjuros
-ADD FOREIGN KEY (NombreConjuro) REFERENCES Conjuros(NombreConjuro);
+ALTER TABLE Clases_Armas_Armaduras_Objetos
+ADD FOREIGN KEY (NombreObjeto) REFERENCES Objetos(NombreObjeto);
 
 
 INSERT INTO Usuarios (NombreUsuario,FechaNacimiento,Password,Email)
@@ -363,6 +363,16 @@ VALUES ('acolito','Has pasado tu vida al servicio de un templo para un dios espe
 ('Sabio','Pasaste años aprendiendo la tradición del multiverso. Recorrió manuscritos, estudió pergaminos y escuchó a los mejores expertos en los temas que le interesan. Tus esfuerzos te han convertido en un maestro en tus campos de estudio.'),
 ('Soldado','La guerra ha sido su vida desde que quiere recordar. Te entrenaste cuando eras joven, estudiaste el uso de armas y armaduras, aprendiste técnicas básicas de supervivencia, incluido cómo mantenerte con vida en el campo de batalla. Es posible que haya sido parte de un ejército nacional permanente o una compañía de mercenarios, o quizás un miembro de una milicia local que saltó a la fama durante una guerra reciente.Cuando elija estos antecedentes, trabaje con su DM para determinar de qué organización militar formaba parte, cuánto progresó en sus filas y qué tipo de experiencias tuvo durante su carrera militar. ¿Era un ejército permanente, una guardia de la ciudad o una milicia de la aldea? O podría haber sido el ejército privado de un noble o un comerciante, o una compañía de mercenarios.');
 
-INSERT INTO Clases_Armas_Armaduras_Conjuros (NombreClase,NombreArma,NombreArmadura,NombreConjuro) VALUES 
-("Barbaro","Alabarda","Coraza",null),
-("Bardo","","Cuero",null,null);
+INSERT INTO Clases_Armas_Armaduras_Objetos (NombreClase,NombreArma,NombreArmadura,NombreObjeto) VALUES 
+("Barbaro","Baston","Coraza","Saco de dormir"),
+("Bardo","Arco corto","Cuero","Saco de dormir"),
+("Brujo","Ballesta ligera","Pieles","Raciones(1 dia)"),
+("Clerigo","Clava","Cota de escamas","Raciones(1 dia)"),
+("Druida","Baston","Coraza","Saco de dormir"),
+("Explorador","Cimitarra","Pieles","Saco de dormir"),
+("Guerrero","Arco largo","Cota de malla","Raciones(1 dia)"),
+("Hechicero","Baston","Pieles","Saco de dormir"),
+("Mago","Baston","Pieles","Raciones(1 dia)"),
+("Monje","Clava","Cuero","Saco de dormir"),
+("Paladin","Ballesta de mano","Cota de malla","Raciones(1 dia)"),
+("Picaro","Arco corto","Pieles","Raciones(1 dia)");

@@ -134,10 +134,31 @@
             <?php
         }
 
+
+        $query = $pdo->prepare("SELECT * FROM Clases_Armas_Armaduras_Objetos;");
+        $query->execute();
+
+        $row = $query->fetchAll();
+
+        $Equipamientos = [];
+        if($row){
+
+            foreach($row as $equipo){
+                array_push($Equipamientos,array("Clase"=>$equipo["NombreClase"],"Arma"=>$equipo["NombreArma"],"Armadura"=>$equipo["NombreArmadura"],"Objeto"=>$equipo["NombreObjeto"]));
+            }
+            
+            ?>
+                <script>
+                    var equipamientos =<?php echo json_encode($Equipamientos) ?>
+                </script>
+            <?php
+        }
+
+
     ?>
 
     <div class="Crear_Form">
-        <form id="autoForm"></form>
+        <form id="autoForm" action="Ficha.php" method="POST"></form>
     </div>
 
 

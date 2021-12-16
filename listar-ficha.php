@@ -7,6 +7,8 @@
 	<link rel="stylesheet" href="styles.css">
     <script src="./Scripts/jquery.min.js" ></script>
     <script src="Scripts/login-dashboard.js"></script>
+	<script src="Scripts/subir-imagen.js"></script>
+
 </head>
 <body class="listar-ficha">
 	<?php include "Templates/header.php"?>
@@ -27,9 +29,16 @@
 		        	exit;
 		      	}
 
+				$tmpFile = $_FILES['imagen1']['tmp_name'];
+				$newFile = './Media/Uploads/'.$_FILES['imagen1']['name'];
+				$result = move_uploaded_file($tmpFile, $newFile);
+				$nuevaimagen = $_FILES['imagen1']['name'];
+  				$sql = $pdo->prepare("UPDATE Personajes SET Imagen = '".$_FILES['imagen1']['name']."' WHERE Nombre='".$_POST['personaje']."';");
+				  
+				$sql->execute();
 
 		      	//preparem i executem la consulta
-		      	$query = $pdo->prepare("select Nombre,Clase,Raza from Personajes");
+		      	$query = $pdo->prepare("select Nombre,Clase,Raza,Imagen from Personajes");
 		      	$query->execute();      
 
 		        //comprovo errors:
@@ -40,13 +49,21 @@
 		      	}  
 		      	//anem agafant les fileres d'amb una amb una
 		      	$row = $query->fetchAll();
-
+ 
+				
 		      	foreach ($row as $ficha) {
 		      		echo"<div class='contenedor'>
 		      				<div class='carta'>
-		      					<div class='img'>
-		      						<img src='/Media/Imagenes/".$ficha["Raza"].".jpeg'/>
-		      					</div>
+		      					<div class='img'>";
+					if (!empty($ficha["Imagen"])){ 
+						echo "<img src='./Media/Uploads/".$ficha["Imagen"]."'/>";
+					
+					}else {
+						echo "<img src='/Media/Imagenes/".$ficha["Raza"].".jpeg'/>";
+
+					};
+
+					echo "	  </div>
 		      					<div class='info'>
 		      						<h3>Nombre:</h2>
 		      						<p>".$ficha["Nombre"]."</p>

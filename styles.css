@@ -233,8 +233,8 @@ p, .texto_normal, a{
     width: 60vw;
 }
 .esquinacierre{
-    color: var(--negro);;
-    background: var(--rojo);;
+    color: var(--negro);
+    background: var(--rojo);
     width: 2vw;
     position: absolute;
     left: 95%;
@@ -244,14 +244,21 @@ p, .texto_normal, a{
 }
 .img{
     cursor:pointer;
+    position: relative;
+    height: 20vh
 }
 .edit{
-    background:white;
-    height: 100px;
-    width: 100px;
+    background:black;
+    height: 22vh;
+    width: 100%;
     z-index: 9999;
     position:absolute;
-    top:
+    top:0;
+    left:0;
+    opacity: 0.7;
+    display:flex;
+    align-items:center;
+    justify-content: center;
 
 
 }

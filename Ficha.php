@@ -1,30 +1,80 @@
 <?php
 
-    $nombre=$_POST["sh_name"];
+    $nombre=$_GET["sh_name"];
+    $raza=$_GET["raza"];
+    $clase=$_GET["clase"];
+    $trasfondo=$_GET["trasfondo"];
 
-    echo "Nombre: $nombre";
+    $fuerza= intval($_GET["fuerza"]);
 
-    $raza=$_POST["raza"];
+    $destreza=intval($_GET["destreza"]);
 
-    echo "Raza: $raza";
+    $constitucion= intval($_GET["consti"]);
 
-    $clase=$_POST["clase"];
+    $inteligencia=intval($_GET["intel"]);
 
-    echo "Clase: $clase";
+    $sabiduria=intval($_GET["sabi"]);
 
-    $fuerza=$_POST["fuerza"];
+    $carisma=intval($_GET["carism"]);
 
-    $destreza=$_POST["destreza"];
+    try {
+        $hostname = "dndcharlierevolution.ml";
+      $dbname = "DungeonsAndDragons";
+      $username = "master";
+      $pw = "Master1234!";
+      $pdo = new PDO ("mysql:host=$hostname;dbname=$dbname","$username","$pw");
+    } catch (PDOException $e) {
+      echo "Failed to get DB handle: " . $e->getMessage() . "\n";
+      exit;
+    }
 
-    $constitucion= $_POST["consti"];
+    $query = $pdo->prepare("select * from Personajes;");
+    $query->execute();     
+    
+    $e= $query->errorInfo();
+    if ($e[0]!='00000') {
+      echo "\nPDO::errorInfo():\n";
+      die("Error accedint a dades: " . $e[2]);
+    }  
+    
+    $row = $query->fetchAll();
 
-    $inteligencia=$_POST["intel"];
+    $flag_existe=false;
+    foreach($row as $ficha){
+        if($ficha["Nombre"]==$nombre){
+            $flag_existe=true;
+        }
+    }
 
-    $sabiduria=$_POST["sabi"];
 
-    $carisma=$_POST["carism"];
+    if($flag_existe){
 
-    echo "Puntos: f: $fuerza destreza: $destreza constitucion: $constitucion inteligencia: $inteligencia sabiduria: $sabiduria carisma: $carisma";
+      
+
+    }else{
+      echo "Nombre: $nombre <br>";
+
+      echo "Raza: $raza <br>";
+  
+      echo "Clase: $clase <br>";
+  
+      echo "Puntos: f: $fuerza destreza: $destreza constitucion: $constitucion inteligencia: $inteligencia sabiduria: $sabiduria carisma: $carisma";
+
+      $query = $pdo->prepare("insert into Personajes(Nombre,Raza,Clase,Trasfondo,Fuerza,Destreza,Constitucion,inteligencia,Sabiduria,Carisma)
+          Values(:nombre,:raza,:clase,:trasfondo,:fuerza,:destreza,:constitucion,:inteligencia,:sabiduria,:carisma)");
+          $query->bindParam(':nombre', $nombre);
+          $query->bindParam(':raza', $raza);
+          $query->bindParam(':clase', $clase);
+          $query->bindParam(':trasfondo', $trasfondo);
+          $query->bindParam(':fuerza',$destreza );
+          $query->bindParam(':destreza', $destreza);
+          $query->bindParam(':constitucion', $constitucion);
+          $query->bindParam(':inteligencia', $inteligencia);
+          $query->bindParam(':sabiduria', $sabiduria);
+          $query->bindParam(':carisma', $carisma);
+          $query->execute();
+    }
+
 
 
 

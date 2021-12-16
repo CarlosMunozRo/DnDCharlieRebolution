@@ -158,7 +158,7 @@
     ?>
 
     <div class="Crear_Form">
-        <form id="autoForm" action="Ficha.php" method="POST"></form>
+        <form id="autoForm" action="Ficha.php" method="GET"></form>
     </div>
 
 

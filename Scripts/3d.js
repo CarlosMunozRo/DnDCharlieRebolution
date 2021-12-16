@@ -6,6 +6,7 @@ const camera = new THREE.PerspectiveCamera(75,800/600,0.1,1000);
 
 const renderer = new THREE.WebGLRenderer({
     canvas: document.getElementById('3d-bgk'),
+    alpha: true,
 });
 
 renderer.setPixelRatio(window.devicePixelRatio);
@@ -32,7 +33,7 @@ scene.add(pointLight);
 const light = new THREE.AmbientLight( 0xffffff ); // soft white light
 scene.add(light);
 
-
+renderer.setClearColor( 0x000000, 0);
 
 var randomRotate=true
 
@@ -41,7 +42,7 @@ setTimeout(()=>{
     dado.rotation.z= .2;
     dado.rotation.y= .32;
     dado.rotation.x= .05;
-    $('body').append($('<div class="new_number"></div>').text(Math.floor(Math.random()*14)));
+    $('body').append($('<div class="new_number"></div>').text(Math.floor(Math.random()*12)));
 
     
 },2000);

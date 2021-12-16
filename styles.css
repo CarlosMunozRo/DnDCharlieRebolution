@@ -906,3 +906,18 @@ a i{
     flex-direction: column;
 }
 
+.dragon{
+    position: absolute;
+    width: 150px;
+    height: auto;
+    animation-name: moverse;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+    left: 0px;
+
+}
+@keyframes moverse{
+    from {left: -5%;} 
+    to {left: 103%;}
+}

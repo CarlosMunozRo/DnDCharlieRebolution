@@ -80,7 +80,7 @@
         }
 
     ?>
-    
+    <img class='dragon' src="Media/Imagenes/Dragon.gif">
     <div class="centrar-contenido flex-row">
         <div class="DIV_Home-Izquierda">
             <div class="centrar-contenido flex-column"><img class="IMG_Home-imagen" src="./Media/Imagenes/DnDLogoHome.png"><h1 class="blanco">Character Creator</h1></div>

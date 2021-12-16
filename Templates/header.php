@@ -27,7 +27,7 @@
         <form action="" method="post">
             <nav class="nav-usuario centrar-contenido flex-column">
                 <a href="#">Perfil</a>
-                <a id="logout">Desconectar</a>
+                <a accesskey="s" id="logout">Desconectar</a>
                 <input type="hidden" name="logout" value="true">
             </nav>
         </form>

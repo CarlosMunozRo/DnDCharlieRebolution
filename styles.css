@@ -575,10 +575,15 @@ p, .texto_normal, a{
 
 
 /* login-dashboard css */
-
-body.login-dashboard > section > nav {
+.ficha{
     background-image: url("Media/Imagenes/d&d_background-login-dashboard.jpg");
     background-size: cover;
+}
+.login-dashboard{
+    background-image: url("Media/Imagenes/d&d_background-login-dashboard.jpg");
+    background-size: cover;
+}
+body.login-dashboard > section > nav {
     height: 80vh; 
     width: 100vw;
 }
@@ -818,4 +823,104 @@ a i{
 }
 .formEquipamiento{
     grid-template-columns: 30% 70% ;
+}
+
+.Contenedor-hilo_ariadna{
+    display: flex;
+    padding-left: 5vw;
+}
+.hilo_ariadna{
+    color:white;
+    font-size: 30px;
+}
+
+
+/*Ficha css*/
+.header{
+    display: flex;
+    border: 2px solid blue;
+    justify-content: space-between;
+    width: 80vw;
+}
+.Posicionar-Izquierda{
+    width: 50vw;
+    margin-left: 2vw;
+    justify-content: center;
+}
+.Posicionar-Derecha{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    margin-right: 2vw;
+    justify-content: center;
+}
+.Info{
+    display: flex;
+    flex-direction: column;
+}
+.Datos{
+    display: flex;
+    justify-content: space-around;
+}
+.IMG_ficha-imagen{
+    width: 200px;
+    height: 100px;
+}
+.Nombre-Personaje{
+    margin-top: -60px;
+    margin-left: 50px;
+}
+.Nombre-Personaje > p{
+    margin-left: 30px;
+    margin-top: -20px;
+}
+.Contenedor{
+    width: 80vw;
+}
+
+.ficha < section{
+    width: 100vw;
+}
+.Info:nth-child(2n){
+    margin-top: 20px;
+}
+.flex{
+    display: flex;
+}
+
+.Decoracion{
+    border: 1px solid green;
+    border-radius: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.redonda{
+    border: 2px solid red;
+    border-radius: 50%;
+}
+
+.Contenedor-habilidades{
+    gap: 30px;
+    border: 2px solid yellow;
+    display: flex;
+    flex-direction: column;
+}
+
+.dragon{
+    position: absolute;
+    width: 150px;
+    height: auto;
+    animation-name: moverse;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+    left: 0px;
+
+}
+@keyframes moverse{
+    from {left: -5%;} 
+    to {left: 103%;}
 }

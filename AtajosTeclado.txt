@@ -1,0 +1,7 @@
+alt + n No recuerdo la contraseña
+alt + r Crear Cuenta
+alt + e Iniciar session
+alt + c Crear ficha
+alt + l Listar ficha
+alt + p Probar ficha
+alt + s Desconectar

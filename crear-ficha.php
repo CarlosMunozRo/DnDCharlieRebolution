@@ -12,7 +12,11 @@
 </head>
 <body class="Crear-Ficha">
     <?php include "Templates/header.php"?>
-
+    <div class="Contenedor-hilo_ariadna">
+        <a href="login-dashboard.php"><h2 class="hilo_ariadna">Dashboard</h2></a>
+        <h2 class="hilo_ariadna">/</h2>
+        <a href="login-dashboard.php"><h2 class="hilo_ariadna">Crear Ficha</h2></a>
+    </div>
     <?php
     
         try {

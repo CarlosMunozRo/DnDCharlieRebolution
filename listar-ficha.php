@@ -10,6 +10,11 @@
 </head>
 <body class="listar-ficha">
 	<?php include "Templates/header.php"?>
+	<div class="Contenedor-hilo_ariadna">
+		<a href="login-dashboard.php"><h2 class="hilo_ariadna">Dashboard</h2></a>
+		<h2 class="hilo_ariadna">/</h2>
+		<a href="login-dashboard.php"><h2 class="hilo_ariadna">Listar Ficha</h2></a>
+	</div>
 		<section class="centrar-contenido">
 		<div class="tablero">
 			<?php
@@ -58,7 +63,7 @@
 		      				</div>
 		      				<div class='posicionar-Botones'>
 		      					<button class='borrar'>Borrar</button>
-		      					<button class='visualizar'>Ver ficha</button>
+		      					<button class='visualizar'><a href='Ficha.php'>Ver ficha</a></button>
 		      				</div>
 		      			</div>";
 		      	}

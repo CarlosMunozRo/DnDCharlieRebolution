@@ -45,6 +45,8 @@
 				</div>
 			</div>
 		</form>
+    <form action="pdf.php">
+    </form>
 	</div>
    <?php
         if(isset($_POST["usuario"])){
@@ -101,7 +103,5 @@
         }
       
     ?>
-
-<?php include "Templates/footer.php"?>
 </body>
 </html>

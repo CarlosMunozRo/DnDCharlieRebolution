@@ -787,10 +787,6 @@ a i{
     justify-content: center;
     align-items: center;
 }
-.contenedor{
-    background-color: var(--rojo-oscuro);
-    border-radius: 25px;  
-}
 .posicionar-Botones{
     margin-left: 2vw;
     margin-right: 2vw;
@@ -843,14 +839,14 @@ a i{
     width: 80vw;
 }
 .Posicionar-Izquierda{
-    width: 50vw;
+    width: 40%;
     margin-left: 2vw;
     justify-content: center;
 }
 .Posicionar-Derecha{
     display: flex;
     flex-direction: column;
-    width: 50vw;
+    width: 60%;
     margin-right: 2vw;
     justify-content: center;
 }
@@ -861,10 +857,17 @@ a i{
 .Datos{
     display: flex;
     justify-content: space-around;
+    width: 100%;
+}
+.Datos>p {
+    width: 40%;
+}
+.text-center{
+    text-align: center;
 }
 .IMG_ficha-imagen{
     width: 200px;
-    height: 100px;
+    height: auto;
 }
 .Nombre-Personaje{
     margin-top: -60px;
@@ -874,8 +877,14 @@ a i{
     margin-left: 30px;
     margin-top: -20px;
 }
+.contenedor{
+    background-color: var(--rojo-oscuro);
+    border-radius: 25px;  
+}
 .Contenedor{
     width: 80vw;
+    background-color: var(--rojo-oscuro);
+    border-radius: 25px;  
 }
 
 .ficha < section{
@@ -889,24 +898,26 @@ a i{
 }
 
 .Decoracion{
-    border: 1px solid green;
-    border-radius: 30%;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 
 .redonda{
-    border: 2px solid red;
+    border: 2px solid rgb(255, 0, 0,.2);
     border-radius: 50%;
+    position: absolute;
+    bottom: -10%;
 }
 
 .Contenedor-habilidades{
     gap: 30px;
-    border: 2px solid yellow;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .dragon{
@@ -920,7 +931,81 @@ a i{
     left: 0px;
 
 }
+
+.wraper-pts-totales{
+    padding-top: 100px;
+}
 @keyframes moverse{
     from {left: -5%;} 
     to {left: 103%;}
+}
+
+.wraper-default{
+    background-color: rgb(0,0,0,.2);
+    margin: 5px;
+}
+
+.space-between{
+    justify-content: space-between;
+}
+
+/*
+
+.Contenedor-salvacion>div:nth-child(1){
+    height: 10%;
+}
+
+.Contenedor-salvacion>div:nth-child(2){
+    height: 10%;
+}
+
+.Contenedor-salvacion>div:nth-child(3){
+    height: 20%;
+}
+
+.Contenedor-salvacion>div:nth-child(4){
+    height: 60%;
+}
+
+*/
+
+.habilidades{
+    padding: 10px 0px;
+}
+
+
+.habilidades>div:nth-child(1){
+    width: 18%;
+    position: relative;
+    text-align: right;
+    margin-right: 8%;
+    margin-left:2%;
+}
+
+.habilidades>div:nth-child(1):before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border:1px solid black;
+    border-radius: 50%;
+}
+.habilidades>div:nth-child(2){
+    width: 80%;
+}
+
+.Container-equipo>div:nth-child(1){
+    width: 38%;
+}
+
+.Container-equipo>div:nth-child(2){
+    width: 61%;
+}
+
+.Contenedor-habilidades .Decoracion{
+    width: 70%;
+    position: relative;
+    padding-bottom: 30px;
 }

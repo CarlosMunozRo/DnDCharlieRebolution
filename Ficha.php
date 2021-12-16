@@ -136,43 +136,43 @@
         	</div>
             <div class="flex">
                 <div class="flex posicionar">
-                    <div class="Contenedor-habilidades">
-                        <div class="Decoracion">
+                    <div class="Contenedor-habilidades wraper-default">
+                        <div class="Decoracion wraper-default">
                             <p>Fuerza</p>
                             <p>+0</p>
                             <div class="redonda">
                                 <p>10</p>
                             </div>
                         </div>
-                        <div class="Decoracion">
+                        <div class="Decoracion wraper-default">
                             <p>Destreza</p>
                             <p>+0</p>
                              <div class="redonda">
                                 <p>10</p>
                             </div>
                         </div>
-                        <div class="Decoracion">
+                        <div class="Decoracion wraper-default">
                             <p>Constitucion</p>
                             <p>+0</p>
                              <div class="redonda">
                                 <p>10</p>
                             </div>
                         </div>
-                        <div class="Decoracion">
+                        <div class="Decoracion wraper-default">
                             <p>Inteligencia</p>
                             <p>+0</p>
                              <div class="redonda">
                                 <p>10</p>
                             </div>
                         </div>
-                        <div class="Decoracion">
+                        <div class="Decoracion wraper-default">
                             <p>Sabiduria</p>
                             <p>+0</p>
                              <div class="redonda">
                                 <p>10</p>
                             </div>
                         </div>
-                        <div class="Decoracion">
+                        <div class="Decoracion wraper-default">
                             <p>Carisma</p>
                             <p>+0</p>
                              <div class="redonda">
@@ -180,68 +180,141 @@
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div>
+                    <div class="Contenedor-salvacion">
+                        <div class="wraper-default">
                             <p>Inspiracion</p>
                         </div>
-                        <div>
+                        <div class="wraper-default">
                             <p>Bonificador de competencia</p>
                         </div>
-                        <div>
+                        <div class="wraper-default">
                             <p>Tiradas de salvacion</p>
                         </div>
-                        <div>
-                            <p></p>
+                        <div class="wraper-default">
+                            <div>
+                                <div class="flex column habilidades">
+                                    <div>+5</div>
+                                    <div>Acrobacias</div>
+                                </div>
+                                <div class="flex column habilidades">
+                                    <div>+5</div>
+                                    <div>Acrobacias</div>
+                                </div>
+                                <div class="flex column habilidades">
+                                    <div>+5</div>
+                                    <div>Acrobacias</div>
+                                </div>
+                                <div class="flex column habilidades">
+                                    <div>+5</div>
+                                    <div>Acrobacias</div>
+                                </div>
+                                <div class="flex column habilidades">
+                                    <div>+5</div>
+                                    <div>Acrobacias</div>
+                                </div>
+                                <div class="flex column habilidades">
+                                    <div>+5</div>
+                                    <div>Acrobacias</div>
+                                </div>
+                                <div class="flex column habilidades">
+                                    <div>+5</div>
+                                    <div>Acrobacias</div>
+                                </div>
+                                <div class="flex column habilidades">
+                                    <div>+5</div>
+                                    <div>Acrobacias</div>
+                                </div>
+                                <div class="flex column habilidades">
+                                    <div>+5</div>
+                                    <div>Acrobacias</div>
+                                </div>
+                                <div class="flex column habilidades">
+                                    <div>+5</div>
+                                    <div>Acrobacias</div>
+                                </div>
+                                <div class="flex column habilidades">
+                                    <div>+5</div>
+                                    <div>Acrobacias</div>
+                                </div>
+                                <div class="flex column habilidades">
+                                    <div>+5</div>
+                                    <div>Acrobacias</div>
+                                </div>
+                                <div class="flex column habilidades">
+                                    <div>+5</div>
+                                    <div>Acrobacias</div>
+                                </div>
+                                <div class="flex column habilidades">
+                                    <div>+5</div>
+                                    <div>Acrobacias</div>
+                                </div>
+                                <div class="flex column habilidades">
+                                    <div>+5</div>
+                                    <div>Acrobacias</div>
+                                </div>
+                                <div class="flex column habilidades">
+                                    <div>+5</div>
+                                    <div>Acrobacias</div>
+                                </div>
+                                <div class="flex column habilidades">
+                                    <div>+5</div>
+                                    <div>Acrobacias</div>
+                                </div>
+                                <div class="flex column habilidades">
+                                    <div>+5</div>
+                                    <div>Acrobacias</div>
+                                </div>
+                            </div>
                             <p>Habilidades</p>
                         </div>
                     </div>
                 </div>
                 <div>
                     <div>
-                        <div class="flex">
-                            <div>
-                                <p>14</p>
+                        <div class="flex space-between">
+                            <div class="wraper-default">
+                                <p class="text-center">14</p>
                                 <p>Clase de arm</p>
                             </div>
-                            <div>
-                                <p>13</p>
+                            <div class="wraper-default">
+                                <p class="text-center">13</p>
                                 <p>Iniciativa</p>
                             </div>
-                            <div>
-                                <p>30'</p>
+                            <div class="wraper-default">
+                                <p class="text-center">30'</p>
                                 <p>Velocidad</p>
                             </div>
                         </div>
-                        <div>
+                        <div class="wraper-default">
                             <div class="flex">
                                 <p>Puntos de golpeo maximos</p>
                                 <p>10</p>
                             </div>
-                            <p>10</p>
-                            <p>Puntos de golpe actuales</p>
+                            <p class="text-center">10</p>
+                            <p class="text-center">Puntos de golpe actuales</p>
                         </div>
-                        <div>
+                        <div class="wraper-pts-totales wraper-default" >
                             <div>
                                 <p>Puntos de golpe temporales</p>
                             </div>
                         </div>
-                        <div>
-                            <div>
+                        <div class="flex">
+                            <div class="wraper-default">
                                 <div class="flex">
                                     <p>total</p>
                                     <p>1d8</p>
                                 </div>
-                                <p>d8</p>
-                                <p>Dado de golpe</p>
+                                <p class="text-center">d8</p>
+                                <p class="text-center">Dado de golpe</p>
                             </div>
-                            <div>
+                            <div class="wraper-default">
                                 <p>Exitos</p>
                                 <p>Fallos</p>
                                 <p>Salvaciones de muerte</p>
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div class="wraper-default">
                         <div class="flex">
                             <p>Nombre</p>
                             <p>Bonf. ataque</p>
@@ -262,26 +335,35 @@
                     </div>
                 </div>
                 <div>
-                <div>
+                <div class="wraper-default">
                     <p>Rasgos De Personalidad</p>
                 </div>
-                <div>
+                <div class="wraper-default">
                     <p>Ideales</p>
                 </div>
-                <div>
+                <div class="wraper-default">
                     <p>Vinculos</p>
                 </div>
-                <div>
+                <div class="wraper-default">
                     <p>Defectos</p>
+                </div>
+                <div class="wraper-default">
+                    <div>
+                        <p>Vision en la oscuridad</p>
+                        <p>Ancestro federico</p>
+                        <p>Pericia</p>
+                        <p>Ataque furioso</p>
+                    </div>
+                    <p>Rasgos y Atributos</p>
                 </div>
             </div>
             </div>
-            <div class="flex">
+            <div class="flex Container-equipo">
                 <div>
-                    <div>
+                    <div class="wraper-default">
                         <p>Sabiduria Passiva</p>
                     </div>
-                    <div>
+                    <div  class="wraper-default">
                         <div>
                             <p>Armaduras:</p>
                             <p>Armas:</p>
@@ -295,7 +377,7 @@
                         <p>Otras competencias E Idiomas</p>
                     </div>
                 </div>
-                <div>
+                <div class="wraper-default">
                     <div>
                         <p>Herramientas</p>
                         <p>Espada</p>
@@ -303,15 +385,7 @@
                     </div>
                     <p>Equipo</p>
                 </div>
-                <div>
-                    <div>
-                        <p>Vision en la oscuridad</p>
-                        <p>Ancestro federico</p>
-                        <p>Pericia</p>
-                        <p>Ataque furioso</p>
-                    </div>
-                    <p>Rasgos y Atributos</p>
-                </div>
+
             </div>
         </div>
     </section>

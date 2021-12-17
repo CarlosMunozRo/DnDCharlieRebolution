@@ -32,13 +32,17 @@
         
     
           //anem agafant les fileres d'amb una amb una
-          $row = $query->fetch();
+          $row = $query->fetchAll();
     
           $login="no";
           if($row){
               session_start();
                 
               $_SESSION["Usuario"] = $_POST["usuario"];
+
+              foreach($row as $field){
+                $_SESSION["UsuarioID"] = $field["UsuarioID"];
+              }
 
               header("Location: login-dashboard.php");
           }else{

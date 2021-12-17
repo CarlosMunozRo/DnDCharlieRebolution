@@ -1,5 +1,7 @@
 <?php
 
+
+
     $nombre=$_GET["sh_name"];
     $raza=$_GET["raza"];
     $clase=$_GET["clase"];
@@ -136,7 +138,7 @@
         	</div>
             <div class="flex">
                 <div class="flex posicionar">
-                    <div class="Contenedor-habilidades wraper-default">
+                    <div class="Contenedor-habilidades wraper-default f-grow">
                         <div class="Decoracion wraper-default">
                             <p>Fuerza</p>
                             <p>+0</p>
@@ -180,7 +182,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="Contenedor-salvacion">
+                    <div class="Contenedor-salvacion f-grow">
                         <div class="wraper-default">
                             <p>Inspiracion</p>
                         </div>
@@ -269,7 +271,7 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <div class="f-grow">
                     <div>
                         <div class="flex space-between">
                             <div class="wraper-default">
@@ -334,7 +336,7 @@
                         <p>Ataques y Conjuros</p>
                     </div>
                 </div>
-                <div class="Container-rasgos">
+                <div class="Container-rasgos f-grow">
                 <div class="wraper-default">
                     <p>Rasgos De Personalidad</p>
                 </div>

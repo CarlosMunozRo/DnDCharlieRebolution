@@ -67,7 +67,7 @@
 		      					</div>
 		      				</div>
 		      				<div class='posicionar-Botones'>
-                                <button class='visualizar'><a href='combate.php?NombrePersonaje=".$ficha["Nombre"]."'>Seleccionar</a></button>
+                                <button class='visualizar'><a href='combate.php?IDPersonaje=".$ficha["PersonajeID"]."'>Seleccionar</a></button>
 		      				</div>
 		      			</div>";
 		      	}

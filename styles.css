@@ -268,8 +268,6 @@ p, .texto_normal, a{
     display:flex;
     align-items:center;
     justify-content: center;
-
-
 }
 
 
@@ -899,14 +897,14 @@ a i{
     width: 80vw;
 }
 .Posicionar-Izquierda{
-    width: 40%;
+    width: 30%;
     margin-left: 2vw;
     justify-content: center;
 }
 .Posicionar-Derecha{
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 50%;
     margin-right: 2vw;
     justify-content: center;
 }
@@ -947,7 +945,7 @@ a i{
     border-radius: 25px;  
 }
 
-.ficha < section{
+.ficha < section {
     width: 100vw;
 }
 .Info:nth-child(2n){
@@ -984,20 +982,30 @@ a i{
     position: absolute;
     width: 150px;
     height: auto;
-    animation-name: moverse;
-    animation-duration: 5s;
+    animation: moverse 20s, volar 0.9s ease-in-out 0s infinite;
+    /*animation-duration: 20s;*/
     animation-iteration-count: infinite;
     animation-timing-function: ease-out;
     left: 0px;
 
+}
+.laFoto{
+    height: 100px;
+    right:3vw;
+    
 }
 
 .wraper-pts-totales{
     padding-top: 100px;
 }
 @keyframes moverse{
-    from {left: -5%;} 
+    from {left: -10%;} 
     to {left: 103%;}
+}
+@keyframes volar{
+    0%{top:0%;}
+    50% {top:5%}
+    100% {top:0%}
 }
 
 .wraper-default{

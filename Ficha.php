@@ -76,7 +76,8 @@
           $query->bindParam(':carisma', $carisma);
           $query->execute();
     }
-
+    $select = $pdo->prepare("select * from Personajes where nombre ='".$_GET['nombre']."';");
+    $select->execute();
 
 ?>
 
@@ -99,6 +100,7 @@
         <h2 class="hilo_ariadna">/</h2>
         <a href="Ficha.php"><h2 class="hilo_ariadna">Ficha</h2></a>
     </div>
+    <?php print_r($nombre)?>
     <section class="centrar-contenido">
         <div class="Contenedor" style="border: 4px solid red;">
         	<div class="header">

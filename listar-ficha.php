@@ -61,10 +61,10 @@
 		      	}  
 		      	//anem agafant les fileres d'amb una amb una
 		      	$row = $query->fetchAll();
- 
-				
+				  
+
 		      	foreach ($row as $ficha) {
-		      		echo"<div class='contenedor'>
+					echo"<div class='contenedor'>
 		      				<div class='carta'>
 		      					<div class='img'>";
 					if (!empty($ficha["Imagen"])){ 
@@ -87,7 +87,7 @@
 		      				</div>
 		      				<div class='posicionar-Botones'>
 		      					<button class='borrar'>Borrar</button>
-		      					<button class='visualizar'><a href='Ficha.php'>Ver ficha</a></button>
+		      					<button class='visualizar'><a href='Ficha.php?nombre=".$ficha['Nombre']."'>Ver ficha</a></button>
 		      				</div>
 		      			</div>";
 		      	}

@@ -9,11 +9,13 @@
     <script src="Scripts/login-dashboard.js"></script>
 	<script src="Scripts/subir-imagen.js"></script>
 
+
 </head>
 <body class="listar-ficha">
 	<?php include "Templates/header.php"?>
 		<section class="centrar-contenido">
 		<div class="tablero">
+			
 			<?php
 				//connexió dins block try-catch:
 		      	//  prova d'executar el contingut del try
@@ -90,5 +92,7 @@
 	</script>
 
 <?php include "Templates/footer.php"?>
+
+<?php include "Templates/descargarPDF.php"?>
 </body>
 </html>

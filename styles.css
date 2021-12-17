@@ -227,6 +227,7 @@ p, .texto_normal, a{
     flex-direction: column;
     text-align: center;
     
+    
 }
 .imagen_inpt{
     height: 10vh;

@@ -13,6 +13,11 @@
 </head>
 <body class="listar-ficha">
 	<?php include "Templates/header.php"?>
+	<div class="Contenedor-hilo_ariadna">
+		<a href="login-dashboard.php"><h2 class="hilo_ariadna">Dashboard</h2></a>
+		<h2 class="hilo_ariadna">/</h2>
+		<a href="login-dashboard.php"><h2 class="hilo_ariadna">Listar Ficha</h2></a>
+	</div>
 		<section class="centrar-contenido">
 		<div class="tablero">
 			
@@ -39,8 +44,13 @@
 				  
 				$sql->execute();
 
+
+
 		      	//preparem i executem la consulta
-		      	$query = $pdo->prepare("select Nombre,Clase,Raza,Imagen from Personajes");
+		      	$query = $pdo->prepare('select Personajes.PersonajeID, Personajes.Nombre,Personajes.Clase,Personajes.Raza from Usuarios_Personajes
+				  inner join Personajes on Usuarios_Personajes.PersonajeID=Personajes.PersonajeID
+				  inner join Usuarios on Usuarios_Personajes.UsuarioID =Usuarios.UsuarioID
+				  where Usuarios.NombreUsuario="'.$_SESSION["Usuario"].'";');
 		      	$query->execute();      
 
 		        //comprovo errors:
@@ -77,7 +87,7 @@
 		      				</div>
 		      				<div class='posicionar-Botones'>
 		      					<button class='borrar'>Borrar</button>
-		      					<button class='visualizar'>Ver ficha</button>
+		      					<button class='visualizar'><a href='Ficha.php'>Ver ficha</a></button>
 		      				</div>
 		      			</div>";
 		      	}

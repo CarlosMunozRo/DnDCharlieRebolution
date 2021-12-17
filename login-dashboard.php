@@ -11,11 +11,14 @@
 </head>
 <body class="login-dashboard">
     <?php include "Templates/header.php"?>
+    <div class="Contenedor-hilo_ariadna">
+        <a href="login-dashboard.php"><h2 class="hilo_ariadna">Dashboard</h2></a>
+    </div>
     <section id="" class="centrar-contenido"> 
         <nav class="centrar-contenido flex-column flex-space-around">
-        <a href="/crear-ficha.php"><button class="BTN_NoA_ST1_Grande">Crear Ficha</button></a>
-        <a href="/listar-ficha.php"><button class="BTN_NoA_ST1_Grande">Listar Fichas</button></a>
-        <a href="/probar-ficha.php"><button class="BTN_NoA_ST1_Grande">Probar Ficha</button></a>
+        <a href="/crear-ficha.php" accesskey="c"><button class="BTN_NoA_ST1_Grande">Crear Ficha</button></a>
+        <a href="/listar-ficha.php" accesskey="l"><button class="BTN_NoA_ST1_Grande">Listar Fichas</button></a>
+        <a href="/probar-ficha.php" accesskey="p"><button class="BTN_NoA_ST1_Grande">Probar Ficha</button></a>
         </nav>
     </section>
     <?php include "Templates/footer.php"?>

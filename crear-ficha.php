@@ -12,7 +12,11 @@
 </head>
 <body class="Crear-Ficha">
     <?php include "Templates/header.php"?>
-
+    <div class="Contenedor-hilo_ariadna">
+        <a href="login-dashboard.php"><h2 class="hilo_ariadna">Dashboard</h2></a>
+        <h2 class="hilo_ariadna">/</h2>
+        <a href="login-dashboard.php"><h2 class="hilo_ariadna">Crear Ficha</h2></a>
+    </div>
     <?php
     
         try {
@@ -134,10 +138,31 @@
             <?php
         }
 
+
+        $query = $pdo->prepare("SELECT * FROM Clases_Armas_Armaduras_Objetos;");
+        $query->execute();
+
+        $row = $query->fetchAll();
+
+        $Equipamientos = [];
+        if($row){
+
+            foreach($row as $equipo){
+                array_push($Equipamientos,array("Clase"=>$equipo["NombreClase"],"Arma"=>$equipo["NombreArma"],"Armadura"=>$equipo["NombreArmadura"],"Objeto"=>$equipo["NombreObjeto"]));
+            }
+            
+            ?>
+                <script>
+                    var equipamientos =<?php echo json_encode($Equipamientos) ?>
+                </script>
+            <?php
+        }
+
+
     ?>
 
     <div class="Crear_Form">
-        <form id="autoForm"></form>
+        <form id="autoForm" action="Ficha.php" method="GET"></form>
     </div>
 
 

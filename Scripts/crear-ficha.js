@@ -17,7 +17,7 @@ var formNum=0;
 function create_sheet(){
     $("#autoForm").append("<div id='form1' class='form_input '></div>")
     $("#form1").append("<label for='sh_name'>Nom: </label>")
-    $("#form1").append("<input id='sh_name'type='text'></input>")
+    $("#form1").append("<input id='sh_name'type='text' name='sh_name'></input>")
     $("#form1").append("<div id='forButton'></div>")
     $("#forButton").append("<a class='BTN_A_ST2_Pequeño icono-animation-delante' onclick='crearFormRazas()'><i class='fas fa-arrow-right'></i></a>")
 }
@@ -244,7 +244,7 @@ function skill_dropdownmenu(id){
 
 }
 function generate_menu(id){
-    var menu = $("<select id='"+id+"' class='points'></select>")
+    var menu = $("<select id='"+id+"' name='"+id.substring(2)+"' class='points'></select>")
     $(menu).append("<option value='0'>8</option>")
     $(menu).append("<option value='1'>9</option>")
     $(menu).append("<option value='2'>10</option>")
@@ -438,15 +438,13 @@ function crearFormIdiomas(){
 
     $('#form6').append("<a class='BTN_A_ST1_Pequeño icono-animation-atras' onclick='removeIdiomas()'><i class='fas fa-undo-alt'></i></a>");
 
-    /*$('#form6').append("<a class='BTN_A_ST2_Pequeño icono-animation-delante' onclick='skill_points()'><i class='fas fa-arrow-right'></i></a>");*/
+    $('#form6').append("<a class='BTN_A_ST2_Pequeño icono-animation-delante' onclick='crearFormEquipamiento()'><i class='fas fa-arrow-right'></i></a>");
 
     $('#form6 input[type="checkbox"]').change(function(e) {
 
         if($('#form6 input[type="checkbox"]:checked').length>3){
             $(e.target).prop( "checked", false );
         }
-
-
         
     });
 
@@ -454,10 +452,6 @@ function crearFormIdiomas(){
 }
 
 function crearFormTrasfondo(){
-
-    if($('#puntosres').text()!="0"){
-        return;
-    }
 
     $('#form4 select').attr('disabled','true');
 
@@ -494,4 +488,47 @@ function removeIdiomas(){
     $('#form5 a').toggleClass("hidden");
     $('#form6').remove();
 
+}
+
+function crearFormEquipamiento(){
+
+    if($('#form6 input[type="checkbox"]:checked').length!=3){
+        return;
+    }
+
+    var curEquipo;
+
+    equipamientos.forEach(equipo=>{
+        if(equipo["Clase"]==$('select[name="clase"]').val()) {
+            curEquipo=equipo;
+            return;
+        }
+    });
+
+    $('#form6 input[type="checkbox"]').attr('disabled','true');
+
+    $('#form6 a').toggleClass('hidden');
+
+    $('form#autoForm').append($('<div id="form7"></div>').addClass("form_input").addClass("formEquipamiento"));
+
+
+    $('#form7').append($('<label id="LB_arma">Arma: </label>'));
+    $('<input type="text" name="arma" disabled/>').val(curEquipo["Arma"]).insertAfter('label#LB_arma');
+
+    $('#form7').append($('<label id="LB_armadura">Armadura: </label>'));
+    $('<input type="text" name="armadura" disabled/>').val(curEquipo["Armadura"]).insertAfter('label#LB_armadura');
+
+    $('#form7').append($('<label id="LB_objeto">Objecto: </label>'));
+    $('<input type="text" name="objeto" disabled/>').val(curEquipo["Objeto"]).insertAfter('label#LB_objeto');
+
+
+    $('#form7').append("<a onclick='submitForm()' type='submit' class='BTN_A_ST1_Pequeño icono-animation-delante'><i class='fas fa-arrow-right'></i></a>");
+
+
+} 
+
+function submitForm(){
+    $('select').removeAttr("disabled");
+    $('input').removeAttr("disabled");
+    $(" #autoForm ").submit();
 }

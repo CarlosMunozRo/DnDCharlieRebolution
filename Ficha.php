@@ -295,16 +295,16 @@
                         </div>
                         <div class="wraper-pts-totales wraper-default" >
                             <div>
-                                <p>Puntos de golpe temporales</p>
+                                <p class="text-center">Puntos de golpe temporales</p>
                             </div>
                         </div>
                         <div class="flex">
                             <div class="wraper-default">
                                 <div class="flex">
                                     <p>total</p>
-                                    <p>1d8</p>
+                                    <p class="bold">1d8</p>
                                 </div>
-                                <p class="text-center">d8</p>
+                                <p class="text-center bold">d8</p>
                                 <p class="text-center">Dado de golpe</p>
                             </div>
                             <div class="wraper-default">
@@ -334,7 +334,7 @@
                         <p>Ataques y Conjuros</p>
                     </div>
                 </div>
-                <div>
+                <div class="Container-rasgos">
                 <div class="wraper-default">
                     <p>Rasgos De Personalidad</p>
                 </div>

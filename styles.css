@@ -10,6 +10,10 @@ body,p{
     margin: 0px;
 }
 
+.bold{
+    font-weight: bold;
+}
+
 :root {
 
     /* Colores */
@@ -949,25 +953,9 @@ a i{
     justify-content: space-between;
 }
 
-/*
 
-.Contenedor-salvacion>div:nth-child(1){
-    height: 10%;
-}
 
-.Contenedor-salvacion>div:nth-child(2){
-    height: 10%;
-}
 
-.Contenedor-salvacion>div:nth-child(3){
-    height: 20%;
-}
-
-.Contenedor-salvacion>div:nth-child(4){
-    height: 60%;
-}
-
-*/
 
 .habilidades{
     padding: 10px 0px;
@@ -1008,4 +996,24 @@ a i{
     width: 70%;
     position: relative;
     padding-bottom: 30px;
+}
+
+.Container-rasgos>div:nth-child(1){
+    height: 10%;
+}
+
+.Container-rasgos>div:nth-child(2){
+    height: 10%;
+}
+
+.Container-rasgos>div:nth-child(3){
+    height: 10%;
+}
+
+.Container-rasgos>div:nth-child(4){
+    height: 10%;
+}
+
+.Container-rasgos>div:nth-child(5){
+    height: 50%;
 }

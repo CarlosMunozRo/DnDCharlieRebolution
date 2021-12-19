@@ -16,8 +16,8 @@ var formNum=0;
 
 function create_sheet(){
     $("#autoForm").append("<div id='form1' class='form_input '></div>")
-    $("#form1").append("<label for='sh_name'>Nom: </label>")
-    $("#form1").append("<input id='sh_name'type='text' name='sh_name'></input>")
+    $("#form1").append("<label for='nombre'>Nom: </label>")
+    $("#form1").append("<input id='nombre'type='text' name='nombre'></input>")
     $("#form1").append("<div id='forButton'></div>")
     $("#forButton").append("<a class='BTN_A_ST2_Pequeño icono-animation-delante' onclick='crearFormRazas()'><i class='fas fa-arrow-right'></i></a>")
 }

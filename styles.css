@@ -258,7 +258,7 @@ p, .texto_normal, a{
 }
 .edit{
     background:black;
-    height: 22vh;
+    height: 150px;
     width: 100%;
     z-index: 9999;
     position:absolute;
@@ -637,7 +637,7 @@ p, .texto_normal, a{
     background-image: url("Media/Imagenes/d&d_background-login-dashboard.jpg");
     background-size: cover;
 }
-.login-dashboard{
+.login-dashboard,.combate{
     background-image: url("Media/Imagenes/d&d_background-login-dashboard.jpg");
     background-size: cover;
 }
@@ -923,6 +923,12 @@ a i{
 .text-center{
     text-align: center;
 }
+.text-left{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}
 .IMG_ficha-imagen{
     width: 200px;
     height: auto;
@@ -995,6 +1001,12 @@ a i{
     
 }
 
+.sec_ficha .laFoto{
+    height: auto;
+    right:unset;
+    
+}
+
 .wraper-pts-totales{
     padding-top: 100px;
 }
@@ -1021,10 +1033,10 @@ a i{
 
 
 
+/*
 .habilidades{
     padding: 10px 0px;
 }
-
 
 .habilidades>div:nth-child(1){
     width: 18%;
@@ -1047,7 +1059,7 @@ a i{
 .habilidades>div:nth-child(2){
     width: 80%;
 }
-
+*/
 .Container-equipo>div:nth-child(1){
     width: 38%;
 }
@@ -1080,4 +1092,50 @@ a i{
 
 .Container-rasgos>div:nth-child(5){
     height: 50%;
+}
+
+.combate .contenedor{
+    padding: 70px 80px;
+}
+
+.combate-contenedor{
+    justify-content: center;
+    gap:40px;
+    padding-top:20px
+}
+
+.sec_ficha{
+    width: 80%;
+    margin: auto;
+    background: var(--rojo);
+}
+.justify-center{
+    justify-content: center;
+}
+
+.habilidades>div >span:first-of-type{
+
+}
+
+.habilidades>div >span:last-of-type{
+    color:rgb(107, 107, 107)
+}
+
+.sec_ficha>div:last-child>div{
+    width: 50%;
+}
+
+.sec_ficha>div:last-child>div.flex>div{
+    flex-grow: 1;
+}
+
+.sec_ficha>div:last-child>div:last-child>div{
+    width: fit-content;
+    margin: 10px auto;
+    padding: 20px;
+}
+
+.puntos_habilidad>div{
+    width: 50%;
+    margin: 10px auto;
 }

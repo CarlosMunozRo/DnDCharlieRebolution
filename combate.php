@@ -8,7 +8,7 @@
     <script src="./Scripts/jquery.min.js" ></script>
     <script src="Scripts/login-dashboard.js"></script>
 </head>
-<body>
+<body class="combate">
     <?php include "Templates/header.php"?>
     <section>
         <?php
@@ -24,7 +24,7 @@
             exit;
             }
         
-            $query = $pdo->prepare('select Personajes.PersonajeID, Personajes.Nombre,Personajes.Clase,Personajes.Raza from Usuarios_Personajes
+            $query = $pdo->prepare('select Personajes.* from Usuarios_Personajes
             inner join Personajes on Usuarios_Personajes.PersonajeID=Personajes.PersonajeID
             inner join Usuarios on Usuarios_Personajes.UsuarioID =Usuarios.UsuarioID
             where Usuarios.NombreUsuario="'.$_SESSION["Usuario"].'" and Personajes.PersonajeID='.$_GET["IDPersonaje"].';');
@@ -33,12 +33,11 @@
             $row = $query->fetchAll();
 
             foreach($row as $ficha){
-                print_r($ficha);
 
                 ?>
                 
                     <div>
-                        <div class="flex combate">
+                        <div class="flex combate-contenedor">
                             <?php
                                 echo"<div class='contenedor'>
                                 <div class='carta'>
@@ -54,9 +53,7 @@
                                         <p>".$ficha["Raza"]."</p>
                                     </div>
                                 </div>
-                                <div class='posicionar-Botones'>
-                                    <button class='visualizar'><a href='combate.php?IDPersonaje=".$ficha["PersonajeID"]."'>Seleccionar</a></button>
-                                </div>
+                                
                             </div>";
                             ?>
                         
@@ -74,14 +71,14 @@
                                         <p>Tripulante</p>
                                     </div>
                                 </div>
-                                <div class='posicionar-Botones'>
-                                    <button class='visualizar'><a href='combate.php?IDPersonaje=".$ficha["PersonajeID"]."'>Seleccionar</a></button>
-                                </div>
+                                
                             </div>
                         </div>
 
-                        <div class="">
+                        <div class="combate-container-botones">
+                            <div>
 
+                            </div>
                         </div>
 
                     </div>

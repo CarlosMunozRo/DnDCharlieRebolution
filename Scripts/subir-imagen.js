@@ -20,7 +20,7 @@ function click(){
 }
 function editMenu(){
     $(".img").mouseenter(function(e){
-        $(e.target).parent().append("<div class='edit'></div>")
+        $('.laFoto.img').append("<div class='edit'></div>")
         $(".edit").append("<p style='color:white;'>Editar</p>")
     });
 

@@ -1139,3 +1139,25 @@ a i{
     width: 50%;
     margin: 10px auto;
 }
+
+#3d-bgk{
+    position: fixed;
+    top:0;
+    left: 0;
+}
+
+.new_number{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 100px;
+    color: white;
+    transform: translate(-50%, -50%);
+}
+
+canvas{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}

@@ -188,7 +188,7 @@
         <h2 class="hilo_ariadna">/</h2>
         <a href="listar-ficha.php"><h2 class="hilo_ariadna">Listar Ficha</h2></a>
         <h2 class="hilo_ariadna">/</h2>
-        <a ><h2 class="hilo_ariadna">Ficha</h2></a>
+        <a ></a><h2 class="hilo_ariadna">Ficha</h2></a>
     </div>
 
 

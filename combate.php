@@ -7,6 +7,8 @@
 	<link rel="stylesheet" href="styles.css">
     <script src="./Scripts/jquery.min.js" ></script>
     <script src="Scripts/login-dashboard.js"></script>
+    <script type="module" src="Scripts/3d.js"></script>
+
 </head>
 <body class="combate">
     <?php include "Templates/header.php"?>
@@ -23,10 +25,12 @@
             echo "Failed to get DB handle: " . $e->getMessage() . "\n";
             exit;
             }
+
         
-            $query = $pdo->prepare('select Personajes.* from Usuarios_Personajes
+            $query = $pdo->prepare('select Personajes.*, Clases.DG from Usuarios_Personajes
             inner join Personajes on Usuarios_Personajes.PersonajeID=Personajes.PersonajeID
             inner join Usuarios on Usuarios_Personajes.UsuarioID =Usuarios.UsuarioID
+            inner join Clases on Personajes.Clase=Clases.NombreClase 
             where Usuarios.NombreUsuario="'.$_SESSION["Usuario"].'" and Personajes.PersonajeID='.$_GET["IDPersonaje"].';');
             $query->execute();
 
@@ -76,9 +80,12 @@
                         </div>
 
                         <div class="combate-container-botones">
-                            <div>
-
-                            </div>
+                            <button onclick="tirarDado(<?php echo $ficha['DG'] ?>,<?php echo $ficha['Fuerza'] ?>,'Fuerza')" class="BTN_NoA_ST1_Pequeño">Fuerza</button>
+                            <button onclick="tirarDado(<?php echo $ficha['DG'] ?>,<?php echo $ficha['Destreza'] ?>,'Destreza')" class="BTN_NoA_ST1_Pequeño">Destreza</button>
+                            <button onclick="tirarDado(<?php echo $ficha['DG'] ?>,<?php echo $ficha['Constitucion'] ?>,'Constitucion')" class="BTN_NoA_ST1_Pequeño">Constitucion</button>
+                            <button onclick="tirarDado(<?php echo $ficha['DG'] ?>,<?php echo $ficha['inteligencia'] ?>,'inteligencia')" class="BTN_NoA_ST1_Pequeño">Inteligencia</button>
+                            <button onclick="tirarDado(<?php echo $ficha['DG'] ?>,<?php echo $ficha['Sabiduria'] ?>,'Sabiduria')" class="BTN_NoA_ST1_Pequeño">Sabiduria</button>
+                            <button onclick="tirarDado(<?php echo $ficha['DG'] ?>,<?php echo $ficha['Carisma'] ?>,'Carisma')" class="BTN_NoA_ST1_Pequeño">Carisma</button>
                         </div>
 
                     </div>
@@ -90,6 +97,10 @@
 
         ?>
     </section>
+
+    
+
+    
 
 </body>
 </html>

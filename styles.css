@@ -1161,3 +1161,8 @@ canvas{
     top: 50%;
     left: 50%;
 }
+
+.combate-container-botones{
+    text-align: center;
+    margin-top: 20px;
+}

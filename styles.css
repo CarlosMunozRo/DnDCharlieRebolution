@@ -221,6 +221,56 @@ p, .texto_normal, a{
     
     grid-area: header;
 }
+.addImagen{
+    width: 70vw;
+    height: 60vh;
+    position: fixed;
+    top:50%;
+    left: 50%;
+    z-index: 9999;
+    background: black;
+    border-radius: 20px;
+    transform: translate(-50%,-50%);
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    
+    
+}
+.imagen_inpt{
+    height: 10vh;
+    width: 60vw;
+}
+.esquinacierre{
+    color: var(--negro);
+    background: var(--rojo);
+    width: 2vw;
+    position: absolute;
+    left: 95%;
+    top: 5%;
+    border-radius: 5px;
+    cursor:pointer;
+}
+.img{
+    cursor:pointer;
+    position: relative;
+    height: 20vh
+}
+.edit{
+    background:black;
+    height: 22vh;
+    width: 100%;
+    z-index: 9999;
+    position:absolute;
+    top:0;
+    left:0;
+    opacity: 0.7;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+
+
 /* Botones */
 
     /* Estandar */
@@ -847,14 +897,14 @@ a i{
     width: 80vw;
 }
 .Posicionar-Izquierda{
-    width: 40%;
+    width: 30%;
     margin-left: 2vw;
     justify-content: center;
 }
 .Posicionar-Derecha{
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 50%;
     margin-right: 2vw;
     justify-content: center;
 }
@@ -895,7 +945,7 @@ a i{
     border-radius: 25px;  
 }
 
-.ficha < section{
+.ficha < section {
     width: 100vw;
 }
 .Info:nth-child(2n){
@@ -932,20 +982,30 @@ a i{
     position: absolute;
     width: 150px;
     height: auto;
-    animation-name: moverse;
-    animation-duration: 5s;
+    animation: moverse 20s, volar 0.9s ease-in-out 0s infinite;
+    /*animation-duration: 20s;*/
     animation-iteration-count: infinite;
     animation-timing-function: ease-out;
     left: 0px;
 
+}
+.laFoto{
+    height: 100px;
+    right:3vw;
+    
 }
 
 .wraper-pts-totales{
     padding-top: 100px;
 }
 @keyframes moverse{
-    from {left: -5%;} 
+    from {left: -10%;} 
     to {left: 103%;}
+}
+@keyframes volar{
+    0%{top:0%;}
+    50% {top:5%}
+    100% {top:0%}
 }
 
 .wraper-default{

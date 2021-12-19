@@ -7,6 +7,9 @@
 	<link rel="stylesheet" href="styles.css">
     <script src="./Scripts/jquery.min.js" ></script>
     <script src="Scripts/login-dashboard.js"></script>
+	<script src="Scripts/subir-imagen.js"></script>
+
+
 </head>
 <body class="listar-ficha">
 	<?php include "Templates/header.php"?>
@@ -17,6 +20,7 @@
 	</div>
 		<section class="centrar-contenido">
 		<div class="tablero">
+			
 			<?php
 				//connexió dins block try-catch:
 		      	//  prova d'executar el contingut del try
@@ -32,6 +36,13 @@
 		        	exit;
 		      	}
 
+				$tmpFile = $_FILES['imagen1']['tmp_name'];
+				$newFile = './Media/Uploads/'.$_FILES['imagen1']['name'];
+				$result = move_uploaded_file($tmpFile, $newFile);
+				$nuevaimagen = $_FILES['imagen1']['name'];
+  				$sql = $pdo->prepare("UPDATE Personajes SET Imagen = '".$_FILES['imagen1']['name']."' WHERE Nombre='".$_POST['personaje']."';");
+				  
+				$sql->execute();
 
 
 
@@ -50,13 +61,21 @@
 		      	}  
 		      	//anem agafant les fileres d'amb una amb una
 		      	$row = $query->fetchAll();
+				  
 
 		      	foreach ($row as $ficha) {
-		      		echo"<div class='contenedor'>
+					echo"<div class='contenedor'>
 		      				<div class='carta'>
-		      					<div class='img'>
-		      						<img src='/Media/Imagenes/".$ficha["Raza"].".jpeg'/>
-		      					</div>
+		      					<div class='img'>";
+					if (!empty($ficha["Imagen"])){ 
+						echo "<img src='./Media/Uploads/".$ficha["Imagen"]."'/>";
+					
+					}else {
+						echo "<img src='/Media/Imagenes/".$ficha["Raza"].".jpeg'/>";
+
+					};
+
+					echo "	  </div>
 		      					<div class='info'>
 		      						<h3>Nombre:</h2>
 		      						<p>".$ficha["Nombre"]."</p>
@@ -68,7 +87,7 @@
 		      				</div>
 		      				<div class='posicionar-Botones'>
 		      					<button class='borrar'>Borrar</button>
-		      					<button class='visualizar'><a href='Ficha.php'>Ver ficha</a></button>
+		      					<button class='visualizar'><a href='Ficha.php?nombre=".$ficha['Nombre']."'>Ver ficha</a></button>
 		      				</div>
 		      			</div>";
 		      	}
@@ -83,5 +102,7 @@
 	</script>
 
 <?php include "Templates/footer.php"?>
+
+<?php include "Templates/descargarPDF.php"?>
 </body>
 </html>

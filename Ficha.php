@@ -76,7 +76,8 @@
           $query->bindParam(':carisma', $carisma);
           $query->execute();
     }
-
+    $select = $pdo->prepare("select * from Personajes where nombre ='".$_GET['nombre']."';");
+    $select->execute();
 
 ?>
 
@@ -88,6 +89,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="styles.css">
 	<title>Ficha</title>
+    <script src="./Scripts/jquery.min.js"></script>
+	<script src="Scripts/subir-imagen.js"></script>
 </head>
 <body class="ficha">
 	<div class="Contenedor-hilo_ariadna">
@@ -97,6 +100,7 @@
         <h2 class="hilo_ariadna">/</h2>
         <a href="Ficha.php"><h2 class="hilo_ariadna">Ficha</h2></a>
     </div>
+    <?php print_r($nombre)?>
     <section class="centrar-contenido">
         <div class="Contenedor" style="border: 4px solid red;">
         	<div class="header">
@@ -108,9 +112,21 @@
         				<h3>Bob el Ñapetas</h1>
         				<p>Nombre del Personaje</p>
         			</div>
-        		</div>
+        		
+                </div>
+                <div class="laFoto img">
+                        <?php
+                        if (!empty($ficha["Imagen"])){ 
+						    echo "<img  src='./Media/Uploads/Semielfo.jpeg'/>";
+						}else {
+					    	echo "<img  src='/Media/Imagenes/Semielfo.jpeg'/>";
+
+					        };?>
+                        </div>	
+                
         		<div class="Posicionar-Derecha">
-        			<div class="Info">
+                <div class="Info">
+                        
                         <div class="Datos">
                             <p>Picaro Lvl 1</p>
                             <p>Circense</p>

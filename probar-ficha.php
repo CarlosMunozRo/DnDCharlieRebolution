@@ -64,9 +64,15 @@
 
 		      		echo"<div class='contenedor'>
 		      				<div class='carta'>
-		      					<div class='img'>
-		      						<img src='/Media/Imagenes/".$imagen."'/>
-		      					</div>
+		      					<div class='img'>";
+								if (!empty($ficha["Imagen"])){ 
+									echo "<img src='./Media/Uploads/".$ficha["Imagen"]."'/>";
+								
+								}else {
+									echo "<img src='/Media/Imagenes/".$ficha["Raza"].".jpeg'/>";
+			
+								};
+		      					echo "</div>
 		      					<div class='info'>
 		      						<h3>Nombre:</h2>
 		      						<p>".$ficha["Nombre"]."</p>

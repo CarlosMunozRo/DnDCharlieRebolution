@@ -91,6 +91,7 @@
             $query->execute();
 
 
+
             $select = $pdo->prepare("select * from Personajes where nombre ='".$nombre."';");
             $select->execute();
         
@@ -125,7 +126,7 @@
     
 
     
-    $select = $pdo->prepare("select Personajes.* ,Clases.DG from Personajes inner join Clases on Personajes.Clase=Clases.NombreClase where nombre ='".$_GET["nombre"]."';");
+    $select = $pdo->prepare("select Personajes.* ,Clases.DG  from Personajes inner join Clases on Personajes.Clase=Clases.NombreClase where nombre ='".$_GET["nombre"]."';");
     $select->execute();
 
     $row = $select->fetchAll();

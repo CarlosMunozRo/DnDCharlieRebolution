@@ -162,7 +162,7 @@
     ?>
 
     <div class="Crear_Form">
-        <form id="autoForm" action="Ficha.php" method="GET"></form>
+        <form id="autoForm" action="Ficha.php" method="GET" disabled></form>
     </div>
 
 

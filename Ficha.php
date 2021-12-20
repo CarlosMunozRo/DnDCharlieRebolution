@@ -13,7 +13,14 @@
 
     session_start();
 
+    
+
     if(!strpos($_SERVER['HTTP_REFERER'], "/listar-ficha.php") && !strpos($_SERVER['HTTP_REFERER'], "/Ficha.php") && $_SERVER['HTTP_REFERER']){
+        
+        if($_GET["idiomas"]==""){
+            header($_SERVER['HTTP_REFERER']);
+            header("Location: crear-ficha.php");
+        }
         
 
         $nombre=$_GET["sh_name"];
@@ -21,6 +28,8 @@
         $clase=$_GET["clase"];
         $trasfondo=$_GET["trasfondo"];
         $idiomas=$_GET["idiomas"];
+
+        
 
         $fuerza= intval($_GET["fuerza"]);
 

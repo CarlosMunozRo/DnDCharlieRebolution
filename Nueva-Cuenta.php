@@ -9,9 +9,10 @@
   <script src="./Scripts/jquery.min.js" ></script>
   <script src="./Scripts/home.js"></script>
   <script src="Scripts/login-dashboard.js"></script>
+  <script  src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
 </head>
 <body class="Nueva-Cuenta">
-	<?php include "Templates/header.php"?>
+	<?php //include "Templates/header.php"?>
 	<div class="DIV_Nueva-Cuenta centrar-contenido">
 		<form action="" method="POST">
 			<div class="DIV_Nueva-Cuenta-Formulario">
@@ -46,6 +47,7 @@
 			</div>
 		</form>
     <form action="pdf.php">
+      <input type="submit" name="" value="Convertir pdf">
     </form>
 	</div>
    <?php

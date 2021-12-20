@@ -13,7 +13,7 @@
 
     session_start();
 
-    $select = $pdo->prepare("select Personajes.* ,Clases.DG from Personajes inner join Clases on Personajes.Clase=Clases.NombreClase where nombre ='".$_GET["nombre"]."';");
+    $select = $pdo->prepare("select Personajes.* ,Clases.DG from Personajes inner join Clases on Personajes.Clase=Clases.NombreClase where nombre ='".$_SESSION["NombrePersonaje"]."';");
     $select->execute();
 
     $row = $select->fetchAll();
@@ -23,9 +23,9 @@
     foreach($row as $ficha){
 
 
+            $nombre=$_SESSION["NombrePersonaje"];
 
             
-            $nombre=$ficha["Nombre"];
             $raza=$ficha["Raza"];
             $clase=$ficha["Clase"];
             $trasfondo=$ficha["Trasfondo"];
@@ -71,21 +71,9 @@
         <div class="header_ficha flex space-between">
             <div>
 
-                <?php if($_GET['exportPDF']!=1):?>
-                    <div class="laFoto img">
-                        <?php
-                            if (!empty($ficha["Imagen"])){ 
-                                echo "<img src='./Media/Uploads/".$ficha["Imagen"]."'/>";
-                            
-                            }else {
-                                echo "<img src='/Media/Imagenes/".$ficha["Raza"].".jpeg'/>";
-                            };
-                        ?>
-                    </div>
-                <?php endif; ?>
 
                 <div class="text-center titulo3">
-                    <?php echo $nombre ?>
+                    Nomre: <?php echo $nombre ?>
                 </div>
             </div>
             <div class="text-left titulo3">
@@ -188,6 +176,7 @@
                     </div>
                 </div>
             </div>
+
 
         </div>
 

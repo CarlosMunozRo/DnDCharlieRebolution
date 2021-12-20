@@ -341,7 +341,9 @@
 
         </div>
 
-                        </div>
+            
+        <a href="prueba.php?NombrePersonaje=<?php echo $nombre ?>">Convertir a PDF</a>
+    </div>
 
 
 

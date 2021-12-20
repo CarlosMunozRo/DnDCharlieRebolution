@@ -12,6 +12,14 @@
 </head>
 <body class="combate">
     <?php include "Templates/header.php"?>
+
+
+	<div class="Contenedor-hilo_ariadna">
+        <a href="login-dashboard.php"><h2 class="hilo_ariadna">Dashboard</h2></a>
+        <h2 class="hilo_ariadna">/</h2>
+        <a href="probar-ficha.php"><h2 class="hilo_ariadna">Probar Ficha</h2></a>
+    </div>
+
     <section>
         <?php
         

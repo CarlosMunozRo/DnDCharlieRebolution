@@ -25,10 +25,10 @@
         
             try {
                 $hostname = "dndcharlierevolution.ml";
-            $dbname = "DungeonsAndDragons";
-            $username = "master";
-            $pw = "Master1234!";
-            $pdo = new PDO ("mysql:host=$hostname;dbname=$dbname","$username","$pw");
+                $dbname = "DungeonsAndDragons";
+                $username = "master";
+                $pw = "Master1234!";
+                $pdo = new PDO ("mysql:host=$hostname;dbname=$dbname","$username","$pw");
             } catch (PDOException $e) {
             echo "Failed to get DB handle: " . $e->getMessage() . "\n";
             exit;
@@ -53,9 +53,15 @@
                             <?php
                                 echo"<div class='contenedor'>
                                 <div class='carta'>
-                                    <div class='img'>
-                                        <img src='/Media/Imagenes/".$ficha["Raza"].".jpeg'/>
-                                    </div>
+                                    <div class='img'>";
+                                    if (!empty($ficha["Imagen"])){ 
+                                        echo "<img src='./Media/Uploads/".$ficha["Imagen"]."'/>";
+                                    
+                                    }else {
+                                        echo "<img src='/Media/Imagenes/".$ficha["Raza"].".jpeg'/>";
+                
+                                    };
+                                    echo "</div>
                                     <div class='info'>
                                         <h3>Nombre:</h2>
                                         <p>".$ficha["Nombre"]."</p>

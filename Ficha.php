@@ -23,7 +23,7 @@
         }
         
 
-        $nombre=$_GET["sh_name"];
+        $nombre=$_GET["nombre"];
         $raza=$_GET["raza"];
         $clase=$_GET["clase"];
         $trasfondo=$_GET["trasfondo"];

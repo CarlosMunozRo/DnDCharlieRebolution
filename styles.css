@@ -951,7 +951,7 @@ a i{
     border-radius: 25px;  
 }
 
-.ficha < section {
+.ficha > section {
     width: 100vw;
 }
 .Info:nth-child(2n){

@@ -180,7 +180,7 @@
 
 ?>
 
-<?php if($_GET['exportPDF']!=1): ?>
+
     <!DOCTYPE html>
     <html>
     <head>
@@ -188,6 +188,9 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1">
     	<link rel="stylesheet" href="styles.css">
     	<title>Ficha</title>
+        <script src="./Scripts/jquery.min.js" ></script>
+
+        <script src="/Scripts/subir-imagen.js"></script>
     </head>
 <body class="ficha">        
 	<div class="Contenedor-hilo_ariadna">
@@ -197,25 +200,9 @@
         <h2 class="hilo_ariadna">/</h2>
         <a ></a><h2 class="hilo_ariadna">Ficha</h2></a>
     </div>
-<?php endif; ?>
 
 
-<?php if($_GET['exportPDF']==1): 
-    // eliminamos las variables de css -- ;
-    $cadena = '<style>'.file_get_contents(dirname(__FILE__).'/styles.css').'</style>';
-    $patrón = '/--(.*)/i';
-    $sustitución = '';
-    $cadena2 = preg_replace($patrón, $sustitución, $cadena);
 
-    // empalmamos la 2n substitucion
-    $patrón2 = '/var\((.*)\)/i';
-    $sustitución2 = 'AAAA';
-    $cadena2 = preg_replace($patrón2, $sustitución2, $cadena2);
-
-    echo str_replace('var(', ';', $cadena2);
-    //echo '<style>'.file_get_contents(dirname(__FILE__).'/styles.css').'</style>'; ?>
-
-<?php endif; ?>
 
     <div class="sec_ficha">
         <div class="header_ficha flex space-between">
@@ -347,7 +334,6 @@
 
 
 
-<?php if($_GET['exportPDF']!=1): ?>
     </body>
-    </html>
-<?php endif; ?>
+</html>
+

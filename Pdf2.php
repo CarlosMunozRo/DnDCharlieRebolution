@@ -11,7 +11,6 @@
         exit;
     }
 
-    session_start();
 
     $select = $pdo->prepare("select Personajes.* ,Clases.DG from Personajes inner join Clases on Personajes.Clase=Clases.NombreClase where nombre ='".$_SESSION["NombrePersonaje"]."';");
     $select->execute();

@@ -191,6 +191,7 @@
         <script src="./Scripts/jquery.min.js" ></script>
 
         <script src="/Scripts/subir-imagen.js"></script>
+        <link rel="stylesheet" href="styles.css">
     </head>
 <body class="ficha">        
 	<div class="Contenedor-hilo_ariadna">
@@ -329,9 +330,9 @@
         </div>
 
             
-        <a href="prueba.php?NombrePersonaje=<?php echo $nombre ?>">Convertir a PDF</a>
     </div>
 
+    <a class="wraper-default" href="prueba.php?NombrePersonaje=<?php echo $nombre ?>">Convertir a PDF</a>
 
 
     </body>

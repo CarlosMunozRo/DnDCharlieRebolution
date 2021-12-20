@@ -36,7 +36,7 @@
 
 
 		      	//preparem i executem la consulta
-		      	$query = $pdo->prepare('select Personajes.PersonajeID, Personajes.Nombre,Personajes.Clase,Personajes.Raza from Usuarios_Personajes
+		      	$query = $pdo->prepare('select Personajes.PersonajeID, Personajes.Nombre,Personajes.Clase,Personajes.Raza,Personajes.Imagen from Usuarios_Personajes
 				  inner join Personajes on Usuarios_Personajes.PersonajeID=Personajes.PersonajeID
 				  inner join Usuarios on Usuarios_Personajes.UsuarioID =Usuarios.UsuarioID
 				  where Usuarios.NombreUsuario="'.$_SESSION["Usuario"].'";');
@@ -51,11 +51,21 @@
 		      	//anem agafant les fileres d'amb una amb una
 		      	$row = $query->fetchAll();
 
+				
+
 		      	foreach ($row as $ficha) {
+
+					$imagen;
+					if (!empty($ficha["Imagen"])){ 
+						$imagen=$ficha["Imagen"];					
+					}else {
+						$imagen=$ficha["Raza"].".jpeg";
+					};
+
 		      		echo"<div class='contenedor'>
 		      				<div class='carta'>
 		      					<div class='img'>
-		      						<img src='/Media/Imagenes/".$ficha["Raza"].".jpeg'/>
+		      						<img src='/Media/Imagenes/".$imagen."'/>
 		      					</div>
 		      					<div class='info'>
 		      						<h3>Nombre:</h2>

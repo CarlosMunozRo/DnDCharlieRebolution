@@ -8,7 +8,7 @@ ob_start();
 
 $_GET["NombrePersonaje"];
 
-include "./Pdf2.php";
+include ("./Pdf2.php");
 $html = ob_get_clean();
 $dompdf->loadHtml($html);
 $dompdf->render();

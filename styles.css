@@ -10,6 +10,14 @@ body,p{
     margin: 0px;
 }
 
+.bold{
+    font-weight: bold;
+}
+
+.f-grow{
+    flex-grow: 1;
+}
+
 :root {
 
     /* Colores */
@@ -213,6 +221,56 @@ p, .texto_normal, a{
     
     grid-area: header;
 }
+.addImagen{
+    width: 70vw;
+    height: 60vh;
+    position: fixed;
+    top:50%;
+    left: 50%;
+    z-index: 9999;
+    background: black;
+    border-radius: 20px;
+    transform: translate(-50%,-50%);
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    
+    
+}
+.imagen_inpt{
+    height: 10vh;
+    width: 60vw;
+}
+.esquinacierre{
+    color: var(--negro);
+    background: var(--rojo);
+    width: 2vw;
+    position: absolute;
+    left: 95%;
+    top: 5%;
+    border-radius: 5px;
+    cursor:pointer;
+}
+.img{
+    cursor:pointer;
+    position: relative;
+    height: 20vh
+}
+.edit{
+    background:black;
+    height: 22vh;
+    width: 100%;
+    z-index: 9999;
+    position:absolute;
+    top:0;
+    left:0;
+    opacity: 0.7;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+
+
 /* Botones */
 
     /* Estandar */
@@ -787,10 +845,6 @@ a i{
     justify-content: center;
     align-items: center;
 }
-.contenedor{
-    background-color: var(--rojo-oscuro);
-    border-radius: 25px;  
-}
 .posicionar-Botones{
     margin-left: 2vw;
     margin-right: 2vw;
@@ -821,6 +875,9 @@ a i{
     padding: 0px 20px;
     margin-top: 2vw;
 }
+.formEquipamiento{
+    grid-template-columns: 30% 70% ;
+}
 
 .Contenedor-hilo_ariadna{
     display: flex;
@@ -840,14 +897,14 @@ a i{
     width: 80vw;
 }
 .Posicionar-Izquierda{
-    width: 50vw;
+    width: 30%;
     margin-left: 2vw;
     justify-content: center;
 }
 .Posicionar-Derecha{
     display: flex;
     flex-direction: column;
-    width: 50vw;
+    width: 50%;
     margin-right: 2vw;
     justify-content: center;
 }
@@ -858,10 +915,17 @@ a i{
 .Datos{
     display: flex;
     justify-content: space-around;
+    width: 100%;
+}
+.Datos>p {
+    width: 40%;
+}
+.text-center{
+    text-align: center;
 }
 .IMG_ficha-imagen{
     width: 200px;
-    height: 100px;
+    height: auto;
 }
 .Nombre-Personaje{
     margin-top: -60px;
@@ -871,11 +935,17 @@ a i{
     margin-left: 30px;
     margin-top: -20px;
 }
+.contenedor{
+    background-color: var(--rojo-oscuro);
+    border-radius: 25px;  
+}
 .Contenedor{
     width: 80vw;
+    background-color: var(--rojo-oscuro);
+    border-radius: 25px;  
 }
 
-.ficha < section{
+.ficha < section {
     width: 100vw;
 }
 .Info:nth-child(2n){
@@ -886,38 +956,128 @@ a i{
 }
 
 .Decoracion{
-    border: 1px solid green;
-    border-radius: 30%;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 
 .redonda{
-    border: 2px solid red;
+    border: 2px solid rgb(255, 0, 0,.2);
     border-radius: 50%;
+    position: absolute;
+    bottom: -10%;
 }
 
 .Contenedor-habilidades{
     gap: 30px;
-    border: 2px solid yellow;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .dragon{
     position: absolute;
     width: 150px;
     height: auto;
-    animation-name: moverse;
-    animation-duration: 5s;
+    animation: moverse 20s, volar 0.9s ease-in-out 0s infinite;
+    /*animation-duration: 20s;*/
     animation-iteration-count: infinite;
     animation-timing-function: ease-out;
     left: 0px;
 
 }
+.laFoto{
+    height: 100px;
+    right:3vw;
+    
+}
+
+.wraper-pts-totales{
+    padding-top: 100px;
+}
 @keyframes moverse{
-    from {left: -5%;} 
+    from {left: -10%;} 
     to {left: 103%;}
+}
+@keyframes volar{
+    0%{top:0%;}
+    50% {top:5%}
+    100% {top:0%}
+}
+
+.wraper-default{
+    background-color: rgb(0,0,0,.2);
+    margin: 5px;
+}
+
+.space-between{
+    justify-content: space-between;
+}
+
+
+
+
+
+.habilidades{
+    padding: 10px 0px;
+}
+
+
+.habilidades>div:nth-child(1){
+    width: 18%;
+    position: relative;
+    text-align: right;
+    margin-right: 8%;
+    margin-left:2%;
+}
+
+.habilidades>div:nth-child(1):before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border:1px solid black;
+    border-radius: 50%;
+}
+.habilidades>div:nth-child(2){
+    width: 80%;
+}
+
+.Container-equipo>div:nth-child(1){
+    width: 38%;
+}
+
+.Container-equipo>div:nth-child(2){
+    width: 61%;
+}
+
+.Contenedor-habilidades .Decoracion{
+    width: 70%;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.Container-rasgos>div:nth-child(1){
+    height: 10%;
+}
+
+.Container-rasgos>div:nth-child(2){
+    height: 10%;
+}
+
+.Container-rasgos>div:nth-child(3){
+    height: 10%;
+}
+
+.Container-rasgos>div:nth-child(4){
+    height: 10%;
+}
+
+.Container-rasgos>div:nth-child(5){
+    height: 50%;
 }

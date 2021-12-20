@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="styles.css">
-	<title>Ficha</title>
-</head>
-<body class="ficha">
+<?php if($_GET['exportPDF']!=1): ?><!DOCTYPE html>
+    <html>
+    <head>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<link rel="stylesheet" href="styles.css">
+    	<title>Ficha</title>
+    </head>
+<body class="ficha">        
 	<div class="Contenedor-hilo_ariadna">
         <a href="login-dashboard.php"><h2 class="hilo_ariadna">Dashboard</h2></a>
         <h2 class="hilo_ariadna">/</h2>
@@ -14,15 +14,36 @@
         <h2 class="hilo_ariadna">/</h2>
         <a href="Ficha.php"><h2 class="hilo_ariadna">Ficha</h2></a>
     </div>
-    <section class="centrar-contenido">
-        <div class="Contenedor" style="border: 4px solid red;">
+<?php endif; ?>
+
+
+<?php if($_GET['exportPDF']==1): 
+    // eliminamos las variables de css -- ;
+    $cadena = '<style>'.file_get_contents(dirname(__FILE__).'/styles.css').'</style>';
+    $patrón = '/--(.*)/i';
+    $sustitución = '';
+    $cadena2 = preg_replace($patrón, $sustitución, $cadena);
+
+    // empalmamos la 2n substitucion
+    $patrón2 = '/var\((.*)\)/i';
+    $sustitución2 = 'AAAA';
+    $cadena2 = preg_replace($patrón2, $sustitución2, $cadena2);
+
+echo str_replace('var(', ';', $cadena2);
+    //echo '<style>'.file_get_contents(dirname(__FILE__).'/styles.css').'</style>'; ?>
+
+<?php endif; ?>
+
+    <div class="centrar-contenido">
+        <div class="Contenedor" style="width:725px;border: 4px solid red;">
+
         	<div class="header">
         		<div class="Posicionar-Izquierda">
         			<div class="Contenedor-IMG">
-        				<img class="IMG_ficha-imagen" src="./Media/Imagenes/DnDLogoHome.png">
+        				<img class="IMG_ficha-imagen" src="./Media/Imagenes/DnDLogoHome.png" <?php if($_GET['exportPDF']==1): ?>style="max-width: 100%; <?php endif; ?>">
         			</div>
         			<div class="Nombre-Personaje">
-        				<h3>Bob el Ñapetas</h1>
+        				<h1>Bob el Ñapetas</h1>
         				<p>Nombre del Personaje</p>
         			</div>
         		</div>
@@ -233,6 +254,9 @@
                 </div>
             </div>
         </div>
-    </section>
-</body>
-</html>
+    </div>
+
+<?php if($_GET['exportPDF']!=1): ?>
+    </body>
+    </html>
+<?php endif; ?>

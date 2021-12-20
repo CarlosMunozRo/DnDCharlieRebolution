@@ -1,5 +1,5 @@
-<?php
 
+<?php
     try {
         $hostname = "dndcharlierevolution.ml";
         $dbname = "DungeonsAndDragons";
@@ -13,118 +13,6 @@
 
     session_start();
 
-    
-
-    if(!strpos($_SERVER['HTTP_REFERER'], "/listar-ficha.php") && !strpos($_SERVER['HTTP_REFERER'], "/Ficha.php") && $_SERVER['HTTP_REFERER']){
-        
-        if($_GET["idiomas"]==""){
-            header($_SERVER['HTTP_REFERER']);
-            header("Location: crear-ficha.php");
-        }
-        
-
-        $nombre=$_GET["nombre"];
-        $raza=$_GET["raza"];
-        $clase=$_GET["clase"];
-        $trasfondo=$_GET["trasfondo"];
-        $idiomas=$_GET["idiomas"];
-
-        
-
-        $fuerza= intval($_GET["fuerza"]);
-
-        $destreza=intval($_GET["destreza"]);
-
-        $constitucion= intval($_GET["consti"]);
-
-        $inteligencia=intval($_GET["intel"]);
-
-        $sabiduria=intval($_GET["sabi"]);
-
-        $carisma=intval($_GET["carism"]);
-
-
-        try {
-            $hostname = "dndcharlierevolution.ml";
-            $dbname = "DungeonsAndDragons";
-            $username = "master";
-            $pw = "Master1234!";
-            $pdo = new PDO ("mysql:host=$hostname;dbname=$dbname","$username","$pw");
-        } catch (PDOException $e) {
-            echo "Failed to get DB handle: " . $e->getMessage() . "\n";
-            exit;
-        }
-
-        $query = $pdo->prepare("select * from Personajes;");
-        $query->execute();     
-        
-        $e= $query->errorInfo();
-        if ($e[0]!='00000') {
-            echo "\nPDO::errorInfo():\n";
-            die("Error accedint a dades: " . $e[2]);
-        }  
-        
-        $row = $query->fetchAll();
-
-        $flag_existe=false;
-        foreach($row as $ficha){
-            if($ficha["Nombre"]==$nombre){
-                $flag_existe=true;
-            }
-        }
-
-        
-        if($flag_existe == false){
-
-            $query = $pdo->prepare("insert into Personajes(Nombre,Raza,Clase,Trasfondo,Fuerza,Destreza,Constitucion,inteligencia,Sabiduria,Carisma)
-            Values(:nombre,:raza,:clase,:trasfondo,:fuerza,:destreza,:constitucion,:inteligencia,:sabiduria,:carisma)");
-            $query->bindParam(':nombre', $nombre);
-            $query->bindParam(':raza', $raza);
-            $query->bindParam(':clase', $clase);
-            $query->bindParam(':trasfondo', $trasfondo);
-            $query->bindParam(':fuerza',$destreza );
-            $query->bindParam(':destreza', $destreza);
-            $query->bindParam(':constitucion', $constitucion);
-            $query->bindParam(':inteligencia', $inteligencia);
-            $query->bindParam(':sabiduria', $sabiduria);
-            $query->bindParam(':carisma', $carisma);
-            $query->execute();
-
-
-            $select = $pdo->prepare("select * from Personajes where nombre ='".$nombre."';");
-            $select->execute();
-        
-            $row = $select->fetchAll();
-        
-            foreach($row as $ficha){
-                print_r("hola");
-                if($ficha["Nombre"]==$nombre){
-                    $idiomas_insertar="";
-                    foreach($idiomas as $idioma){
-                        if($idioma==end($idiomas)){
-                            $idiomas_insertar.=$idioma;
-                            continue;
-                        }
-                        $idiomas_insertar.=$idioma.",";
-                    }
-        
-                    $query2 = $pdo->prepare('update Personajes set Idiomas ="'.$idiomas_insertar.'" where PersonajeID= '.$ficha["PersonajeID"].' ;');
-                    $query2->execute();
-        
-                    $query3 = $pdo->prepare('INSERT INTO Usuarios_Personajes VALUES ('.$_SESSION["UsuarioID"].','.$ficha["PersonajeID"].');');
-                    $query3->execute();
-        
-                    
-                }  
-            }
-
-        }
-
-    
-    }
-    
-
-    
     $select = $pdo->prepare("select Personajes.* ,Clases.DG from Personajes inner join Clases on Personajes.Clase=Clases.NombreClase where nombre ='".$_GET["nombre"]."';");
     $select->execute();
 
@@ -136,7 +24,7 @@
 
 
 
-
+            
             $nombre=$ficha["Nombre"];
             $raza=$ficha["Raza"];
             $clase=$ficha["Clase"];
@@ -176,46 +64,8 @@
     }
 
 
-
-
 ?>
 
-<?php if($_GET['exportPDF']!=1): ?>
-    <!DOCTYPE html>
-    <html>
-    <head>
-    	<meta charset="utf-8">
-    	<meta name="viewport" content="width=device-width, initial-scale=1">
-    	<link rel="stylesheet" href="styles.css">
-    	<title>Ficha</title>
-    </head>
-<body class="ficha">        
-	<div class="Contenedor-hilo_ariadna">
-        <a href="login-dashboard.php"><h2 class="hilo_ariadna">Dashboard</h2></a>
-        <h2 class="hilo_ariadna">/</h2>
-        <a href="listar-ficha.php"><h2 class="hilo_ariadna">Listar Ficha</h2></a>
-        <h2 class="hilo_ariadna">/</h2>
-        <a ></a><h2 class="hilo_ariadna">Ficha</h2></a>
-    </div>
-<?php endif; ?>
-
-
-<?php if($_GET['exportPDF']==1): 
-    // eliminamos las variables de css -- ;
-    $cadena = '<style>'.file_get_contents(dirname(__FILE__).'/styles.css').'</style>';
-    $patrón = '/--(.*)/i';
-    $sustitución = '';
-    $cadena2 = preg_replace($patrón, $sustitución, $cadena);
-
-    // empalmamos la 2n substitucion
-    $patrón2 = '/var\((.*)\)/i';
-    $sustitución2 = 'AAAA';
-    $cadena2 = preg_replace($patrón2, $sustitución2, $cadena2);
-
-    echo str_replace('var(', ';', $cadena2);
-    //echo '<style>'.file_get_contents(dirname(__FILE__).'/styles.css').'</style>'; ?>
-
-<?php endif; ?>
 
     <div class="sec_ficha">
         <div class="header_ficha flex space-between">
@@ -342,10 +192,3 @@
         </div>
 
                         </div>
-
-
-
-<?php if($_GET['exportPDF']!=1): ?>
-    </body>
-    </html>
-<?php endif; ?>

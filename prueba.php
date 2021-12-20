@@ -15,10 +15,9 @@ try {
     //$content = file_get_contents('./Ficha.php');
     //str_replace();
 
-
     ob_start();
     $_GET['exportPDF'] = 1;
-    include dirname(__FILE__).'/Ficha.php';
+    include dirname(__FILE__).'/Pdf2.php?nombre=Legolas';
     $content = ob_get_clean();
     //$content = ob_get_contents();
 

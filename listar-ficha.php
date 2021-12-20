@@ -75,6 +75,8 @@
 
 					};
 
+				
+
 					echo "	  </div>
 		      					<div class='info'>
 		      						<h3>Nombre:</h2>

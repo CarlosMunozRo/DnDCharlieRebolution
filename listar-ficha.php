@@ -47,7 +47,7 @@
 
 
 		      	//preparem i executem la consulta
-		      	$query = $pdo->prepare('select Personajes.PersonajeID, Personajes.Nombre,Personajes.Clase,Personajes.Raza from Usuarios_Personajes
+		      	$query = $pdo->prepare('select Personajes.PersonajeID, Personajes.Nombre,Personajes.Clase,Personajes.Raza,Personajes.Imagen from Usuarios_Personajes
 				  inner join Personajes on Usuarios_Personajes.PersonajeID=Personajes.PersonajeID
 				  inner join Usuarios on Usuarios_Personajes.UsuarioID =Usuarios.UsuarioID
 				  where Usuarios.NombreUsuario="'.$_SESSION["Usuario"].'";');

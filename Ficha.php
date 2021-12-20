@@ -154,6 +154,7 @@
             $inteligencia=$ficha["inteligencia"];
             $constitucion=$ficha["Constitucion"];
             $dado=$ficha["DG"];
+            $imagen=$ficha["Imagen"];
 
             $query5 = $pdo->prepare("SELECT * FROM Clases_Armas_Armaduras_Objetos where NombreClase='".$clase."';");
             $query5->execute();
@@ -190,7 +191,6 @@
     	<title>Ficha</title>
         <script src="./Scripts/jquery.min.js" ></script>
 
-        <script src="/Scripts/subir-imagen.js"></script>
         <link rel="stylesheet" href="styles.css">
     </head>
 <body class="ficha">        
@@ -212,11 +212,12 @@
                 <?php if($_GET['exportPDF']!=1):?>
                     <div class="laFoto img">
                         <?php
-                            if (!empty($ficha["Imagen"])){ 
-                                echo "<img src='./Media/Uploads/".$ficha["Imagen"]."'/>";
+
+                            if (!empty($imagen)){ 
+                                echo "<img src='./Media/Uploads/".$imagen."'/>";
                             
                             }else {
-                                echo "<img src='/Media/Imagenes/".$ficha["Raza"].".jpeg'/>";
+                                echo "<img src='/Media/Imagenes/".$raza.".jpeg'/>";
                             };
                         ?>
                     </div>

@@ -12,7 +12,7 @@
     }
 
 
-    $select = $pdo->prepare("select Personajes.* ,Clases.DG from Personajes inner join Clases on Personajes.Clase=Clases.NombreClase where nombre ='".$_SESSION["NombrePersonaje"]."';");
+    $select = $pdo->prepare("select Personajes.* ,Clases.DG from Personajes inner join Clases on Personajes.Clase=Clases.NombreClase where nombre ='".$_GET["NombrePersonaje"]."';");
     $select->execute();
 
     $row = $select->fetchAll();
@@ -22,7 +22,7 @@
     foreach($row as $ficha){
 
 
-            $nombre=$_SESSION["NombrePersonaje"];
+            $nombre=$_GET["NombrePersonaje"];
 
             
             $raza=$ficha["Raza"];

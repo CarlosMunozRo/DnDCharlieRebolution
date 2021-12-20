@@ -5,8 +5,8 @@ use Dompdf\Dompdf;
 $dompdf = new Dompdf();
 ob_start();
 
-session_start();
-$_SESSION["NombrePersonaje"]=$_GET["NombrePersonaje"];
+
+$_GET["NombrePersonaje"];
 
 include "./Pdf2.php";
 $html = ob_get_clean();
